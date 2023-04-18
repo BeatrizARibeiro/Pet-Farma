@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.php": "php"
-    },
-    "[php]": {
-        "files.autoGuessEncoding": false,
-        "files.encoding": "utf8"
-    }
-}
