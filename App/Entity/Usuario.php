@@ -20,5 +20,23 @@ class Usuario{
 
   public $telefone; //tipo texto por conta da mascara
 
-  
+  public function cadastrar() {
+  $obDatabase = new Database('usuario');
+
+  $this->codus = $obDatabase->insert([
+    'nome' => $this->nome,
+    'email' => $this->email,
+    'senha' => $this->senha,
+    'cpf' => $this->cpf,
+    'telefone' => $this->telefone,
+  ]);
+
+  return true;
+}
+
+  public static function getUsuarioPorEmail($email) {
+    return (new Database('usuario'))->select('email = "'. $email.'"')->fetchObject(self::class);
+
+  }
+
 }

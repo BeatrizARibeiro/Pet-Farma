@@ -19,7 +19,7 @@ class Endereco{
   public $codus; //chave estrangeira de usuario
 
   /**
-   * Método responsavel por cadastrar
+   * Mï¿½todo responsavel por cadastrar
    * @return boolean
    */
   public function cadastrar(){
@@ -37,7 +37,7 @@ class Endereco{
   }
 
   /**
-   * Método responsavel por atualizar
+   * Mï¿½todo responsavel por atualizar
    * @return boolean
    */
   public function atualizar(){
@@ -50,7 +50,7 @@ class Endereco{
   }
 
   /**
-   * Método responsavel por excluir
+   * Mï¿½todo responsavel por excluir
    * @return boolean
    */
   public function excluir(){
@@ -59,7 +59,7 @@ class Endereco{
 
 
   /**
-   * Método responsável por buscar um endereco com base em seu codigo
+   * Mï¿½todo responsï¿½vel por buscar um endereco com base em seu codigo
    * @param  integer $cep
    * @return Endereco
    */
@@ -69,7 +69,7 @@ class Endereco{
   }
 
   /**
-   * Método responsável por buscar todos os enderecos do usuario, com base no seu codigo
+   * Mï¿½todo responsï¿½vel por buscar todos os enderecos do usuario, com base no seu codigo
    * @param  integer $cep
    * @return Endereco
    */

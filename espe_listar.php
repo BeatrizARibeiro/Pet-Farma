@@ -5,6 +5,9 @@
 
     use \App\Entity\Especie;
 
+    use App\Session\Login;
+    Login::requireAdmin();
+
     //variavel com array de especies
     $especies = Especie::getEspecies();
 

@@ -5,6 +5,9 @@
 
     use \App\Entity\Produto;
 
+    use App\Session\Login;
+    Login::requireAdmin();
+
     //variavel com array de produtos
     $produtos = Produto::getProdutos();
 

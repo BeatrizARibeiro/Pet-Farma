@@ -5,6 +5,9 @@
 
     use \App\Entity\Categoria;
 
+    use App\Session\Login;
+    Login::requireAdmin();
+
     //variavel com array de categorias
     $categorias = Categoria::getCategorias();
 
