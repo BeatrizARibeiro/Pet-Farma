@@ -1,5 +1,6 @@
 <?php
   $alertaCadastro = strlen($alertaCadastro) ? '<div>'.$alertaCadastro.'</div>' : '';
+
 ?>
 <main>
   <a href="index.php">Voltar</a>
@@ -8,7 +9,9 @@
   <?=$alertaCadastro?>
 
   <form  method="POST">
+
     <div class="inputBox">
+      <label for="nome" class="inputLabel">Nome completo</label>
       <input
         type="text"
         name="nome"
@@ -16,10 +19,10 @@
         class="inputUser"
         required
       />
-      <label for="nome" class="labelInput"> Nome completo </label>
     </div>
-    <br /><br />
+
     <div class="inputBox">
+      <label for="email" class="inputLabel">Email</label>
       <input
         type="text"
         name="email"
@@ -27,11 +30,10 @@
         class="inputUser"
         required
       />
-      <label for="email" class="labelInput"> Email </label>
     </div>
-    <br /><br />
 
     <div class="inputBox">
+      <label for="senha" class="inputLabel">Senha</label>
       <input
         type="password"
         name="senha"
@@ -39,11 +41,10 @@
         class="inputUser"
         required
       />
-      <label for="senha" class="labelInput"> Senha </label>
     </div>
-    <br /><br />
 
     <div class="inputBox">
+      <label for="cpf" class="inputLabel">CPF</label>
       <input
         type="text"
         name="cpf"
@@ -51,92 +52,24 @@
         class="inputUser"
         required
       />
-      <label for="cpf" class="labelInput"> CPF </label>
     </div>
-    <br /><br />
 
     <div class="inputBox">
+      <label for="telefone" class="inputLabel">Telefone</label>
       <input
         type="tel"
+        pattern="\(\d{2}\) \d{4}-\d{4}" 
+        placeholder="(99) 9999-9999"
         name="telefone"
         id="telefone"
         class="inputUser"
         required
       />
-      <label for="telefone" class="labelInput"> Telefone </label>
     </div>
-    <br /><br />
-
-    <!-- <p>Endereço</p>
-
-    <div class="inputBox">
-      <input
-        type="text"
-        name="cep"
-        id="cep"
-        class="inputUser"
-        required
-      />
-      <label for="cep" class="labelInput">
-        <b>CEP</b>
-      </label>
-    </div>
-    <br /><br />
-
-    <div class="inputBox">
-      <input
-        type="text"
-        name="rua"
-        id="rua"
-        class="inputUser"
-        required
-      />
-      <label for="rua" class="labelInput">
-        <b>Rua</b>
-      </label>
-    </div>
-    <br /><br />
-
-    <div class="inputBox">
-      <input
-        type="text"
-        name="bairro"
-        id="bairro"
-        class="inputUser"
-        required
-      />
-      <label for="bairro" class="labelInput">
-        <b>Bairro</b>
-      </label>
-    </div>
-    <br /><br />
-
-    <div class="inputBox">
-      <input
-        type="text"
-        name="numero"
-        id="numero"
-        class="inputUser"
-      />
-      <label for="numero" class="labelInput">
-        <b>Número</b>
-      </label>
-    </div>
-    <br /><br />
-
-    <div class="inputBox">
-      <input
-        type="text"
-        name="tipo"
-        id="tipo"
-        class="inputUser"
-      />
-      <label for="tipo" class="labelInput">
-        <b>Tipo</b>
-      </label>
-    </div>
-    <br /><br /> -->
 
     <button type="submit" name="acao" value="cadastrar">Cadastrar</button>
+
   </form>
+
+  
 </main>
