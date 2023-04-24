@@ -58,7 +58,6 @@
       <label for="telefone" class="inputLabel">Telefone</label>
       <input
         type="tel"
-        pattern="\(\d{2}\) \d{4}-\d{4}" 
         placeholder="(99) 9999-9999"
         name="telefone"
         id="telefone"
