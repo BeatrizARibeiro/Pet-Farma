@@ -37,17 +37,21 @@ class Usuario{
 public function atualizarSenha($novosDados) {
     $this->senha = $novosDados['senha'];
 
-    return (new Database('usuario'))->update('codus = '.$this->codus,[
+    return (new Database('usuario'))
+      ->update('codus = '.$this->codus,[
       'senha' => $this->senha,
     ]);
 }
 
-
-
-
   public static function getUsuarioPorEmail($email) {
-    return (new Database('usuario'))->select('email = "'. $email.'"')->fetchObject(self::class);
-
+    return (new Database('usuario'))
+    ->select('email = "'. $email.'"')
+    ->fetchObject(self::class);
   }
 
+  public static function getUsuarioPorCodus($codus) {
+  return (new Database('usuario'))
+    ->select('codus = '. $codus)
+    ->fetchObject(self::class);
+  }
 }
