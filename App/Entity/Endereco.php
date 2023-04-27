@@ -65,7 +65,7 @@ class Endereco{
    * @return Endereco
    */
   public static function getEndereco($cep){
-    return (new Database('produto'))->select('cep = '.$cep)
+    return (new Database('endereco'))->select('cep = '.$cep)
                                     ->fetchObject(self::class);//passa a classe que vc quer instanciar
   }
 
@@ -76,7 +76,7 @@ class Endereco{
    */
 
   public static function getEnderecosCli($codus){
-    return (new Database('produto'))->select('codus = '.$codus)
+    return (new Database('endereco'))->select('codus = '.$codus)
                                     ->fetchAll(PDO::FETCH_CLASS,self::class);//passa a classe que vc quer instanciar
   }
 
