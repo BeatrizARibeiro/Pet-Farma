@@ -35,9 +35,9 @@ use \App\Session\Login;
     </tbody>
   </table>
 
+  <h2>Endereços</h2>
+  <a href="endereco_cadastro.php">Adicionar novo endereço</a>
   <table>
-   <h2>Endereços</h2>
-   <a href="obEndereco_cadastro.php">Adicionar novo endereço</a>
     <thead>
       <tr>
         <th>CEP</th>
@@ -58,7 +58,7 @@ use \App\Session\Login;
           <td><?php echo $endereco->tipo; ?></td>
           <td>
             <a href="endereco_editar.php?codend=<?php echo $endereco->codend; ?>">Editar</a>
-            <a href="endereco_editar.php?codend=<?php echo $endereco->codend; ?>">Excluir</a>
+            <a href="endereco_excluir.php?codend=<?php echo $endereco->codend; ?>">Excluir</a>
           </td>
         </tr>
       <?php } ?>
