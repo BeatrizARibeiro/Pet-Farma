@@ -30,7 +30,8 @@ class Endereco{
                                         'rua'    => $this->rua,
                                         'bairro' => $this->bairro,
                                         'numero' => $this->numero,
-                                        'tipo'   => $this->tipo
+                                        'tipo'   => $this->tipo,
+                                        'codus'   => $this->codus,
                                     ]);
     //RETORNAR SUCESSO
     return true;

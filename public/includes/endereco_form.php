@@ -55,5 +55,7 @@
         class="inputUser"
       />
     </div>
+
+        <button type="submit" name="acao" value="cadastrar">Cadastrar</button>
   </form>
 </main>

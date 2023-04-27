@@ -7,9 +7,16 @@
   Login::requireLogin();
   !Login::isAdmin();
 
+  $usuario = Login::getUsuarioLogado();
+
 if(!isset($_GET['codus']) or !is_numeric($_GET['codus'])) {
     header ('location: index.php?status=error');
     exit;
+}
+
+if(isset($_GET['codus']) && $_GET['codus'] !== $usuario['codus']){ 
+  header('location: index.php?status=error');
+  exit;
 }
 
 $obUsuario = Usuario::getUsuarioPorCodus($_GET['codus']);
@@ -19,4 +26,4 @@ if(!$obUsuario instanceof Usuario) {
     exit;
 }
 
-include __DIR__.'/public/includes/dados_form.php';
+include __DIR__.'/public/includes/meus_dados.php';

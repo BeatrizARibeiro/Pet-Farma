@@ -34,6 +34,18 @@ class Usuario{
   return true;
 }
 
+public function atualizar($dados) {
+  $obDatabase = new Database('usuario');
+
+  $this->codus = $obDatabase->update('codus = '.$this->codus,[
+    'nome' => $this->nome,
+    'email' => $this->email,
+    'cpf' => $this->cpf,
+    'telefone' => $this->telefone,
+    'senha' => $this->senha,
+]);
+}
+
 public function atualizarSenha($novosDados) {
     $this->senha = $novosDados['senha'];
 
