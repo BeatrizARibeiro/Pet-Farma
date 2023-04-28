@@ -6,6 +6,8 @@ use \App\Db\Database;
 use \PDO;
 
 class Endereco{
+  public $codend;
+
   public $cep;
 
   public $rua;
@@ -25,7 +27,8 @@ class Endereco{
   public function cadastrar(){
     //INSERIR A VAGA NO BANCO
     $obDatabase = new Database('endereco');
-    $this->cep = $obDatabase->insert([
+    $this->codend = $obDatabase->insert([
+                                        'codend' => $this->codend,
                                         'cep'    => $this->cep,
                                         'rua'    => $this->rua,
                                         'bairro' => $this->bairro,
@@ -42,7 +45,8 @@ class Endereco{
    * @return boolean
    */
   public function atualizar(){
-    return (new Database('endereco'))->update(  'cep = '.$this->cep,[
+    return (new Database('endereco'))->update(  'codend = '.$this->codend,[
+                                                'cep'    => $this->cep,
                                                 'rua'    => $this->rua,
                                                 'bairro' => $this->bairro,
                                                 'numero' => $this->numero,
@@ -55,7 +59,7 @@ class Endereco{
    * @return boolean
    */
   public function excluir(){
-    return (new Database('endereco'))->delete('cep = '.$this->cep);
+    return (new Database('endereco'))->delete('codend = '.$this->codend);
   }
 
 
@@ -64,8 +68,8 @@ class Endereco{
    * @param  integer $cep
    * @return Endereco
    */
-  public static function getEndereco($cep){
-    return (new Database('endereco'))->select('cep = '.$cep)
+  public static function getEndereco($codend){
+    return (new Database('endereco'))->select('codend = '.$codend)
                                     ->fetchObject(self::class);//passa a classe que vc quer instanciar
   }
 
