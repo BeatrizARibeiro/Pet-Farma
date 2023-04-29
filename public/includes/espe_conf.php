@@ -10,7 +10,7 @@
 
     <div class="form-group">
       <a href="espe_listar.php">
-        <button type="button">Calcelar</button>
+        <button type="button">Cancelar</button>
       </a>
 
       <button type="submit" name="excluir">Excluir</button>

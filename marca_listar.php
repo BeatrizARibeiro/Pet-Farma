@@ -5,6 +5,9 @@
 
     use \App\Entity\Marca;
 
+    use App\Session\Login;
+    Login::requireAdmin();
+
     //variavel com array de marcas
     $marcas = Marca::getMarcas();
 

@@ -1,15 +1,15 @@
 <main>
 
-  <h2>Excluir Marca</h2>
+  <h2>Excluir Endereço</h2>
 
   <form method="post">
 
     <div class="form-group">
-      <p>Você deseja realmente excluir a marca <strong><?=$objMarca->nome_marca?></strong>?</p>
+      <p>Você deseja realmente excluir o endereço <strong><?=$obEndereco->rua.', '. $obEndereco->numero.' - '. $obEndereco->bairro ?></strong>?</p>
     </div>
 
     <div class="form-group">
-      <a href="marca_listar.php">
+      <a href="dados_listar.php">
         <button type="button">Cancelar</button>
       </a>
 
