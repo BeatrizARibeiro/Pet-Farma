@@ -3,10 +3,14 @@
 require __DIR__.'/vendor/autoload.php';
 
 use App\Entity\Endereco;
+use App\Session\Login;
 
-if(!isset($_GET['codend']) or !is_numeric($_GET['codend'])){
-  header('location: dados_listar.php?status=error');
-  exit;
+  $obEndereco = Endereco::getEndereco($_GET['codend']);
+  $usuarioLogado = Login::getUsuarioLogado();
+
+if(!isset($_GET['codend']) || !is_numeric($_GET['codend']) || $usuarioLogado['codus'] !== $obEndereco->codus) {
+    header('Location: index.php?status=error');
+    exit;
 }
 
 $obEndereco = Endereco::getEndereco($_GET['codend']);
@@ -26,6 +30,4 @@ if(isset($_POST['excluir'])){
 }
 
 
-include __DIR__.'/public/includes/header.php';
 include __DIR__.'/public/includes/endereco_conf.php';
-include __DIR__.'/public/includes/footer.php';

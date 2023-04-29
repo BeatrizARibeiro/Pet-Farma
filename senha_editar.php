@@ -62,6 +62,7 @@ if(isset($_POST['acao'])) {
       }
 
       // Redireciona o usuário para a página de sucesso
+      Login::logout();
       header('Location: login.php');
       exit;
 
