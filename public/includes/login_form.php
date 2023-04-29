@@ -41,5 +41,8 @@
     </button>
 
   </form>
+
+    <a href="senha_esqueci.php">Esqueci minha senha</a>
+
   
 </main>
