@@ -1,7 +1,7 @@
 <?php
   use App\Entity\Produto;
 
-  $produtos = Produto::getProdutosRepteis();
+  $produtos = Produto::getProdutosMedicamentos();
 
   $cards = '';
 
@@ -20,12 +20,12 @@
   }
 
   //caso nao tenha nenhum produto cadastrado no banco
-  $cards = strlen($cards) ? $cards : '<h4>Nenhum produto para répteis encontrado</h4>';
+  $cards = strlen($cards) ? $cards : '<h4>Nenhum produto encontrado</h4>';
 ?>
 
 <main>
 <section id="product1" class="section-p1">
-    <h2>Produtos para Répteis</h2>
+    <h2>Medicamentos</h2>
     <div class="pro-container">
       <?=$cards?>
     </div>

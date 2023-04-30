@@ -125,6 +125,42 @@ class Produto{
                                     ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
+  //Função para pegar os medicamentos
+  public static function getProdutosMedicamentos(){
+    return (new Database('produto'))->selectMedicamentos()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os tratamentos
+  public static function getProdutosTratamentos(){
+    return (new Database('produto'))->selectTratamentos()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os suplementos e vitaminas
+  public static function getProdutosSupl_Vita(){
+    return (new Database('produto'))->selectSuplementosVitaminas()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os acessorio
+  public static function getProdutosAcessorios(){
+    return (new Database('produto'))->selectAcessorios()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os brinquedos
+  public static function getProdutosBrinquedos(){
+    return (new Database('produto'))->selectBrinquedos()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os Higiene e cosmeticos
+  public static function getProdutosHigi_Cosm(){
+    return (new Database('produto'))->selectHigieneCosmetico()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
   //funcao para pegar a quantidade de produtos
   public static function getQtdeProdutos($where = null){
     return (new Database('produto'))->select($where, null, null, 'COUNT(*) as qtde')
