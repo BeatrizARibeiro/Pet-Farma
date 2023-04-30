@@ -24,7 +24,7 @@ if(isset($_POST['acao'])) {
 
         $obEndereco->cadastrar();
 
-        header("Location: dados_listar.php");
+        header('Location: dados_listar.php?codus=' . $usuario['codus']);
 
 
       }

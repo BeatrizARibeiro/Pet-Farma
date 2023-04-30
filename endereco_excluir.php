@@ -22,11 +22,8 @@ if(!$obEndereco instanceof Endereco) {
 
 if(isset($_POST['excluir'])){
     $obEndereco->excluir();
-    unlink("./public/img/".$objProd->imagem."");
-    
-
-  header('location: prod_listar.php?status=success');
-  exit;
+    header('Location: dados_listar.php?codus=' . $usuarioLogado['codus']);
+    exit;
 }
 
 

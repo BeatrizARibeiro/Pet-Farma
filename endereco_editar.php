@@ -41,7 +41,7 @@ if(isset($_POST['acao'])) {
         $obEndereco->numero = $_POST['numero'],
         $obEndereco->tipo = $_POST['tipo']
       ]);
-      header('Location: dados_listar.php?status=success');
+      header('Location: dados_listar.php?codus=' . $usuarioLogado['codus']);
       exit;
 
       break;

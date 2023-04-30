@@ -48,7 +48,7 @@ if(isset($_POST['acao'])) {
         $obUsuario->telefone = $_POST['telefone'],
         $obUsuario->senha = password_hash($_POST['senha'], PASSWORD_DEFAULT),
       ]);
-      header('Location: dados_listar.php?status=success');
+      header('Location: dados_listar.php?codus=' . $usuario['codus']);
       exit;
 
       break;

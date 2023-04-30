@@ -10,7 +10,7 @@ if ($usuarioLogado) {
   }
   $usuario = $nomeUsuario . '<a href="logout.php" class="">Sair</a>';
 } else {
-  $usuario = 'Visitante <a href="login.php" class="">Entrar</a> <a href="cadastro.php" class="">Criar conta</a> <a href="senha_editar.php" class="">Alterar senha</a>';
+  $usuario = 'Visitante <a href="login.php" class="">Entrar</a> <a href="cadastro.php" class="">Criar conta</a>';
 }
 
 ?>
