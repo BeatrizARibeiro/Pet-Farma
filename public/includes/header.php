@@ -20,15 +20,30 @@ if ($usuarioLogado) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet-Farma</title>
   </head>
   <body>
 
-  <nav>
+  <section id="header">
     <a href="index.php">Logo</a>
-    <div class="busca" <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>><!--Essa dive nao sera exibida para o admin-->
-        <input type="text" id="txtBusca" placeholder="Busco por"/>
-    </div>
+    <form method="post">
+      <div class="busca" <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>><!--Essa dive nao sera exibida para o admin-->
+          <input type="text" name="busca"  placeholder="Busco por"/>
+          <button class="search-btn" name="btnbusca" type="submit">Buscar
+            <!--<img src="public/img/lupa.png" class="lupa"> tirei pq estava mto grande, dps colocava de novo ocm css-->
+          </button>
+      </div>
+    </form>
+
+    <?php
+      $busca_url = "http://localhost/pet-farma/busca.php?busca=";
+      if(isset($_POST['btnbusca'])){
+        $input = $_POST['busca'];
+        header("location: ".$busca_url.$input);
+      }
+    ?>
     
     <div class="f-admin" <?php if(!Login::isLogged() || $usuarioLogado['admin'] == 0) { echo 'style="display: none;"'; } ?>><!--funcoes do admin, apenas o admin ve codus=1 ou codus=2-->
         <a href="">Pedidos</a>
@@ -38,6 +53,8 @@ if ($usuarioLogado) {
         <a href="espe_listar.php">Espécies</a>
       </div>
       <p>Olá, <?=$usuario?></p>
+
+      
 
     <div <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>> <!--apenas clientes e pessoas nao logadas podem ver (adm nao ve)-->
       <a href="">Carrinho</a><!--colocar icone bonitinho no lugar-->
@@ -49,4 +66,17 @@ if ($usuarioLogado) {
                                                                           
                                                                           
     </div>
-  </nav>
+  </section>
+
+  <div class="divHeader2">
+    <ul>
+        <li><i class="fas fa-solid fa-bars"></i>Categoria
+          <ul>
+            <li><a href="">Medicamentos</a></li>
+            <li><a href="">Suplementos e Vitaminas</a></li>
+            <li><a href="">Acessórios e Brinquedos</a></li>
+            <li><a href="">Higiene e Cosméticos</a></li>
+          </ul>
+        </li>
+    <ul>
+

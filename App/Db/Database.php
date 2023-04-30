@@ -17,7 +17,7 @@ class Database{
    * Nome do banco de dados
    * @var string
    */
-  const NAME = 'pet-farma-teste';
+  const NAME = 'pet-farma';
 
   /**
    * Usuário do banco
@@ -29,7 +29,7 @@ class Database{
    * Senha de acesso ao banco de dados
    * @var string
    */
-  const PASS = 'toor';
+  const PASS = '';
 
   /**
    * Nome da tabela a ser manipulada
@@ -118,6 +118,76 @@ class Database{
     $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
 
     //EXECUTA A QUERY
+    return $this->execute($query);
+  }
+
+  //QUERY PARA PEGAR DESTAQUES
+  public function select2(){
+    $query = "select * from produto p inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c 
+    on pc.codcate = c.codcate
+    where c.nome_cate like '%Destaques%'";
+
+    return $this->execute($query);
+  }
+
+  //QUERY PARA PEGAR PROD AVES 
+  public function selectAves(){
+    $query = "select * from produto p inner join especie e
+    on p.codespe = e.codespe
+    where e.nome_espe like '%Aves%'";
+
+    return $this->execute($query);
+  }
+
+   
+  //QUERY PARA PEGAR PROD SILVESTRES
+   public function selectSilvestres(){
+    $query = "select * from produto p inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c 
+    on pc.codcate = c.codcate
+    where c.nome_cate like '%Silvestres%'";
+
+    return $this->execute($query);
+  }
+
+  //QUERY PARA PEGAR PROD EQUINOS
+  public function selectEquinos(){
+    $query = "select * from produto p inner join especie e
+    on p.codespe = e.codespe
+    where e.nome_espe like '%Equinos%'";
+
+    return $this->execute($query);
+  }
+
+  //QUERY PARA PEGAR PROD PEIXES
+  public function selectPeixes(){
+    $query = "select * from produto p inner join especie e
+    on p.codespe = e.codespe
+    where e.nome_espe like '%Peixes%'";
+
+    return $this->execute($query);
+  }
+
+  //QUERY PARA PEGAR PROD PEIXES
+  public function selectRepteis(){
+    $query = "select * from produto p inner join especie e
+    on p.codespe = e.codespe
+    where e.nome_espe like '%Réptil%'";
+
+    return $this->execute($query);
+  }
+
+  //QUERY PARA PEGAR PROD MAMIFEROS
+  public function selectMamiferos(){
+    $query = "select * from produto p inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c 
+    on pc.codcate = c.codcate
+    where c.nome_cate like '%Mamíferos%'";
+
     return $this->execute($query);
   }
 
