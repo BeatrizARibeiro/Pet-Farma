@@ -20,6 +20,8 @@ class Usuario{
 
   public $telefone; //tipo texto por conta da mascara
 
+  public $token;
+
   public function cadastrar() {
   $obDatabase = new Database('usuario');
 
@@ -54,6 +56,15 @@ public function atualizarSenha($novosDados) {
       'senha' => $this->senha,
     ]);
 }
+
+public function setToken($token) {
+  $obDatabase = new Database('usuario');
+  $this->token = $token;
+  $obDatabase->update('codus = '.$this->codus, [
+    'token' => $this->token,
+  ]);
+}
+
 
   public static function getUsuarioPorEmail($email) {
     return (new Database('usuario'))
