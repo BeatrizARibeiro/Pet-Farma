@@ -2,7 +2,7 @@
   $alertaEditarDados = strlen($alertaEditarDados) ? '<div>'.$alertaEditarDados.'</div>' : '';
 ?>
 <main>
-  <a href="index.php">Voltar</a>
+  <a href="dados_listar.php?codus=<?php echo $usuario['codus']; ?>">Voltar</a>
   <h1>Editar dados</h1>
     <form  method="POST">
       <?=$alertaEditarDados?>

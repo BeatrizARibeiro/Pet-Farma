@@ -3,7 +3,7 @@
 ?>
 
 <main>
-  <a href="index.php">Voltar</a>
+  <a href="dados_listar.php?codus=<?php echo $usuario['codus']; ?>">Voltar</a>
   <h1>Alterar senha</h1>
 
   <?=$alertaAlterarSenha?>

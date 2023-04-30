@@ -1,6 +1,6 @@
 <main>
   <form method="POST">
-    <a href="index.php">Voltar</a>
+    <a href="dados_listar.php?codus=<?php echo $usuario['codus']; ?>">Voltar</a>
     <h1>Cadastrar endereço</h1>
 
     <div class="inputBox">
