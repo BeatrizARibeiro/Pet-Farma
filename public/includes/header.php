@@ -68,15 +68,20 @@ if ($usuarioLogado) {
     </div>
   </section>
 
-  <div class="divHeader2">
-    <ul>
-        <li><i class="fas fa-solid fa-bars"></i>Categoria
-          <ul>
-            <li><a href="">Medicamentos</a></li>
-            <li><a href="">Suplementos e Vitaminas</a></li>
-            <li><a href="">Acessórios e Brinquedos</a></li>
-            <li><a href="">Higiene e Cosméticos</a></li>
-          </ul>
-        </li>
-    <ul>
+  <nav class="categoria" <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>>
+    <div class="divHeader2">
+      <ul>
+          <li><i class="fas fa-solid fa-bars"></i>Categoria
+            <ul>
+              <li><a href="./medi.php">Medicamentos</a></li>
+              <li><a href="./trat.php">Tratamentos</a></li>
+              <li><a href="./supl_vita.php">Suplementos e Vitaminas</a></li>
+              <li><a href="./aces.php">Acessórios</a></li>
+              <li><a href="./brin.php">Brinquedos</a></li>
+              <li><a href="./higi_cosm.php">Higiene e Cosméticos</a></li>
+            </ul>
+          </li>
+      <ul>
+    </div>
+  </nav>
 

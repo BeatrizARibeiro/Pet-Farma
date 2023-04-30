@@ -17,7 +17,7 @@ class Database{
    * Nome do banco de dados
    * @var string
    */
-  const NAME = 'pet-farma-teste';
+  const NAME = 'pet-farma';
 
   /**
    * Usuário do banco
@@ -29,7 +29,7 @@ class Database{
    * Senha de acesso ao banco de dados
    * @var string
    */
-  const PASS = 'toor';
+  const PASS = '';
 
   /**
    * Nome da tabela a ser manipulada
@@ -136,7 +136,7 @@ class Database{
   public function selectAves(){
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
-    where e.nome_espe like '%Aves%'";
+    where e.nome_espe like '%Ave%' or e.nome_espe like '%Pássaro%'";
 
     return $this->execute($query);
   }
@@ -144,11 +144,11 @@ class Database{
    
   //QUERY PARA PEGAR PROD SILVESTRES
    public function selectSilvestres(){
-    $query = "select * from produto p inner join prod_cate pc
-    on p.codprod = pc.codprod
-    inner join categoria c 
-    on pc.codcate = c.codcate
-    where c.nome_cate like '%Silvestres%'";
+    $query = "select * from produto p inner join especie e
+    on p.codespe = e.codespe
+    where e.nome_espe like '%Coelho%' or e.nome_espe like '%Roedores%'
+    or e.nome_espe like '%Rato%' or e.nome_espe like '%Hamster%'
+    or e.nome_espe like '%Porquinho%da%India%'";
 
     return $this->execute($query);
   }
@@ -157,7 +157,7 @@ class Database{
   public function selectEquinos(){
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
-    where e.nome_espe like '%Equinos%'";
+    where e.nome_espe like '%Cavalo%'";
 
     return $this->execute($query);
   }
@@ -166,27 +166,93 @@ class Database{
   public function selectPeixes(){
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
-    where e.nome_espe like '%Peixes%'";
+    where e.nome_espe like '%Peixe%'";
 
     return $this->execute($query);
   }
 
-  //QUERY PARA PEGAR PROD PEIXES
+  //QUERY PARA PEGAR PROD REPTEIS
   public function selectRepteis(){
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
-    where e.nome_espe like '%Réptil%'";
+    where e.nome_espe like '%Réptil%' or e.nome_espe like '%Tartatuga%'
+    or e.nome_espe like '%Cobra%' or e.nome_espe like '%Lagarto%'";
 
     return $this->execute($query);
   }
 
   //QUERY PARA PEGAR PROD MAMIFEROS
   public function selectMamiferos(){
+    $query = "select * from produto p inner join especie e
+    on p.codespe = e.codespe
+    where e.nome_espe like '%Mamífero%' or e.nome_espe like '%Cachorro%' 
+    or e.nome_espe like '%Gato%'";
+
+    return $this->execute($query);
+  }
+
+  //QUERY PARA PEGAR MEDICAMENTOS
+  public function selectMedicamentos(){
     $query = "select * from produto p inner join prod_cate pc
     on p.codprod = pc.codprod
-    inner join categoria c 
+    inner join categoria c
     on pc.codcate = c.codcate
-    where c.nome_cate like '%Mamíferos%'";
+    where c.nome_cate like '%Medicamentos%'";
+
+    return $this->execute($query);
+  }
+
+   //QUERY PARA PEGAR TRATAMENTOS
+   public function selectTratamentos(){
+    $query = "select * from produto p inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c
+    on pc.codcate = c.codcate
+    where c.nome_cate like '%Tratamentos%'";
+
+    return $this->execute($query);
+  }
+
+   //QUERY PARA PEGAR SUPLEMENTOS E VITAMINAS
+   public function selectSuplementosVitaminas(){
+    $query = "select * from produto p inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c
+    on pc.codcate = c.codcate
+    where c.nome_cate like '%Suplementos%' or c.nome_cate like '%Vitaminas%'";
+
+    return $this->execute($query);
+  }
+
+   //QUERY PARA PEGAR ACESSORIOS
+   public function selectAcessorios(){
+    $query = "select * from produto p inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c
+    on pc.codcate = c.codcate
+    where c.nome_cate like '%Acessórios%'";
+
+    return $this->execute($query);
+  }
+
+   //QUERY PARA PEGAR BRINQUEDOS
+   public function selectBrinquedos(){
+    $query = "select * from produto p inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c
+    on pc.codcate = c.codcate
+    where c.nome_cate like '%Brinquedos%'";
+
+    return $this->execute($query);
+  }
+
+   //QUERY PARA PEGAR HIGIENE E COSMÉTICOS
+   public function selectHigieneCosmetico(){
+    $query = "select * from produto p inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c
+    on pc.codcate = c.codcate
+    where c.nome_cate like '%Higiene%' or c.nome_cate like '%Cométicos%'";
 
     return $this->execute($query);
   }
