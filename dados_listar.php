@@ -14,7 +14,7 @@ if(!isset($_GET['codus']) or !is_numeric($_GET['codus'])) {
     exit;
 }
 
-if(isset($_GET['codus']) && $_GET['codus'] !== $usuario['codus']){ 
+if(isset($_GET['codus']) && $_GET['codus'] != $usuario['codus']){ 
   header('location: index.php?status=error2');
   exit;
 }

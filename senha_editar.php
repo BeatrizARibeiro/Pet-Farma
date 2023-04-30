@@ -8,6 +8,8 @@ use App\Session\Login;
 
 $alertaAlterarSenha = "";
 
+$usuario = Login::getUsuarioLogado();
+
 if(isset($_POST['acao'])) {
   switch($_POST['acao']){
     case 'alterar-senha':

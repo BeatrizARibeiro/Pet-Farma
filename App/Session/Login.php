@@ -33,7 +33,7 @@ class Login {
     self::init();
 
     unset($_SESSION['usuario']);
-    header('Location: index.php');
+    header('Location: login.php');
     exit;
 
   }

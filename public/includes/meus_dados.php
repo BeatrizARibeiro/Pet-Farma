@@ -8,7 +8,7 @@ use \App\Session\Login;
 
 ?>
 <main>
-  <a href="dados_listar.php">Voltar</a>
+  <a href="index.php">Voltar</a>
   <h1>Meus dados</h1>
   <h2>Dados pessoais</h2>
 
@@ -24,7 +24,7 @@ use \App\Session\Login;
     </tr>
     <tr>
       <td>Senha:</td>
-      <td><a href="senha_editar.php?status=success">alterar senha</a></td>
+      <td><a href="senha_editar.php?codus=<?php echo $usuario['codus']; ?>">alterar senha</a></td>
     </tr>
     <tr>
       <td>CPF:</td>
