@@ -6,7 +6,7 @@
   $cards = '';
 
   foreach($produtos as $prod){
-    $cards .= '<a href=" ">
+    $cards .= '<a href="./detalhes.php?codprod='.$prod->codprod.'">
                 <div class="pro">
                     <img src="public/img/'.$prod->imagem.'" alt="">
                     <div class="des">
