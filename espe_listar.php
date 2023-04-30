@@ -4,12 +4,33 @@
     include __DIR__.'/public/includes/header.php';
 
     use \App\Entity\Especie;
-
+    use \App\Db\Pagination;
     use App\Session\Login;
     Login::requireAdmin();
 
+    //busca
+    $busca = filter_input(INPUT_GET,'busca', FILTER_SANITIZE_STRING);
+
+
+    //CONDIÇÕES SQL
+    $condicoes = [
+        strlen($busca) ? 'nome_espe LIKE "%'.str_replace(' ', '%', $busca).'%"' : null
+    ];
+
+    //REMOVE POSICOES VAZIAS
+    $condicoes = array_filter($condicoes);
+
+    //CLAUSULA WHERE
+    $where = implode(' AND ', $condicoes);
+
+    //QUANTIDADE DE VAGAS
+    $qtdeEspecies = Especie::getQtdeEspecies($where);
+
+    //PAGINACAO
+    $objPagi = new Pagination($qtdeEspecies, $_GET['pagina'] ?? 1, 10);
+
     //variavel com array de especies
-    $especies = Especie::getEspecies();
+    $especies = Especie::getEspecies($where, null, $objPagi->getLimit());
 
      $mensagem = '';
 
@@ -47,7 +68,23 @@
                                                         <td colspan="6" class="text-center">
                                                             Nenhuma espécie encontrada
                                                         </td>
-                                                        </tr>'
+                                                        </tr>';
+
+    //GETS
+    unset($_GET['status']);
+    unset($_GET['pagina']);
+    $gets = http_build_query($_GET);
+
+    //PAGINACAO
+    $paginacao = '';
+    $paginas = $objPagi->getPages();
+
+    foreach($paginas as $key=>$pagina){
+        $class = $pagina['atual'] ? 'btn-primary' : 'btn-light';
+        $paginacao .= '<a href="?pagina='.$pagina['pagina'].'&'.$gets.'">
+                        <button type="button" class="btn '.$class.'">'.$pagina['pagina'].'</button>
+                    </a>';
+    }
    
    ?>
 <main>
@@ -59,6 +96,18 @@
         <a href="espe_cadastrar.php">
             <button >Nova Espécie</button>
         </a>
+</section>
+
+<section>
+  <form method="get">
+    <div class="row my-4">
+      <div class="col">
+        <label>Buscar Espécie</label>
+        <input type="text" name="busca" VALUE="<?=$busca?>">
+        <button type="submit">Buscar</button>
+      </div>
+    </div>
+  </form>
 </section>
 
 <section>
@@ -75,6 +124,9 @@
         </tbody>
     </table>
 
+</section>
+<section>
+    <?=$paginacao?>
 </section>
 </main>
 

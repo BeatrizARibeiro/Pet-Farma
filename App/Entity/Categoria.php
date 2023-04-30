@@ -23,7 +23,7 @@ class Categoria{
   }
 
   /**
-   * Método responsavel por atualizar a categoria no banco
+   * Mï¿½todo responsavel por atualizar a categoria no banco
    * @return boolean
    */
   public function atualizar(){
@@ -33,7 +33,7 @@ class Categoria{
   }
 
   /**
-   * Método responsavel por excluir 
+   * Mï¿½todo responsavel por excluir 
    * @return boolean
    */
   public function excluir(){
@@ -41,7 +41,7 @@ class Categoria{
   }
 
   /**
-   * Método responsavel por obter todas as categorias do banco de dados
+   * Mï¿½todo responsavel por obter todas as categorias do banco de dados
    * @return array
    */
   public static function getCategorias($where = null, $order = null, $limit = null){
@@ -49,8 +49,15 @@ class Categoria{
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
+  //funcao para pegar a quantidade de categorias
+  public static function getQtdeCategorias($where = null){
+    return (new Database('categoria'))->select($where, null, null, 'COUNT(*) as qtde')
+                                      ->fetchObject()
+                                      ->qtde;
+  }
+
   /**
-   * Método responsavel por buscar uma categoria com base em seu Código
+   * Mï¿½todo responsavel por buscar uma categoria com base em seu Cï¿½digo
    * @param  integer $codcate
    * @return Categoria
    */

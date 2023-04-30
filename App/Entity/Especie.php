@@ -56,6 +56,14 @@ class Especie{
                                     ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
+  //funcao para pegar a quantidade de especies
+  public static function getQtdeEspecies($where = null){
+    return (new Database('especie'))->select($where, null, null, 'COUNT(*) as qtde')
+                                    ->fetchObject()
+                                    ->qtde;
+  }
+
+
   /**
    * Metodo responsavel por buscar uma especie com base em seu codigo
    * @param  integer $codespe

@@ -56,6 +56,14 @@ class Marca{
                                   ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
+  //funcao para pegar a quantidade de marcas
+  public static function getQtdeMarcas($where = null){
+    return (new Database('marca'))->select($where, null, null, 'COUNT(*) as qtde')
+                                  ->fetchObject()
+                                  ->qtde;
+  }
+
+
   /**
    * Metodo responsavel por buscar uma marca com base em seu codigo
    * @param  integer $codmarca

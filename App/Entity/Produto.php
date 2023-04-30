@@ -83,6 +83,56 @@ class Produto{
                                     ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
+  //Função para pegar os produtos em destaques
+  public static function getProdutosEmDestaque(){
+    return (new Database('produto'))->select2()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os produtos para aves
+  public static function getProdutosAves(){
+    return (new Database('produto'))->selectAves()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os produtos para silvestres
+  public static function getProdutosSilvestres(){
+    return (new Database('produto'))->selectSilvestres()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os produtos para equinos
+  public static function getProdutosEquinos(){
+    return (new Database('produto'))->selectEquinos()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os produtos para peixes
+  public static function getProdutosPeixes(){
+    return (new Database('produto'))->selectPeixes()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os produtos para peixes
+  public static function getProdutosRepteis(){
+    return (new Database('produto'))->selectPeixes()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Função para pegar os produtos para mamiferos
+  public static function getProdutosMamiferos(){
+    return (new Database('produto'))->selectMamiferos()
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //funcao para pegar a quantidade de produtos
+  public static function getQtdeProdutos($where = null){
+    return (new Database('produto'))->select($where, null, null, 'COUNT(*) as qtde')
+                                    ->fetchObject()
+                                    ->qtde;
+  }
+
+
   /**
    * Método responsável por buscar um produto com base em seu código
    * @param  integer $codprod
