@@ -1,4 +1,10 @@
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="./public/js/masks.js"></script>
+  </head>
 <?php
+
 
 require __DIR__.'/vendor/autoload.php';
 
@@ -33,3 +39,4 @@ if(isset($_POST['acao'])) {
 }
 
 include __DIR__.'/public/includes/endereco_form.php';
+

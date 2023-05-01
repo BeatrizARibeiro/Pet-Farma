@@ -37,4 +37,6 @@ if(isset($_POST['acao'])) {
 }
 
 //CARREGA OS ELEMENTOS HTML
+include __DIR__.'/public/includes/header.php';
 include __DIR__.'/public/includes/cadastro_form.php';
+include __DIR__.'/public/includes/footer.php';

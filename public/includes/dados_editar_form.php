@@ -1,6 +1,11 @@
 <?php
   $alertaEditarDados = strlen($alertaEditarDados) ? '<div>'.$alertaEditarDados.'</div>' : '';
 ?>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="./public/js/masks.js"></script>
+  </head>
 <main>
   <a href="dados_listar.php?codus=<?php echo $usuario['codus']; ?>">Voltar</a>
   <h1>Editar dados</h1>
