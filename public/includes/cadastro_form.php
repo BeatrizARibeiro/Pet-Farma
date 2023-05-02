@@ -46,49 +46,49 @@
 
       <div class="second-column">
         <h2 class="title title-second">Criar Conta</h2>
-        <form class="form">
+        <form class="form" method="POST">
           <label class="label-input" for="nome">
             <i class="fas fa-regular fa-user icon-modify"></i>
             <input 
             type="text"
             name="nome"
             id="nome"
-        placeholder="Nome Completo"
-        required>
-      </label>
-      <label class="label-input" for="cpf">
-        <i class="fas fa-regular fa-user icon-modify"></i>
-        <input type="text"
-        name="cpf"
-        id="cpf"
-        placeholder="CPF"
-        required>
-      </label>
-      <label class="label-input" for="telefone">
-        <i class="fas fa-light fa-phone icon-modify"></i>
-        <input type="tel" 
-        type="tel"
-        name="telefone"
-        id="telefone"
-        placeholder="Telefone"
-        required>
-      </label>
-      <label class="label-input" for="email">
-        <i class="fas fa-regular fa-envelope icon-modify"></i>
-        <input placeholder="E-mail"
-            type="text"
-        name="email"
-        id="email"
-        required>
-      </label>
-      <label class="label-input" for="senha">
-        <i class="fas fa-light fa-lock icon-modify"></i>
-        <input type="password" placeholder="Senha"
-        name="senha"
-        id="senha"
-        required>
-      </label>
-      <?=$alertaCadastro?>
+            placeholder="Nome Completo"
+            required>
+          </label>
+          <label class="label-input" for="cpf">
+            <i class="fas fa-regular fa-user icon-modify"></i>
+            <input type="text"
+            name="cpf"
+            id="cpf"
+            placeholder="CPF"
+            required>
+          </label>
+          <label class="label-input" for="telefone">
+            <i class="fas fa-light fa-phone icon-modify"></i>
+            <input type="tel" 
+            type="tel"
+            name="telefone"
+            id="telefone"
+            placeholder="Telefone"
+            required>
+          </label>
+          <label class="label-input" for="email">
+            <i class="fas fa-regular fa-envelope icon-modify"></i>
+            <input placeholder="E-mail"
+                type="text"
+            name="email"
+            id="email"
+            required>
+          </label>
+          <label class="label-input" for="senha">
+            <i class="fas fa-light fa-lock icon-modify"></i>
+            <input type="password" placeholder="Senha"
+            name="senha"
+            id="senha"
+            required>
+          </label>
+          <?=$alertaCadastro?>
           <button class="btn btn-second" type="submit" name="acao" value="cadastrar">cadastre-se</button>
         </form>
       </div>
