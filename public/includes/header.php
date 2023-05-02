@@ -21,20 +21,17 @@ if ($usuarioLogado) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>PetFarma</title>
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
     <link rel="stylesheet" href="./public/css/style.css">
-</head>
-=======
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="../js//masks.js"></script>
     <title>Pet-Farma</title>
   </head>
->>>>>>> 17f51f411cf0bc9d9c3ed3cd57f1cbfab23de8f9
   <body>
 
   <section id="header">

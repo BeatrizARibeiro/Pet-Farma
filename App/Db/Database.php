@@ -17,7 +17,7 @@ class Database{
    * Nome do banco de dados
    * @var string
    */
-  const NAME = 'pet-farma-v2';
+  const NAME = 'pet-farma';
 
   /**
    * Usuário do banco
@@ -29,7 +29,7 @@ class Database{
    * Senha de acesso ao banco de dados
    * @var string
    */
-  const PASS = 'toor';
+  const PASS = '';
 
   /**
    * Nome da tabela a ser manipulada
