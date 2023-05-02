@@ -1,6 +1,11 @@
 <?php
   $alertaEditarDados = strlen($alertaEditarDados) ? '<div>'.$alertaEditarDados.'</div>' : '';
 ?>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="./public/js/masks.js"></script>
+  </head>
 <main>
   <a href="index.php">Voltar</a>
   <h1>Editar Endereço</h1>
@@ -13,6 +18,7 @@
           name="cep"
           id="cep"
           class="inputUser"
+          pattern="[0-9]
           required
           value="<?php echo $obEndereco->cep; ?>"
         />
@@ -56,14 +62,10 @@
 
       <div class="inputBox">
         <label for="tipo" class="inputLabel">Tipo</label>
-        <input
-          type="text"
-          name="tipo"
-          id="tipo"
-          class="inputUser"
-          required
-          value="<?php echo $obEndereco->tipo; ?>"
-        />
+        <select name="tipo" id="tipo" class="inputUser" required>
+          <option value="casa" <?php if($obEndereco->tipo === 'casa') echo 'selected'; ?>>Casa</option>
+          <option value="apartamento" <?php if($obEndereco->tipo === 'apartamento') echo 'selected'; ?>>Apartamento</option>
+        </select>
       </div>
 
     <button type="submit" name="acao" value="atualizar">Atualizar</button>

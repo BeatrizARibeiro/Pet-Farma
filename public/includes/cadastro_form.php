@@ -2,6 +2,7 @@
   $alertaCadastro = strlen($alertaCadastro) ? '<div>'.$alertaCadastro.'</div>' : '';
 
 ?>
+<<<<<<< HEAD
 
 
 <head>
@@ -112,6 +113,13 @@
 
 
 <!-- 
+=======
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="./public/js/masks.js"></script>
+  </head>
+>>>>>>> 17f51f411cf0bc9d9c3ed3cd57f1cbfab23de8f9
 <main>
   <a href="index.php">Voltar</a>
   <h1>Criar conta</h1>
@@ -180,5 +188,10 @@
 
   </form>
 
+<<<<<<< HEAD
   
 </main> -->
+=======
+
+</main>
+>>>>>>> 17f51f411cf0bc9d9c3ed3cd57f1cbfab23de8f9

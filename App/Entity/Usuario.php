@@ -48,12 +48,11 @@ public function atualizar($dados) {
 ]);
 }
 
-public function atualizarSenha($novosDados) {
-    $this->senha = $novosDados['senha'];
+public function atualizarSenha($novaSenha) {
+    $obDatabase = new Database('usuario');
 
-    return (new Database('usuario'))
-      ->update('codus = '.$this->codus,[
-      'senha' => $this->senha,
+    return $obDatabase->update('codus = '.$this->codus, [
+        'senha' => $novaSenha
     ]);
 }
 
@@ -65,6 +64,18 @@ public function setToken($token) {
   ]);
 }
 
+  public function validaToken($tokenUrl) {
+    $obDatabase = new Database('usuario');
+    $registro = $obDatabase->select('token = "'. $tokenUrl.'"');
+
+    if (!empty($registro)) {
+      return true; // o token da URL é igual ao token salvo no banco de dados
+    } else {
+      header('Location: login.php?status=missingtoken');
+      return false; // o token da URL não é válido
+    }
+  }
+
 
   public static function getUsuarioPorEmail($email) {
     return (new Database('usuario'))
@@ -75,6 +86,12 @@ public function setToken($token) {
   public static function getUsuarioPorCodus($codus) {
   return (new Database('usuario'))
     ->select('codus = '. $codus)
+    ->fetchObject(self::class);
+  }
+
+  public static function getUsuarioPorToken($token) {
+    return (new Database('usuario'))
+    ->select('token = "'. $token.'"')
     ->fetchObject(self::class);
   }
 }

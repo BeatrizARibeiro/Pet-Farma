@@ -58,9 +58,9 @@ if(isset($_POST['acao'])) {
 
       // Cria o hash da nova senha e atualiza o registro do usuário
       $novaSenha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-      if(!$obUsuario->atualizarSenha(['senha' => $novaSenha])){
-        $alertaAlterarSenha = "Erro ao atualizar a senha. Tente novamente mais tarde.";
-        break;
+      if(!$obUsuario->atualizarSenha($novaSenha)){
+          $alerta = "Erro ao atualizar a senha. Tente novamente mais tarde.";
+          break;
       }
 
       // Redireciona o usuário para a página de sucesso

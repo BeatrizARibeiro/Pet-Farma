@@ -1,21 +1,35 @@
 <?php
 
+require __DIR__.'/vendor/autoload.php';
+
 use App\Entity\Usuario;
 use App\Session\Login;
+Login::requireLogout();
+
 
 $alerta = "";
-$usuarioLogado = Login::getUsuarioLogado();
+$obUsuario = Usuario::getUsuarioPorToken($_GET['token']);
 
-if($_GET['token'] !== $usuarioLogado['token']) {
-  Login::logout();
-  header('Location: login.php');
+
+// Obtém o usuário a partir do email informado
+if(!$obUsuario instanceof Usuario) {
+  $alerta = "Usuário não encontrado.";
+  header('Location: login.php?status=missinguser');
+}
+
+if ($obUsuario->token !== $_GET['token']) {
+  header('Location: login.php?status=missingtoken');
   exit;
-
 }
 
 if(isset($_POST['acao'])) {
   switch($_POST['acao']){
     case 'alterar-senha':
+      // Verifica se o email foi informado
+      if($_GET['token'] != $obUsuario->token){
+        header('Location: login.php?status=incorrecttoken');
+        break;
+      }
 
       // Verifica se a nova senha foi informada
       if(empty($_POST['senha'])){
@@ -30,21 +44,20 @@ if(isset($_POST['acao'])) {
       }
 
       // Verifica se as novas senhas são iguais
-      if($_POST['senha'] !== $_POST['confirmar-senha']){
+      if($_POST['senha'] != $_POST['confirmar-senha']){
         $alerta = "As novas senhas não conferem.";
         break;
       }
 
       // Cria o hash da nova senha e atualiza o registro do usuário
       $novaSenha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-      if(!$obUsuario->atualizarSenha(['senha' => $novaSenha])){
-        $alerta = "Erro ao atualizar a senha. Tente novamente mais tarde.";
-        break;
+      if(!$obUsuario->atualizarSenha($novaSenha)){
+          $alerta = "Erro ao atualizar a senha. Tente novamente mais tarde.";
+          break;
       }
 
       // Redireciona o usuário para a página de sucesso
       Login::logout();
-      header('Location: login.php');
       exit;
 
       break;
