@@ -2,7 +2,6 @@
 
   require __DIR__.'/vendor/autoload.php';
 
-  use App\Entity\Usuario;
   use App\Session\Login;
   use App\Entity\Endereco;
   Login::requireLogin();

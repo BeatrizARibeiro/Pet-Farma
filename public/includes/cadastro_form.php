@@ -2,7 +2,6 @@
   $alertaCadastro = strlen($alertaCadastro) ? '<div>'.$alertaCadastro.'</div>' : '';
 
 ?>
-<<<<<<< HEAD
 
 
 <head>
@@ -12,6 +11,9 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
   <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
   <link rel="stylesheet" href="./public/css/StyleLogin.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="./public/js/masks.js"></script>
   <title>Entrar</title>
 </head>
 
@@ -39,7 +41,7 @@
         <h2 class="title title-primary">Bem-Vindo de volta!</h2>
         <p class="description description-primary">Para realizar as compras no site</p>
         <p class="description description-primary">por favor, faça login com o seu E-mail pessoal em</p>
-       <a class="btn btn-primary" id="btnEntrar" href="login.php">Entrar</a>
+        <a class="btn btn-primary" id="btnEntrar" href="login.php">Entrar</a>
       </div>
 
       <div class="second-column">
@@ -113,13 +115,6 @@
 
 
 <!-- 
-=======
-  <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script src="./public/js/masks.js"></script>
-  </head>
->>>>>>> 17f51f411cf0bc9d9c3ed3cd57f1cbfab23de8f9
 <main>
   <a href="index.php">Voltar</a>
   <h1>Criar conta</h1>

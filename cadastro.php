@@ -23,10 +23,10 @@ if(isset($_POST['acao'])) {
 
         $obUsuario = new Usuario();
         $obUsuario->nome = $_POST['nome'];
-        $obUsuario->email = $_POST['email'];
-        $obUsuario->senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $obUsuario->cpf = $_POST['cpf'];
         $obUsuario->telefone = $_POST['telefone'];
+        $obUsuario->email = $_POST['email'];
+        $obUsuario->senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $obUsuario->cadastrar();
 
         Login::login($obUsuario);

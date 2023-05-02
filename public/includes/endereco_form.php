@@ -16,7 +16,6 @@
         name="cep"
         id="cep"
         class="inputUser"
-        pattern="\d+"
         required
       />
     </div>
@@ -28,7 +27,6 @@
         name="rua"
         id="rua"
         class="inputUser"
-        pattern="[a-zA-Z]+"
         required
       />
     </div>
@@ -40,7 +38,6 @@
         name="bairro"
         id="bairro"
         class="inputUser"
-        pattern="[a-zA-Z]+"
         required
       />
     </div>
@@ -52,7 +49,6 @@
         name="numero"
         id="numero"
         class="inputUser"
-        pattern="\d+"
         required
       />
     </div>

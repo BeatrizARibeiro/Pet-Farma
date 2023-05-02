@@ -18,7 +18,6 @@
           name="cep"
           id="cep"
           class="inputUser"
-          pattern="[0-9]
           required
           value="<?php echo $obEndereco->cep; ?>"
         />
