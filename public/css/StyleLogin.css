@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+/* ICON */
+.logo {
+    width: 40px;
+}
+
+/* HEADER START */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #52C1B7;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #065a4f;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #065a4f;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#navbar i,
+h3 {
+    color: #fff;
+    display: flex;
+    margin: 10px;
+}
+
+/* CONTAINER */
+
+.container {
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(220, 238, 234);
+}
+
+.content {
+    background-color: rgb(255, 255, 255);
+    /* border-radius: 15px; */
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    background-image: url("../img/fundopet.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #2db3a7;
+    width: 40%;
+    height: 100%;
+    /* border-top-left-radius: 15px; */
+    /* border-bottom-left-radius: 15px; */
+
+
+    /* left: 60%; */
+    left: 0;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.title-primary {
+    color: #fff;
+}
+
+.title-second {
+    color: #2db3a7;
+}
+
+/* Descrição  */
+
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 35px;
+}
+
+.description-primary {
+    color: #fff;
+    font-weight: 400;
+}
+
+.description-second {
+    color: #858585;
+    font-weight: 400;
+}
+
+/* Botão */
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border-width: 0px;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    transition: background-color 0.5s;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #2db3a7;
+}
+
+.btn-second {
+    background-color: #2db3a7;
+    border: 1px solid #2db3a7;
+    padding: 10px 30px;
+    transition: background-color 0.5s;
+}
+
+.btn-second:hover {
+    background-color: #fff;
+    border: 1px solid #52C1B7;
+    color: #2db3a7;
+}
+
+.first-content {
+    display: flex;
+    /* display: none; */
+}
+
+.first-content .second-column {
+    z-index: 11;
+}
+
+.first-column {
+    text-align: center;
+    /* flex: 1 0 auto; */
+    z-index: 10;
+    width: 40%;
+}
+
+.second-column {
+    /* flex: 2 0 auto; */
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* FORMS */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.form input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: #e7eeeb;
+}
+
+/* Icon Input */
+
+.label-input {
+    background-color: #e7eeeb;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.icon-modify {
+    color: #af7ac4;
+    padding: 0 5px;
+}
+
+
+/* LOGIN */
+
+.second-content {
+    position: absolute;
+    display: flex;
+    /* display: none; */
+}
+
+.second-content .first-column {
+    order: 2;
+    /* opacity: 0; */
+    z-index: -1;
+}
+
+.second-content .second-column {
+    order: 1;
+    /* opacity: 0; */
+    z-index: -1;
+}
+
+.password {
+    color: #af7ac4;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.password::first-letter {
+    text-transform: capitalize;
+}

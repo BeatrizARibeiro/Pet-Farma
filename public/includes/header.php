@@ -17,22 +17,25 @@ if ($usuarioLogado) {
 
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet-Farma</title>
-  </head>
+    <title>PetFarma</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
   <body>
 
   <section id="header">
-    <a href="index.php">Logo</a>
+    <a href="index.php"><img src="public/img/logopetfarma2.png" class="logo" alt=""></a>
     <form method="post">
-      <div class="busca" <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>><!--Essa dive nao sera exibida para o admin-->
-          <input type="text" name="busca"  placeholder="Busco por"/>
-          <button class="search-btn" name="btnbusca" type="submit">Buscar
-            <!--<img src="public/img/lupa.png" class="lupa"> tirei pq estava mto grande, dps colocava de novo ocm css-->
+      <div class="search-box" <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>><!--Essa dive nao sera exibida para o admin-->
+          <input type="text" class="search-txt" name="busca"  placeholder="Busco por"/>
+          <button class="search-btn" name="btnbusca" type="submit">
+            <img src="public/img/lupa.png" class="lupa">
           </button>
       </div>
     </form>

@@ -23,6 +23,17 @@
   $destaques = strlen($destaques) ? $destaques : '<h4>Nenhum produto em destaque</h4>';
 ?>
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFarma</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
 <body>
   <section id="hero">
     <div class="homeimgtexto">
@@ -34,7 +45,7 @@
           <!--tirei o botão pq ele não faz sentido no contexto do site-->
       </div>
       <div class="animaishome">
-          <img src="">
+          <img src="public/img/animaishome.png">
       </div>
     </div>
   </section>
