@@ -2,8 +2,6 @@
   $alertaCadastro = strlen($alertaCadastro) ? '<div>'.$alertaCadastro.'</div>' : '';
 
 ?>
-<<<<<<< HEAD
-
 
 <head>
   <meta charset="UTF-8">
