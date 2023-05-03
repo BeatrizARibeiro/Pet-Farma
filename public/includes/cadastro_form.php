@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
   <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
   <link rel="stylesheet" href="./public/css/StyleLogin.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="./public/js/masks.js"></script>
   <title>Entrar</title>
 </head>
 
@@ -37,54 +40,54 @@
         <h2 class="title title-primary">Bem-Vindo de volta!</h2>
         <p class="description description-primary">Para realizar as compras no site</p>
         <p class="description description-primary">por favor, faça login com o seu E-mail pessoal em</p>
-       <a class="btn btn-primary" id="btnEntrar" href="login.php">Entrar</a>
+        <a class="btn btn-primary" id="btnEntrar" href="login.php">Entrar</a>
       </div>
 
       <div class="second-column">
         <h2 class="title title-second">Criar Conta</h2>
-        <form class="form">
+        <form class="form" method="POST">
           <label class="label-input" for="nome">
             <i class="fas fa-regular fa-user icon-modify"></i>
             <input 
             type="text"
             name="nome"
             id="nome"
-        placeholder="Nome Completo"
-        required>
-      </label>
-      <label class="label-input" for="cpf">
-        <i class="fas fa-regular fa-user icon-modify"></i>
-        <input type="text"
-        name="cpf"
-        id="cpf"
-        placeholder="CPF"
-        required>
-      </label>
-      <label class="label-input" for="telefone">
-        <i class="fas fa-light fa-phone icon-modify"></i>
-        <input type="tel" 
-        type="tel"
-        name="telefone"
-        id="telefone"
-        placeholder="Telefone"
-        required>
-      </label>
-      <label class="label-input" for="email">
-        <i class="fas fa-regular fa-envelope icon-modify"></i>
-        <input placeholder="E-mail"
-            type="text"
-        name="email"
-        id="email"
-        required>
-      </label>
-      <label class="label-input" for="senha">
-        <i class="fas fa-light fa-lock icon-modify"></i>
-        <input type="password" placeholder="Senha"
-        name="senha"
-        id="senha"
-        required>
-      </label>
-      <?=$alertaCadastro?>
+            placeholder="Nome Completo"
+            required>
+          </label>
+          <label class="label-input" for="cpf">
+            <i class="fas fa-regular fa-user icon-modify"></i>
+            <input type="text"
+            name="cpf"
+            id="cpf"
+            placeholder="CPF"
+            required>
+          </label>
+          <label class="label-input" for="telefone">
+            <i class="fas fa-light fa-phone icon-modify"></i>
+            <input type="tel" 
+            type="tel"
+            name="telefone"
+            id="telefone"
+            placeholder="Telefone"
+            required>
+          </label>
+          <label class="label-input" for="email">
+            <i class="fas fa-regular fa-envelope icon-modify"></i>
+            <input placeholder="E-mail"
+                type="text"
+            name="email"
+            id="email"
+            required>
+          </label>
+          <label class="label-input" for="senha">
+            <i class="fas fa-light fa-lock icon-modify"></i>
+            <input type="password" placeholder="Senha"
+            name="senha"
+            id="senha"
+            required>
+          </label>
+          <?=$alertaCadastro?>
           <button class="btn btn-second" type="submit" name="acao" value="cadastrar">cadastre-se</button>
         </form>
       </div>
@@ -111,13 +114,6 @@
 
 
 <!-- 
-=======
-  <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script src="./public/js/masks.js"></script>
-  </head>
->>>>>>> 17f51f411cf0bc9d9c3ed3cd57f1cbfab23de8f9
 <main>
   <a href="index.php">Voltar</a>
   <h1>Criar conta</h1>
@@ -185,11 +181,3 @@
     <button type="submit" name="acao" value="cadastrar">Cadastrar</button>
 
   </form>
-
-<<<<<<< HEAD
-  
-</main> -->
-=======
-
-</main>
->>>>>>> 17f51f411cf0bc9d9c3ed3cd57f1cbfab23de8f9

@@ -23,10 +23,10 @@ if(isset($_POST['acao'])) {
 
         $obUsuario = new Usuario();
         $obUsuario->nome = $_POST['nome'];
-        $obUsuario->email = $_POST['email'];
-        $obUsuario->senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $obUsuario->cpf = $_POST['cpf'];
         $obUsuario->telefone = $_POST['telefone'];
+        $obUsuario->email = $_POST['email'];
+        $obUsuario->senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $obUsuario->cadastrar();
 
         Login::login($obUsuario);
@@ -37,6 +37,6 @@ if(isset($_POST['acao'])) {
 }
 
 //CARREGA OS ELEMENTOS HTML
-include __DIR__.'/public/includes/header.php';
+// include __DIR__.'/public/includes/header.php';
 include __DIR__.'/public/includes/cadastro_form.php';
-include __DIR__.'/public/includes/footer.php';
+// include __DIR__.'/public/includes/footer.php';
