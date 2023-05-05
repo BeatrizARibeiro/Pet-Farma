@@ -9,6 +9,8 @@ Login::requireLogout();
 $alertaCadastro = "";
 
 
+
+
 if(isset($_POST['acao'])) {
     switch($_POST['acao']){
     case 'cadastrar':
@@ -18,6 +20,13 @@ if(isset($_POST['acao'])) {
       if($obUsuario instanceof Usuario){
         $alertaCadastro = "O e-mail já está em uso.";
         break;
+      }
+
+
+    $usuarioCPF = Usuario::validaCPF($_POST['cpf']);
+      if(!$usuarioCPF){
+          $alertaCadastro = "CPF inválido.";
+          break;
       }
 
 
