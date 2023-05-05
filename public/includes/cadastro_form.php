@@ -76,7 +76,7 @@
           <label class="label-input" for="email">
             <i class="fas fa-regular fa-envelope icon-modify"></i>
             <input placeholder="E-mail"
-                type="text"
+            type="email"
             name="email"
             id="email"
             required>
