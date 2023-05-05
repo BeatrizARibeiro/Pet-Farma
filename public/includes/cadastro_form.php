@@ -3,7 +3,6 @@
 
 ?>
 
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -182,11 +181,3 @@
     <button type="submit" name="acao" value="cadastrar">Cadastrar</button>
 
   </form>
-
-<<<<<<< HEAD
-  
-</main> -->
-=======
-
-</main>
->>>>>>> 17f51f411cf0bc9d9c3ed3cd57f1cbfab23de8f9
