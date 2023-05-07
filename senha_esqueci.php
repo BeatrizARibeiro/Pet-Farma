@@ -43,7 +43,7 @@ if(isset($_POST['acao'])) {
         $mail->Host = 'smtp-relay.sendinblue.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'adrielkasima@gmail.com';
-        $mail->Password = '1pLYdtkIxC2bg3aP';
+        $mail->Password = '0IbNznW2KyLT6kMD';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
         $mail->isHTML(true);
