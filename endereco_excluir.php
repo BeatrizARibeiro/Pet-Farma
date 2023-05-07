@@ -8,7 +8,7 @@ use App\Session\Login;
   $obEndereco = Endereco::getEndereco($_GET['codend']);
   $usuarioLogado = Login::getUsuarioLogado();
 
-if(!isset($_GET['codend']) || !is_numeric($_GET['codend']) || $usuarioLogado['codus'] !== $obEndereco->codus) {
+if(!isset($_GET['codend']) || !is_numeric($_GET['codend']) || $usuarioLogado['codus'] != $obEndereco->codus) {
     header('Location: index.php?status=error');
     exit;
 }

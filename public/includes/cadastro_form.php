@@ -87,7 +87,9 @@
             id="senha"
             required>
           </label>
-          <?=$alertaCadastro?>
+          <section style="text-align: center;">
+            <?=$alertaCadastro?>
+          </section>
           <button class="btn btn-second" type="submit" name="acao" value="cadastrar">cadastre-se</button>
         </form>
       </div>
