@@ -1,8 +1,32 @@
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFarma</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
+    <link rel="stylesheet" href="./public/css/StyleLogin.css">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="./public/js/masks.js"></script>
   </head>
+
+
+
+
+  <!-- <section id="header">
+    <a href="index.php"><img src="./public/img/logopetfarma2.png" class="logo" alt=""></a>
+
+    <div>
+      <ul id="navbar">
+        <li><i class="fas fa-solid fa-lock"></i>
+          <h3>Ambiente seguro</h3>
+        </li>
+      </ul>
+    </div>
+  </section> -->
+
 
 <main>
   <form method="POST">
