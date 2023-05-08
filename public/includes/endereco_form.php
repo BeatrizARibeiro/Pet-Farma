@@ -69,7 +69,7 @@
     <div class="inputBox">
       <label for="numero" class="inputLabel">Numero</label>
       <input
-        type="text"
+        type="number"
         name="numero"
         id="numero"
         class="inputUser"
