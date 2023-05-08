@@ -17,10 +17,10 @@ if(!$obUsuario instanceof Usuario) {
   header('Location: login.php?status=missinguser');
 }
 
-// if ($obUsuario->token !== $_GET['token']) {
-//   header('Location: login.php?status=missingtoken');
-//   exit;
-// }
+if ($obUsuario->token != $_GET['token']) {
+  header('Location: senha_redefinir_form.php');
+  exit;
+}
 
 if(isset($_POST['acao'])) {
   switch($_POST['acao']){
