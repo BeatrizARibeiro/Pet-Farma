@@ -51,36 +51,53 @@ use \App\Session\Login;
         <tr>
     <th>CEP:</th>
     <td><?php echo $endereco->cep; ?></td>
-  </tr>
-  <tr>
-    <th>Rua:</th>
-    <td><?php echo $endereco->rua; ?></td>
-  </tr>
-  <tr>
-    <th>Bairro:</th>
-    <td><?php echo $endereco->bairro; ?></td>
-  </tr>
-  <tr>
-    <th>Número:</th>
-    <td><?php echo $endereco->numero; ?></td>
-  </tr>
-  <tr>
-    <th>Tipo:</th>
-    <td><?php echo $endereco->tipo; ?></td>
-  </tr>
-  <tr>
-    <th>Ações:</th>
-    <td>
-      <a href="endereco_editar.php?codend=<?php echo $endereco->codend; ?>">Editar</a>
-      <a href="endereco_excluir.php?codend=<?php echo $endereco->codend; ?>">Excluir</a>
-    </td>
-  </tr>
-      <?php } ?>
-    </tbody>
+    </tr>
+    <tr>
+      <th>Rua:</th>
+      <td><?php echo $endereco->rua; ?></td>
+    </tr>
+    <tr>
+      <th>Bairro:</th>
+      <td><?php echo $endereco->bairro; ?></td>
+    </tr>
+    <tr>
+      <th>Número:</th>
+      <td><?php echo $endereco->numero; ?></td>
+    </tr>
+    <tr>
+      <th>Tipo:</th>
+      <td><?php echo $endereco->tipo; ?></td>
+    </tr>
+    <tr>
+      <th>Ações:</th>
+      <td>
+        <a href="endereco_editar.php?codend=<?php echo $endereco->codend; ?>">Editar</a>
+        <a href="endereco_excluir.php?codend=<?php echo $endereco->codend; ?>">Excluir</a>
+      </td>
+    </tr>
+        <?php } ?>
+      </tbody>
   </table>
 <?php } else { ?>
   <p>Nenhum endereço cadastrado.</p>
-<?php } ?>
+<?php } 
+
+$cep = "18160-000";
+$url = "https://viacep.com.br/ws/$cep/json/";
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
+$endereco = json_decode($response, true);
+
+echo "Endereço: ".$endereco['logradouro'].", ".$endereco['bairro'].", ".$endereco['localidade']." - ".$endereco['uf'];
+
+?>
+
+  
 
 
 </main>
