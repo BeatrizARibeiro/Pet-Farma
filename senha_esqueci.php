@@ -33,7 +33,7 @@ if(isset($_POST['acao'])) {
         $obUsuario->setToken($token);
         print_r($token);
 
-        $link = "http://localhost:8080/pet-farma/senha_redefinir.php?token=$token";
+        $link = "http://localhost/pet-farma/senha_redefinir.php?token=$token";
         $mensagem = "Olá, " . $obUsuario->nome . ". Você solicitou uma troca de senha, Clique no link abaixo para realizar a alteração: \n$link";
 
 

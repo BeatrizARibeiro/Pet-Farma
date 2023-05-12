@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+body {
+    position: absolute;
+    background-image: url("../img/fundopet.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    width: 100%;
+    height: 100%;
+}
+
+/* ICON */
+.logo {
+    width: 40px;
+}
+
+/* HEADER START */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #52C1B7;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+}
+
+
+#navbar i,
+h3 {
+    color: #fff;
+    display: flex;
+    margin: 10px;
+}
+
+/* div */
+.divOlaUsuario {
+    background-color: #ffffff75;
+    color: #1a1a1a;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2%;
+}
+
+
+/* meus dados */
+.divOlaUsuario h1 {
+    padding-left: 80px;
+}
+
+.divOlaUsuario a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    background: #A252C1;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.meusDadosPessoais .tbDadosPessoais {
+    background-color: #ffffff;
+    color: #52C1B7;
+    /* width: 80%; */
+    height: 40%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+
+    margin: 30px;
+}
+
+.meusDadosPessoais .tbDadosPessoais table {
+    width: 50%;
+    /* align-items: center; */
+    margin: 80px;
+}
+
+.meusDadosPessoais .tbDadosPessoais table tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.meusDadosPessoais .tbDadosPessoais table tbody tr {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+.meusDadosPessoais .tbDadosPessoais table tbody tr .titleTd {
+    font-weight: bold;
+}
+
+.meusDadosPessoais .tbDadosPessoais table tbody tr td {
+    width: 20%;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 10%;
+    /* padding-right: 10px; */
+}
+
+.tbDadosPessoais h1 {
+    margin-left: 50px;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.divTitleEndereco{
+    margin-left: 50px;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Endereços */
+
+.meusDadosPessoais .enderecos{
+    background-color: #ffffff;
+    color: #52C1B7;
+    /* width: 80%; */
+    height: 40%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+
+    margin: 30px;
+}
+
+.meusDadosPessoais .enderecos table {
+    width: 50%;
+    /* align-items: center; */
+    margin: 80px;
+}
+
+.meusDadosPessoais .enderecos table tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.meusDadosPessoais .enderecos table tbody tr {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+.meusDadosPessoais .enderecos table tbody tr .titleTd {
+    font-weight: bold;
+}
+
+.meusDadosPessoais .enderecos table tbody tr th {
+    width: 20%;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 10%;
+    /* padding-right: 10px; */
+}

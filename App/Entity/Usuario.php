@@ -71,7 +71,7 @@ public function setToken($token) {
     if (!empty($registro)) {
       return true; // o token da URL é igual ao token salvo no banco de dados
     } else {
-      header('Location: login.php?status=missingtoken');
+      header('Location: senha_redefinir_form.php');
       return false; // o token da URL não é válido
     }
   }
