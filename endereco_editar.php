@@ -28,13 +28,15 @@ if(isset($_POST['acao'])) {
   switch($_POST['acao']){
     case 'atualizar':
 
-      if(!isset($_POST['cep'], $_POST['rua'], $_POST['bairro'], $_POST['numero'], $_POST['tipo'])){
+      if(!isset($_POST['cep'], $_POST['uf'], $_POST['cidade'], $_POST['rua'], $_POST['bairro'], $_POST['numero'], $_POST['tipo'])){
         $alertaEditarDados = "Por favor, preencha todos os campos.";
       }
 
 
       $obEndereco->atualizar([
         $obEndereco->cep = $_POST['cep'],
+        $obEndereco->uf = $_POST['uf'],
+        $obEndereco->cidade = $_POST['cidade'],
         $obEndereco->rua = $_POST['rua'],
         $obEndereco->bairro = $_POST['bairro'],
         $obEndereco->numero = $_POST['numero'],
