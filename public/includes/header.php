@@ -66,7 +66,7 @@ if ($usuarioLogado) {
       
 
     <div <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>> <!--apenas clientes e pessoas nao logadas podem ver (adm nao ve)-->
-      <a href="">Carrinho</a><!--colocar icone bonitinho no lugar-->
+      <a href="carrinho.php">Carrinho</a><!--colocar icone bonitinho no lugar-->
       <a <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus dados</a><!--colocar icone bonitinho no lugar-->
                             <!--colocar icone bonitinho no lugar e fazer um DROPDOWN COM
                                                                           LOGIN/LOGOUT

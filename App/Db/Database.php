@@ -257,6 +257,24 @@ class Database{
     return $this->execute($query);
   }
 
+  public function selectProdutosPedido($numpedido){
+    $query = "select * from produto p inner join item_pedido i
+    on p.codprod = i.codprod
+    inner join pedido pd
+    on i.numpedido = pd.numpedido
+    where pd.numpedido = ".$numpedido."";
+
+    return $this->execute($query);
+  }
+
+  //QUERY PARA PEGAR PEDIDO ABERTO
+  public function selectPedidoAberto($codus){
+    $query = "select * from pedido
+    where status_pedido like '%Em Aberto%' and codus = ".$codus."";
+
+    return $this->execute($query);
+  }
+
   /**
    * Método responsável por executar atualizações no banco de dados
    * @param  string $where

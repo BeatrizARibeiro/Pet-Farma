@@ -54,7 +54,7 @@
                         <td>'.$produto->codprod.'</td>
                         <td>'.$produto->nome_prod.'</td>
                         <td>'.$produto->peso.'</td>
-                        <td>'.$produto->preco.'</td>
+                        <td>R$ '.number_format($produto->preco, 2, ',', '.').'</td>
                         <td>
                             <a href="prod_editar.php?codprod='.$produto->codprod.'">
                                 <button type="button">Editar</button>
@@ -91,7 +91,7 @@
    
    ?>
 <main>
- <?=$mensagem?><!--exibe a mensagem de erro ou sucesso na tela-->
+
 <section>
         <a href="index.php">
             <button>Voltar</button>
@@ -112,7 +112,7 @@
     </div>
   </form>
 </section>
-
+<?=$mensagem?><!--exibe a mensagem de erro ou sucesso na tela-->
 <section>
 
     <table>
