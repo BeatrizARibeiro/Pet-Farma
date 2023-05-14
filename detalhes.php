@@ -26,17 +26,28 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
 <h4>Informações: <?=$objProd->descricao?></h4>
 <h4>Peso: <?=$objProd->peso?></h4>
 <h4>R$ <?=$objProd->preco?></h4>
-<button onclick="diminuir()">-</button>
-<input type="number" id="qtde" name="qtde" value="1">
-<button onclick="aumentar()">+</button>
-<button>
-    <a href="#">Adicionar ao Carrinho</a>
-</button>
+<form method="post">
+    <button type="button" onclick="diminuir()">-</button>
+    <input type="number" id="qtde" name="qtde" value="1">
+    <button type="button" onclick="aumentar()">+</button>
+    <button type="submit" name="btnqtde">Adicionar ao Carrinho</button>
+</form>
+
+<?php
+    $qtde_url = "http://localhost/pet-farma/add_carrinho.php?codprod=".$objProd->codprod."&qtde=";
+    if(isset($_POST['btnqtde'])){
+    $input = $_POST['qtde'];
+    header("location: ".$qtde_url.$input);
+    }
+?>
+
 
 <script>
     function diminuir() {
         var numero = document.getElementById("qtde");
-        numero.value = parseInt(numero.value) - 1;
+        if(numero.value >1){
+            numero.value = parseInt(numero.value) - 1;
+        }
     }
 
     function aumentar() {
@@ -47,5 +58,5 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
 
 
 <?php
-include __DIR__.'/public/includes/footer.php';
+    include __DIR__.'/public/includes/footer.php';
 ?>

@@ -28,7 +28,8 @@ if(!$objProd instanceof Produto){
 if(isset($_POST['salvar'])){
     $objProd->nome_prod = $_POST['nome_prod'];
     $objProd->descricao = $_POST['descricao'];
-    $objProd->preco = $_POST['preco'];
+    $preco = $_POST['preco'];
+    $objProd->preco = str_replace(',','.', $preco);
     $objProd->peso = $_POST['peso'];
     $objProd->codespe = $_POST['codespe'];
     $objProd->codmarca = $_POST['codmarca'];

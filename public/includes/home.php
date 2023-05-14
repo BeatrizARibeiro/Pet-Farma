@@ -14,10 +14,22 @@
                               <span>'.$prod->peso.'</span>
                               <h4>R$'.$prod->preco.'</h4>
                           </div>
-                          <a href="#">Comprar</a>
+                          <a href="add_carrinho.php">Comprar</a>
                       </div>
                   </a>';
   }
+
+  //passar o código do produto na url
+
+  $mensagem = '';
+
+    if(isset($_GET['status'])){
+        switch($_GET['status']){
+        case 'item':
+            $mensagem = '<div>Você já possui esse item no carrinho!</div>';
+            break;
+        }
+    }
 
   //caso nao tenha nenhum produto cadastrado no banco
   $destaques = strlen($destaques) ? $destaques : '<h4>Nenhum produto em destaque</h4>';
@@ -32,6 +44,8 @@
     <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
     <link rel="stylesheet" href="./public/css/style.css">
 </head>
+
+<?=$mensagem?>
 
 <body>
   <section id="hero">

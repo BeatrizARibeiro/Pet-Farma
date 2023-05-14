@@ -92,7 +92,7 @@
     }
    ?>
 <main>
- <?=$mensagem?><!--exibe a mensagem de erro ou sucesso na tela-->
+ 
 <section>
         <a href="index.php">
             <button>Voltar</button>
@@ -114,6 +114,7 @@
   </form>
 </section>
 
+<?=$mensagem?><!--exibe a mensagem de erro ou sucesso na tela-->
 
 <section>
 

@@ -28,17 +28,6 @@ class Prod_Cate{
   }
 
   /**
-   * Metodo responsavel por atualizar
-   * @return boolean
-   */
-  public function atualizar(){
-    return (new Database('prod_cate'))->update('codprod = '.$this->codprod,[
-                                                'codprod' => $this->codprod,
-                                                'codcate' => $this->codcate
-                                            ]);
-  }
-
-  /**
    * Metodo responsavel por excluir
    * @return boolean
    */
