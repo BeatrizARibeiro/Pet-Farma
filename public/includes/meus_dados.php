@@ -94,8 +94,16 @@ use \App\Session\Login;
       <?php foreach ($obEndereco as $endereco) { ?>
         <tbody>
           <tr>
-            <th class="titleTd">CEP:</th>
+        <th class="titleTd">CEP:</th>
     <td><?php echo $endereco->cep; ?></td>
+  </tr>
+  <tr>
+    <th class="titleTd">Cidade:</th>
+    <td><?php echo $endereco->cidade; ?></td>
+  </tr>
+  <tr>
+    <th class="titleTd">UF:</th>
+    <td><?php echo $endereco->uf; ?></td>
   </tr>
   <tr>
     <th class="titleTd">Rua:</th>
@@ -125,7 +133,8 @@ use \App\Session\Login;
 </table>
 <?php } else { ?>
   <p>Nenhum endereço cadastrado.</p>
-  <?php } ?>
+<?php } 
+?>
   
 </div>
 </div>
@@ -222,20 +231,6 @@ use \App\Session\Login;
 <?php } else { ?>
   <p>Nenhum endereço cadastrado.</p>
 <?php } 
-
-$cep = "18160-000";
-$url = "https://viacep.com.br/ws/$cep/json/";
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-curl_close($ch);
-
-$endereco = json_decode($response, true);
-
-echo "Endereço: ".$endereco['logradouro'].", ".$endereco['bairro'].", ".$endereco['localidade']." - ".$endereco['uf'];
-
 ?>
 
   

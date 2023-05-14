@@ -44,6 +44,30 @@
           required
           />
         </div>
+
+        <div class="form-group">
+          <label for="cidade" class="inputLabel">Cidade</label>
+          <input
+          type="text"
+          name="cidade"
+          id="cidade"
+          class="inputUser"
+          required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="uf" class="inputLabel">UF</label>
+          <input
+          style="width: 60px;"
+          type="text"
+          name="uf"
+          id="uf"
+          class="inputUser"
+          maxlength="2"
+          required
+          />
+        </div>
         
         <div class="form-group">
           <label for="rua" class="inputLabel">Rua</label>
@@ -56,14 +80,14 @@
           />
         </div>
         
-        <div class="form-group">
-      <label for="bairro" class="inputLabel">Bairro</label>
-      <input
-        type="text"
-        name="bairro"
-        id="bairro"
-        class="inputUser"
-        required
+      <div class="form-group">
+        <label for="bairro" class="inputLabel">Bairro</label>
+        <input
+          type="text"
+          name="bairro"
+          id="bairro"
+          class="inputUser"
+          required
         />
       </div>
       
@@ -93,6 +117,23 @@
 </main>
 
 </body>
+
+<?php
+
+$cep = "18160-000";
+$url = "https://viacep.com.br/ws/$cep/json/";
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
+$endereco = json_decode($response, true);
+
+echo "Endereço: ".$endereco['logradouro'].", ".$endereco['bairro'].", ".$endereco['localidade']." - ".$endereco['uf'];
+
+?>
 
 
 

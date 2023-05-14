@@ -13,10 +13,12 @@ Login::requireLogin();
 if(isset($_POST['acao'])) {
     switch($_POST['acao']){
     case 'cadastrar':
-      if(isset($_POST['cep'], $_POST['rua'], $_POST['bairro'],$_POST['numero'], $_POST['tipo']) and is_numeric($_POST['numero'])) {
+      if(isset($_POST['cep'], $_POST['cep'], $_POST['cidade'], $_POST['uf'],  $_POST['rua'], $_POST['bairro'],$_POST['numero'], $_POST['tipo']) and is_numeric($_POST['numero'])) {
 
         $obEndereco = new Endereco();
         $obEndereco->cep = $_POST['cep'];
+        $obEndereco->cidade = $_POST['cidade'];
+        $obEndereco->uf = $_POST['uf'];
         $obEndereco->rua = $_POST['rua'];
         $obEndereco->bairro = $_POST['bairro'];
         $obEndereco->numero = $_POST['numero'];

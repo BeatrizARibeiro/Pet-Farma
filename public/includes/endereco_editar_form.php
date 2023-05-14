@@ -11,8 +11,8 @@
   <h1>Editar Endereço</h1>
     <form  method="POST">
       <?=$alertaEditarDados?>
-    <div class="inputBox">
-        <label for="nome" class="inputLabel">CEP</label>
+      <div class="inputBox">
+        <label for="cep" class="inputLabel">CEP</label>
         <input
           type="text"
           name="cep"
@@ -20,6 +20,30 @@
           class="inputUser"
           required
           value="<?php echo $obEndereco->cep; ?>"
+        />
+      </div>
+
+      <div class="inputBox">
+        <label for="cidade" class="inputLabel">Cidade</label>
+        <input
+          type="text"
+          name="cidade"
+          id="cidade"
+          class="inputUser"
+          required
+          value="<?php echo $obEndereco->cidade; ?>"
+        />
+      </div>
+
+      <div class="inputBox">
+        <label for="uf" class="inputLabel">UF</label>
+        <input
+          type="text"
+          name="uf"
+          id="uf"
+          class="inputUser"
+          required
+          value="<?php echo $obEndereco->uf; ?>"
         />
       </div>
 

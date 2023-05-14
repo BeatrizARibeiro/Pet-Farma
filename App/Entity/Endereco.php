@@ -10,6 +10,10 @@ class Endereco{
 
   public $cep;
 
+  public $cidade;
+
+  public $uf;
+
   public $rua;
 
   public $bairro;
@@ -30,6 +34,8 @@ class Endereco{
     $this->codend = $obDatabase->insert([
                                         'codend' => $this->codend,
                                         'cep'    => $this->cep,
+                                        'cidade'    => $this->cidade,
+                                        'uf'    => $this->uf,
                                         'rua'    => $this->rua,
                                         'bairro' => $this->bairro,
                                         'numero' => $this->numero,
@@ -47,6 +53,8 @@ class Endereco{
   public function atualizar(){
     return (new Database('endereco'))->update(  'codend = '.$this->codend,[
                                                 'cep'    => $this->cep,
+                                                'cidade' => $this->cidade,
+                                                'uf'     => $this->uf,
                                                 'rua'    => $this->rua,
                                                 'bairro' => $this->bairro,
                                                 'numero' => $this->numero,
