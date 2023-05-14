@@ -33,7 +33,7 @@ if(isset($_POST['acao'])) {
         $obUsuario->setToken($token);
         print_r($token);
 
-        $link = "http://localhost:8080/pet-farma/senha_redefinir.php?token=$token";
+        $link = "http://localhost/pet-farma/senha_redefinir.php?token=$token";
         $mensagem = "Olá, " . $obUsuario->nome . ". Você solicitou uma troca de senha, Clique no link abaixo para realizar a alteração: \n$link";
 
 
@@ -42,8 +42,8 @@ if(isset($_POST['acao'])) {
         $mail->isSMTP();
         $mail->Host = 'smtp-relay.sendinblue.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'adrielkasima@gmail.com';
-        $mail->Password = '1pLYdtkIxC2bg3aP';
+        $mail->Username = 'petfarma.dev@gmail.com';
+        $mail->Password = 'wfINtpn6q5KUzhra';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
         $mail->isHTML(true);
