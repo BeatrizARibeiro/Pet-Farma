@@ -33,8 +33,8 @@ class Item_Pedido{
    * Método responsável por atualizar
    * @return boolean
    */
-  public function atualizar($numpedido){
-    return (new Database('item_pedido'))->update('numpedido = '.$this->numpedido,[
+  public function atualizar($codprod){
+    return (new Database('item_pedido'))->update('codprod = '.$this->codprod,[
                                                                 'qtde' => $this->qtde,
                                                               ]);
   }
@@ -43,15 +43,21 @@ class Item_Pedido{
    * Metodo responsavel por excluir
    * @return boolean
    */
-  public function excluir($numpedido){
-    return (new Database('item_pedido'))->delete('numpedido = '.$numpedido);
+  public function excluir($codprod){
+    return (new Database('item_pedido'))->delete('codprod = '.$codprod);
   }
 
 
   //Metodo responsavel por obter todos itens pedidos de acordo com o pedido
-  public static function getIem_Pedido($numpedido){
+  public static function getIens_Pedido($numpedido){
     return (new Database('item_pedido'))->select('numpedido = '.$numpedido)
                                         ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
+  //Metodo responsavel por obter o item pedido
+  public static function getIem_Pedido($codprod){
+    return (new Database('item_pedido'))->select('codprod = '.$codprod)
+                                        ->fetchObject(self::class);//passa a classe que vc quer instanciar
   }
 
 }

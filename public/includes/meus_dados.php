@@ -42,7 +42,7 @@ use \App\Session\Login;
 
 <div class="divOlaUsuario">
 <h1>Olá, <?=$nomeUsuario?></h1>
-<a href="logout.php" class="">Sair</a>
+<a href="index.php" class="">Voltar</a>
 </div>
 
 </div>

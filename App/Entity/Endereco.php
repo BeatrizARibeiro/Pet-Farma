@@ -24,6 +24,8 @@ class Endereco{
 
   public $codus; //chave estrangeira de usuario
 
+  public $padrao;
+
   /**
    * M�todo responsavel por cadastrar
    * @return boolean
@@ -90,6 +92,12 @@ class Endereco{
   public static function getEnderecosCli($codus){
     return (new Database('endereco'))->select('codus = '.$codus)
                                     ->fetchAll(PDO::FETCH_CLASS,self::class);//passa a classe que vc quer instanciar
+  }
+
+  //pegar endereço padrão
+  public static function getEnderecoPadrao($codus){
+    return (new Database('endereco'))->select('codus = '.$codus.' and padrao = 1')
+                                      ->fetchObject(self::class);//passa a classe que vc quer instanciar
   }
 
 }

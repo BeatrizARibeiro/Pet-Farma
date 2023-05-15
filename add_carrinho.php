@@ -6,6 +6,7 @@
     use App\Entity\Pedido;
     use App\Session\Login;
 
+    $mensagem = '';
 
     //verifica sessao
     $sessao = Login::getUsuarioLogado();
@@ -18,6 +19,10 @@
         $pedidoAberto = Pedido::getPedidoAberto($sessao['codus']);
         $item = new Item_Pedido();
 
+        if(isset($_GET['codprod'])){
+            $mensagem = '<div class="msg">Produto adicionado com sucesso!</div>';
+        }
+
         //ja tem pedido
         if($pedidoAberto){
             $item->numpedido = $pedidoAberto->numpedido;
@@ -25,7 +30,7 @@
             $item->codprod = $_GET['codprod'];
 
             //verifica se ja tem o item
-            $carrinho = Item_Pedido::getIem_Pedido($pedidoAberto->numpedido);
+            $carrinho = Item_Pedido::getIens_Pedido($pedidoAberto->numpedido);
             foreach($carrinho as $ca){
                 if($ca->codprod == $item->codprod){
                     header('location: index.php?status=item');
