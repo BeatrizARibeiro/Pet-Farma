@@ -100,6 +100,7 @@
                         <div class="info">
                             <div>
                                 <?=$endereco?>
+                                <input name="codend" value="<?=$end->codend?>" style="display:none;"></input>
                             </div>
                         </div>
                     </div>
