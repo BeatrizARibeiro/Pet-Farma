@@ -64,7 +64,7 @@
     <a href="#">Cancelar</a>
 
     <section <?=$visibilidade?>>
-        <h4>Protocolo XXXXX</h4>
+        <h4>Protocolo: <?=$pedido->protocolo?></h4>
         <p>Seu pedido foi entregue a transportadora.</p>
-        <p>Use seu número de protocolo para companhar seu pedido na <a href="">Transportadora Maravilha</a> </p>
+        <p>Use seu número de protocolo para acompanhar seu pedido na <a href="">Transportadora Maravilha</a></p>
     </section>

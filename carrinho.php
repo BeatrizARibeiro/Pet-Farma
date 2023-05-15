@@ -44,11 +44,10 @@
         $preference->items = array($item);
 
         $preference->back_urls = array(
-            "sucess" => "http://localhost/pet-farma/index.php",
+            "success" => "http://localhost/pet-farma/finalizar_compra.php?numpedido=".$_POST['numpedido']."&codend=".$_POST['codend']."",
             "failure" => "http://localhost/pet-farma/carrinho.php",
         );
 
-        $preference->notification_url = "http://localhost/pet-farma/notification.php";
         $preference->external_reference = $_POST['numpedido'];
 
         $preference->save();

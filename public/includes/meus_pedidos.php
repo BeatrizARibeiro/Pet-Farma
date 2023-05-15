@@ -14,8 +14,8 @@
     //PAGINACAO
     $objPagi = new Pagination($qtdePedido, $_GET['pagina'] ?? 1, 10);
 
-    //variavel com array de marcas
-    $pedidos = Pedido::getPedidos('codus = '.$sessao['codus'].'', null, $objPagi->getLimit());
+    //variavel com array de pedidos
+    $pedidos = Pedido::getPedidos('codus = '.$sessao['codus'].' and status_pedido <> "Em Aberto"', null, $objPagi->getLimit());
 
 
    

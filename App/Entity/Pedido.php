@@ -61,7 +61,7 @@ class Pedido{
   //método para pegar o pedido através do seu código
   public static function getPedido($numpedido){
     return (new Database('pedido'))->select('numpedido = '.$numpedido)
-                                    ->fetchObject();
+                                    ->fetchObject(self::class);
   }
   /**
    * Método responsavel por obter todos os pedidos
@@ -69,7 +69,7 @@ class Pedido{
    */
   public static function getPedidos($where = null, $order = null, $limit = null){
     return (new Database('pedido'))->select($where,$order,$limit)
-                                      ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+                                   ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
   //funcao para pegar a quantidade de pedidos
