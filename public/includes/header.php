@@ -5,10 +5,11 @@ $usuarioLogado = Login::getUsuarioLogado();
 
 if ($usuarioLogado) {
   $nomeUsuario = $usuarioLogado['nome'];
+  $primeiroNome = explode(' ', $nomeUsuario)[0]; // Pega o primeiro nome do usuário
   if ($usuarioLogado['admin'] == 1) {
-    $nomeUsuario .= " (Admin)";
+    $primeiroNome .= " (Admin)";
   }
-  $usuario = $nomeUsuario . '<a href="logout.php" class="">Sair</a>';
+  $usuario = $primeiroNome . '<a href="logout.php" class="">Sair</a>';
 } else {
   $usuario = 'Visitante <a href="login.php" class="">Entrar</a> <a href="cadastro.php" class="">Criar conta</a>';
 }
