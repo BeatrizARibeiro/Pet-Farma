@@ -20,6 +20,12 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
     header('location: index.php?status=error');
     exit;
   }
+
+  $qtde_url = "http://localhost/pet-farma/add_carrinho.php?codprod=".$objProd->codprod."&qtde=";
+    if(isset($_POST['btnqtde'])){
+    $input = $_POST['qtde'];
+        header("location: ".$qtde_url.$input);
+    }
 ?>
 <img src="./public/img/<?=$objProd->imagem?>" alt="">
 <h2><?=$objProd->nome_prod?></h2>
@@ -32,15 +38,6 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
     <button type="button" onclick="aumentar()">+</button>
     <button type="submit" name="btnqtde">Adicionar ao Carrinho</button>
 </form>
-
-<?php
-    $qtde_url = "http://localhost/pet-farma/add_carrinho.php?codprod=".$objProd->codprod."&qtde=";
-    if(isset($_POST['btnqtde'])){
-    $input = $_POST['qtde'];
-    header("location: ".$qtde_url.$input);
-    }
-?>
-
 
 <script>
     function diminuir() {

@@ -40,6 +40,7 @@
       </div>
 
       <div class="second-column">
+        
         <h2 class="title title-second">Entrar na sua conta</h2>
         <form class="form" method="post">
           <label class="label-input" for="email">
@@ -60,11 +61,13 @@
         required >
           </label>
           <a class="password" href="senha_esqueci.php">esqueceu a sua senha?</a>
-            <?=$alertaLogin?>
+            
           <button class="btn btn-second" type="submit" 
       name="acao" 
       value="logar">Entrar</button>
         </form>
+        <center><br/><?=$alertaLogin?></center>
+        <center><br/><?=$mensagem?></center>
       </div>
     </div>
 
