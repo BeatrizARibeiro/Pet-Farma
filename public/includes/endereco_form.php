@@ -12,21 +12,19 @@
     <script src="./public/js/masks.js"></script>
   </head>
 
-
-
-
 <body>
-    <section id="header">
-    <a href="index.php"><img src="./public/img/logopetfarma2.png" class="logo" alt=""></a>
 
-    <div>
-      <ul id="navbar">
-        <li><i class="fas fa-solid fa-lock"></i>
-          <h3>Ambiente seguro</h3>
-        </li>
-      </ul>
-    </div>
-  </section>
+    <section id="header">
+      <a href="index.php"><img src="./public/img/logopetfarma2.png" class="logo" alt=""></a>
+
+      <div>
+        <ul id="navbar">
+          <li><i class="fas fa-solid fa-lock"></i>
+            <h3>Ambiente seguro</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
   
   <main>
     <div class="form-container">
@@ -40,6 +38,30 @@
           type="text"
           name="cep"
           id="cep"
+          class="inputUser"
+          placeholder="00000-000"
+          required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="uf" class="inputLabel">UF</label>
+          <select
+            name="uf"
+            id="uf"
+            class="inputUser"
+            required
+          >
+            <option value="" selected disabled hidden>Selecione um estado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cidade" class="inputLabel">Cidade</label>
+          <input
+          type="text"
+          name="cidade"
+          id="cidade"
           class="inputUser"
           required
           />
@@ -57,105 +79,40 @@
         </div>
         
         <div class="form-group">
-      <label for="bairro" class="inputLabel">Bairro</label>
-      <input
-        type="text"
-        name="bairro"
-        id="bairro"
-        class="inputUser"
-        required
-        />
-      </div>
+          <label for="bairro" class="inputLabel">Bairro</label>
+          <input
+            type="text"
+            name="bairro"
+            id="bairro"
+            class="inputUser"
+            required
+          />
+        </div>
       
-      <div class="form-group">
-        <label for="numero" class="inputLabel">Numero</label>
-        <input
-        type="number"
-        name="numero"
-        id="numero"
-        class="inputUser"
-        required
-        />
-      </div>
+        <div class="form-group">
+          <label for="numero" class="inputLabel">Numero</label>
+          <input
+          type="number"
+          name="numero"
+          id="numero"
+          class="inputUser"
+          required
+          />
+        </div>
       
-      <div class="form-group">
-        <label for="tipo">Tipo</label>
-        <select id="tipo" name="tipo">
-          <option value="casa">Casa</option>
-          <option value="apartamento">Apartamento</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <input type="submit" name="acao" value="cadastrar" class="form-button">
-      </div>
-    </form>
-  </div>
-</main>
+        <div class="form-group">
+          <label for="tipo">Tipo</label>
+          <select id="tipo" name="tipo">
+            <option value="casa">Casa</option>
+            <option value="apartamento">Apartamento</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" name="acao" value="cadastrar" class="form-button">
+        </div>
+      </form>
+    </div>
+  </main>
 
+    <script src="./public/js/cep.js"></script>
 </body>
-
-
-
-
-
-<!-- 
-<main>
-  <form method="POST">
-    <a href="dados_listar.php?codus=<?php echo $usuario['codus']; ?>">Voltar</a>
-    <h1>Cadastrar endereço</h1>
-
-    <div class="inputBox">
-      <label for="cep" class="inputLabel">CEP</label>
-      <input
-        type="text"
-        name="cep"
-        id="cep"
-        class="inputUser"
-        required
-      />
-    </div>
-
-    <div class="inputBox">
-      <label for="rua" class="inputLabel">Rua</label>
-      <input
-        type="text"
-        name="rua"
-        id="rua"
-        class="inputUser"
-        required
-      />
-    </div>
-
-    <div class="inputBox">
-      <label for="bairro" class="inputLabel">Bairro</label>
-      <input
-        type="text"
-        name="bairro"
-        id="bairro"
-        class="inputUser"
-        required
-      />
-    </div>
-
-    <div class="inputBox">
-      <label for="numero" class="inputLabel">Numero</label>
-      <input
-        type="number"
-        name="numero"
-        id="numero"
-        class="inputUser"
-        required
-      />
-    </div>
-
-    <div class="inputBox">
-      <label for="tipo">Tipo</label>
-      <select id="tipo" name="tipo">
-        <option value="casa">Casa</option>
-        <option value="apartamento">Apartamento</option>
-      </select>
-    </div>
-
-        <button type="submit" name="acao" value="cadastrar">Cadastrar</button>
-  </form>
-</main> -->
