@@ -14,7 +14,7 @@
                               <span>'.$prod->peso.'</span>
                               <h4>R$'.$prod->preco.'</h4>
                           </div>
-                          <a href="add_carrinho.php">Comprar</a>
+                          <a href="add_carrinho.php?codprod='.$prod->codprod.'">Comprar</a>
                       </div>
                   </a>';
   }
@@ -39,7 +39,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetFarma</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
     <link rel="stylesheet" href="./public/css/style.css">

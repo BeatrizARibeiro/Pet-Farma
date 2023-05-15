@@ -262,7 +262,11 @@ class Database{
     on p.codprod = i.codprod
     inner join pedido pd
     on i.numpedido = pd.numpedido
-    where pd.numpedido = ".$numpedido."";
+    inner join prod_cate pc
+    on p.codprod = pc.codprod
+    inner join categoria c
+    on pc.codcate = c.codcate
+    where pd.numpedido = ".$numpedido." group by i.codprod";
 
     return $this->execute($query);
   }
