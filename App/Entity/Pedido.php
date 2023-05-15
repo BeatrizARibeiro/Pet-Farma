@@ -45,7 +45,6 @@ class Pedido{
                                                 'numpedido' => $this->numpedido,
                                                 'dt_pedido' => $this->dt_pedido,
                                                 'status_pedido' => $this->status_pedido,
-                                                'protocolo' => $this->protocolo,
                                                 'codus' => $this->codus,
                                                 'codend' => $this->codend
                                             ]);
@@ -59,6 +58,11 @@ class Pedido{
     return (new Database('pedido'))->delete('numpedido = '.$this->numpedido);
   }
 
+  //método para pegar o pedido através do seu código
+  public static function getPedido($numpedido){
+    return (new Database('pedido'))->select('numpedido = '.$numpedido)
+                                    ->fetchObject();
+  }
   /**
    * Método responsavel por obter todos os pedidos
    * @return array
