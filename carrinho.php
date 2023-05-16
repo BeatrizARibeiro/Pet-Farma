@@ -4,6 +4,7 @@
     //importando as classes
 
     use App\Entity\Item_Pedido;
+    use App\Entity\Pedido;
     use \App\Session\Login;
     
 
@@ -19,6 +20,7 @@
 
     if(isset($_POST['finalizar'])){
         $itens = Item_Pedido::getIens_Pedido($_POST['numpedido']);
+        $pedido = Pedido::getPedido($_POST['numpedido']);
         
         foreach($itens as $i){
             $i->qtde = $_POST['qtde'.$i->codprod.''];
@@ -40,9 +42,19 @@
         $item->quantity = 1;
         $item->unit_price = $total;
         $preference->items = array($item);
+
+        $preference->back_urls = array(
+            "success" => "http://localhost/pet-farma/finalizar_compra.php?numpedido=".$_POST['numpedido']."&codend=".$_POST['codend']."",
+            "failure" => "http://localhost/pet-farma/carrinho.php",
+        );
+
+        $preference->external_reference = $_POST['numpedido'];
+
         $preference->save();
 
-        header('location:'.$preference->init_point);
+        $link = $preference->sandbox_init_point;
+
+        header('location: '.$link);
     }
 
     include __DIR__.'/public/includes/header.php';

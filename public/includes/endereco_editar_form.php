@@ -8,7 +8,7 @@
   </head>
 <main>
   <body>
-    <a href="index.php">Voltar</a>
+    <a href="dados_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Voltar</a>
     <h1>Editar Endereço</h1>
     <form  method="POST">
       <?=$alertaEditarDados?>

@@ -45,7 +45,6 @@ class Pedido{
                                                 'numpedido' => $this->numpedido,
                                                 'dt_pedido' => $this->dt_pedido,
                                                 'status_pedido' => $this->status_pedido,
-                                                'protocolo' => $this->protocolo,
                                                 'codus' => $this->codus,
                                                 'codend' => $this->codend
                                             ]);
@@ -59,13 +58,18 @@ class Pedido{
     return (new Database('pedido'))->delete('numpedido = '.$this->numpedido);
   }
 
+  //método para pegar o pedido através do seu código
+  public static function getPedido($numpedido){
+    return (new Database('pedido'))->select('numpedido = '.$numpedido)
+                                    ->fetchObject(self::class);
+  }
   /**
    * Método responsavel por obter todos os pedidos
    * @return array
    */
   public static function getPedidos($where = null, $order = null, $limit = null){
     return (new Database('pedido'))->select($where,$order,$limit)
-                                      ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+                                   ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
   //funcao para pegar a quantidade de pedidos

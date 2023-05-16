@@ -7,6 +7,7 @@ use App\Session\Login;
 Login::requireLogout();
 
 $alertaLogin = "";
+$mensagem = "";
 
 if(isset($_POST['acao'])) {
   switch($_POST['acao']){
@@ -23,6 +24,16 @@ if(isset($_POST['acao'])) {
       break;
   }
 }
+
+if(isset($_GET['status'])) {
+  switch($_GET['status']){
+    case 'alerta':
+      $mensagem = "Faça login ou cadastre-se para poder comprar os produtos do seu pet!";
+      break;
+  }
+}
+
+
 
 //CARREGA OS ELEMENTOS HTML
 include __DIR__.'/public/includes/login_form.php';

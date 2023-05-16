@@ -9,9 +9,10 @@
     </div>
 
     <div class="form-group">
-      <a href="dados_listar.php">
-        <button type="button">Cancelar</button>
-      </a>
+      <a href="dados_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">
+      <button type="button">Cancelar</button>
+    </a>
+
 
       <button type="submit" name="excluir">Excluir</button>
     </div>

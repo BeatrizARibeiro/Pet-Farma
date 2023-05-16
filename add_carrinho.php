@@ -12,7 +12,7 @@
     $sessao = Login::getUsuarioLogado();
 
     if($sessao == null){
-        header('location: login.php');
+        header('location: login.php?status=alerta');
         exit;
     }
     else{
