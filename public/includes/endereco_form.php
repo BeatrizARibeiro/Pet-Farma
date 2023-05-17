@@ -107,6 +107,12 @@
             <option value="apartamento">Apartamento</option>
           </select>
         </div>
+
+        <div class="form-group">
+          <label for="padrao">Definir como padrão</label>
+          <input type="checkbox" name="padrao" id="padrao" value="1">
+        </div>
+
         <div class="form-group">
           <input type="submit" name="acao" value="cadastrar" class="form-button">
         </div>

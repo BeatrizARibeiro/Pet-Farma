@@ -7,12 +7,9 @@ use \App\Session\Login;
   $obEndereco = Endereco::getEnderecosCli($usuarioLogado['codus']);
 
   $nomeUsuario = $usuarioLogado['nome'];
+  $primeiroNome = explode(' ', $nomeUsuario)[0];
 
 ?>
-
-
-
-
 
 <head>
   <meta charset="UTF-8">
@@ -41,7 +38,7 @@ use \App\Session\Login;
 
 
 <div class="divOlaUsuario">
-<h1>Olá, <?=$nomeUsuario?></h1>
+<h1>Olá, <?=$primeiroNome?>!</h1>
 <a href="index.php" class="">Voltar</a>
 </div>
 
@@ -90,47 +87,55 @@ use \App\Session\Login;
 </div>
 
   <?php if (is_countable($obEndereco) && count($obEndereco) > 0) { ?>
-    <table>
-      <?php foreach ($obEndereco as $endereco) { ?>
-        <tbody>
-          <tr>
-        <th class="titleTd">CEP:</th>
-    <td><?php echo $endereco->cep; ?></td>
-  </tr>
-  <tr>
-    <th class="titleTd">Cidade:</th>
-    <td><?php echo $endereco->cidade; ?></td>
-  </tr>
-  <tr>
-    <th class="titleTd">UF:</th>
-    <td><?php echo $endereco->uf; ?></td>
-  </tr>
-  <tr>
-    <th class="titleTd">Rua:</th>
-    <td><?php echo $endereco->rua; ?></td>
-  </tr>
-  <tr>
-    <th class="titleTd">Bairro:</th>
-    <td><?php echo $endereco->bairro; ?></td>
-  </tr>
-  <tr>
-    <th class="titleTd">Número:</th>
-    <td><?php echo $endereco->numero; ?></td>
-  </tr>
-  <tr>
-    <th class="titleTd">Tipo:</th>
-    <td><?php echo $endereco->tipo; ?></td>
-  </tr>
-  <tr>
-    <th class="titleTd">Ações:</th>
-    <td>
-      <a href="endereco_editar.php?codend=<?php echo $endereco->codend; ?>">Editar</a>
-      <a href="endereco_excluir.php?codend=<?php echo $endereco->codend; ?>">Excluir</a>
-    </td>
-  </tr>
-  <?php } ?>
-</tbody>
-</table>
+  <table>
+    <?php foreach ($obEndereco as $endereco) { ?>
+      <tbody>
+        <tr>
+          <th class="titleTd">CEP:</th>
+          <td><?php echo $endereco->cep; ?></td>
+        </tr>
+        <tr>
+          <th class="titleTd">Cidade:</th>
+          <td><?php echo $endereco->cidade; ?></td>
+        </tr>
+        <tr>
+          <th class="titleTd">UF:</th>
+          <td><?php echo $endereco->uf; ?></td>
+        </tr>
+        <tr>
+          <th class="titleTd">Rua:</th>
+          <td><?php echo $endereco->rua; ?></td>
+        </tr>
+        <tr>
+          <th class="titleTd">Bairro:</th>
+          <td><?php echo $endereco->bairro; ?></td>
+        </tr>
+        <tr>
+          <th class="titleTd">Número:</th>
+          <td><?php echo $endereco->numero; ?></td>
+        </tr>
+        <tr>
+          <th class="titleTd">Tipo:</th>
+          <td><?php echo $endereco->tipo; ?></td>
+        </tr>
+        <tr>
+          <th class="titleTd">Padrão:</th>
+          <td><?php echo ($endereco->padrao == 1) ? "sim" : "não"; ?></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <th class="titleTd">Ações:</th>
+          <td>
+            <a href="endereco_editar.php?codend=<?php echo $endereco->codend; ?>">Editar</a>
+            <a href="endereco_excluir.php?codend=<?php echo $endereco->codend; ?>">Excluir</a>
+          </td>
+        </tr>
+      <?php } ?>
+      </tbody>
+  </table>
+
+
 <?php } else { ?>
   <p>Nenhum endereço cadastrado.</p>
 <?php } 

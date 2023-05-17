@@ -21,10 +21,10 @@ class Endereco{
   public $numero;//int
 
   public $tipo; //string
+  
+  public $padrao;
 
   public $codus; //chave estrangeira de usuario
-
-  public $padrao;
 
   /**
    * M�todo responsavel por cadastrar
@@ -42,6 +42,7 @@ class Endereco{
                                         'bairro' => $this->bairro,
                                         'numero' => $this->numero,
                                         'tipo'   => $this->tipo,
+                                        'padrao'   => $this->padrao,
                                         'codus'   => $this->codus,
                                     ]);
     //RETORNAR SUCESSO
@@ -60,7 +61,8 @@ class Endereco{
                                                 'rua'    => $this->rua,
                                                 'bairro' => $this->bairro,
                                                 'numero' => $this->numero,
-                                                'tipo'   => $this->tipo
+                                                'tipo'   => $this->tipo,
+                                                'padrao' => $this->padrao,
                                             ]);
   }
 
