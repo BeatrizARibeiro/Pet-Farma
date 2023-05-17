@@ -94,7 +94,7 @@
 
         <div class="form-group">
           <label for="padrao">Definir como padrão</label>
-          <input type="checkbox" name="padrao" id="padrao" value="1" <?php echo ($obEndereco->padrao == 1) ? 'checked' : ''; ?>>
+          <input type="checkbox" name="padrao" id="padrao" value="1" <?php  ($obEndereco->padrao == 1) ? 'checked' : ''; ?>>
         </div>
 
       <button type="submit" name="acao" value="atualizar">Atualizar</button>

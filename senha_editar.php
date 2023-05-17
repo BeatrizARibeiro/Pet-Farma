@@ -38,7 +38,7 @@ if(isset($_POST['acao'])) {
       }
 
       // Verifica se as novas senhas são iguais
-      if($_POST['senha'] !== $_POST['confirmar-senha']){
+      if($_POST['senha'] != $_POST['confirmar-senha']){
         $alertaAlterarSenha = "As novas senhas não conferem.";
         break;
       }
