@@ -27,8 +27,20 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
         header("location: ".$qtde_url.$input);
     }
 ?>
-<img src="./public/img/<?=$objProd->imagem?>" alt="">
-<h2><?=$objProd->nome_prod?></h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Detalhes</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
+    <link rel="stylesheet" href="./public/css/StyleDetalhes.css">
+  </head>
+
+  <h2><?=$objProd->nome_prod?></h2>
+  <img class="imgDetalhes" src="./public/img/<?=$objProd->imagem?>" alt="">
 <h4>Informações: <?=$objProd->descricao?></h4>
 <h4>Peso: <?=$objProd->peso?></h4>
 <h4>R$ <?=$objProd->preco?></h4>
