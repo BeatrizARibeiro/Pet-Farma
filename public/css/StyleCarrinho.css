@@ -254,4 +254,7 @@ aside button {
     border: none;
     font-size: 18px;
     font-weight: bold;
+    pointer-events:none;
+    outline:none;
+    text-indent:-9999px;
   }

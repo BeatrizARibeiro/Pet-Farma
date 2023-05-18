@@ -90,7 +90,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="icon" type="imagem/png" href="/img/logopetfarma.png" />
     <link rel="stylesheet" href="./public/css/StyleCarrinho.css">
-
+    <script src="./public/js/blocktab.js"></script>
     <title>Cesta de Compras</title>
 </head>
 
@@ -145,10 +145,10 @@
                         </div>
                         <footer>
                             <span>Total</span>
-                            <input class="inputTotal" id="totalfinal" name="totalfinal" value="R$ <?=number_format($soma + 25.00, 2, ',', '.')?>" disabled></input>
+                            <input class="inputTotal" id="totalfinal" name="totalfinal" value="R$ <?=number_format($soma + 25.00, 2, ',', '.')?>"></input>
                         </footer>
                     </div>
-                    <button type="submit" name="finalizar" <?=$enabled?>>Finalizar Compra</button>
+                    <button type="submit" name="finalizar" <?=$enabled?> onkeypress="teste(event)">Finalizar Compra</button>
             </aside>
             </form>
     </div>
