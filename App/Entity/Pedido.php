@@ -57,6 +57,14 @@ class Pedido{
   public function excluir(){
     return (new Database('pedido'))->delete('numpedido = '.$this->numpedido);
   }
+  
+  //Método para atualizar o status do pedido
+  public function atuzaliarStatus(){
+    return (new Database('pedido'))->update('numpedido = '.$this->numpedido,[
+                                                'status_pedido' => $this->status_pedido,
+                                                'protocolo' => $this->protocolo
+                                            ]);
+  }
 
   //método para pegar o pedido através do seu código
   public static function getPedido($numpedido){
@@ -101,7 +109,7 @@ class Pedido{
   //MÉTODO PARA PEGAR A DESCRIÇÃO DOS PRODUTOS DA LISTA DO PEDIDO
   public static function getProdutoporPedido($numpedido){
   return (new Database('pedido'))->selectProdutosPedido($numpedido)
-                                ->fetchAll(PDO::FETCH_CLASS,self::class);//passa a classe que vc quer instanciar
+                                 ->fetchAll(PDO::FETCH_CLASS,self::class);//passa a classe que vc quer instanciar
   }
 
 

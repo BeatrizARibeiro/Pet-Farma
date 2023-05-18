@@ -1,12 +1,21 @@
 <?php
   use App\Entity\Produto;
+  use App\Session\Login;
+
+  $usuarioLogado = Login::getUsuarioLogado();
+
+  $enabled = '';
+  
+  if($usuarioLogado && $usuarioLogado['admin'] == 1){
+    $enabled = 'style="display:none"';
+  }
 
   $produtos = Produto::getProdutosMamiferos();
 
   $cards = '';
 
   foreach($produtos as $prod){
-    $cards .= '<a href="./detalhes.php?codprod='.$prod->codprod.'">
+    $cards .= '<a style="text-decoration: none" href="./detalhes.php?codprod='.$prod->codprod.'">
                 <div class="pro">
                     <img src="public/img/'.$prod->imagem.'" alt="">
                     <div class="des">
@@ -14,7 +23,7 @@
                         <span>'.$prod->peso.'</span>
                         <h4>R$'.$prod->preco.'</h4>
                     </div>
-                    <a href="add_carrinho.php?codprod='.$prod->codprod.'">Comprar</a>
+                    <a href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.'>Comprar</a>
                 </div>
              </a>';
   }

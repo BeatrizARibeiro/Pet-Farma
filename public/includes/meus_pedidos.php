@@ -6,8 +6,6 @@
 
     $sessao = Login::getUsuarioLogado();
 
-    
-
     //QUANTIDADE DE PEDIDOS
     $qtdePedido = Pedido::getQtdePedidos();
 
@@ -16,7 +14,6 @@
 
     //variavel com array de pedidos
     $pedidos = Pedido::getPedidos('codus = '.$sessao['codus'].' and status_pedido <> "Em Aberto"', null, $objPagi->getLimit());
-
 
    
     //percorrendo o array
@@ -85,4 +82,8 @@
             <?=$res_pedido?>
         </tbody>
     </table>
+
+    <section>
+        <?=$paginacao?>
+    </section>
 </main>

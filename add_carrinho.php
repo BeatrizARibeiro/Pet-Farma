@@ -20,7 +20,7 @@
         $item = new Item_Pedido();
 
         if(isset($_GET['codprod'])){
-            $mensagem = '<div class="msg">Produto adicionado com sucesso!</div>';
+            $mensagem = '<div class="msg">Produto adicionado com sucesso!</div><br>';
         }
 
         //ja tem pedido

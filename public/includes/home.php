@@ -1,12 +1,22 @@
 <?php
   use App\Entity\Produto;
+  use App\Session\Login;
+
+  $usuarioLogado = Login::getUsuarioLogado();
 
   $produtos = Produto::getProdutosEmDestaque();
 
   $destaques = '';
 
+  $enabled = '';
+  
+
+  if($usuarioLogado && $usuarioLogado['admin'] == 1){
+    $enabled = 'style="display:none"';
+  }
+
   foreach($produtos as $prod){
-    $destaques .= '<a href="./detalhes.php?codprod='.$prod->codprod.'">
+    $destaques .= '<a style="text-decoration: none" href="./detalhes.php?codprod='.$prod->codprod.'">
                       <div class="pro">
                           <img src="public/img/'.$prod->imagem.'" alt="">
                           <div class="des">
@@ -14,7 +24,7 @@
                               <span>'.$prod->peso.'</span>
                               <h4>R$'.$prod->preco.'</h4>
                           </div>
-                          <a href="add_carrinho.php?codprod='.$prod->codprod.'">Comprar</a>
+                          <a  href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.'>Comprar</a>
                       </div>
                   </a>';
   }
@@ -26,9 +36,13 @@
     if(isset($_GET['status'])){
         switch($_GET['status']){
         case 'item':
-            $mensagem = '<div>Você já possui esse item no carrinho!</div>';
+            $mensagem = '<div>Você já possui esse item no carrinho!  &#128584;</div>';
             break;
+        case 'cancelado':
+          $mensagem = '<div>Seu pedido foi cancelado com sucesso, <br>você receberá seu reembolso em breve!</div>';
+          break;
         }
+        
     }
 
   //caso nao tenha nenhum produto cadastrado no banco

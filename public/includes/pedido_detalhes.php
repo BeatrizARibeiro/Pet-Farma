@@ -11,16 +11,25 @@
 
     $pedido = Pedido::getPedido($num);
 
-    $itens = Pedido::getProdutoporPedido($_GET['numpedido']);
+    $itens = Pedido::getProdutoporPedido($num);
 
     $res = '';
 
-    if($pedido->status_pedido == "Entregue a Transportadora"){
+    if($pedido->status_pedido == "Entregue a transportadora" ){
         $visibilidade = '';
     }
     else{
         $visibilidade = 'style="display:none;"';
     }
+
+    if($pedido->status_pedido == "Entregue a transportadora" || $pedido->status_pedido == "Cancelado" ){
+        $v = 'style="display:none;"';
+    }
+    else{
+        $v = '';
+    }
+
+
 
     foreach($itens as $item){
         $res .= '<tr>
@@ -61,7 +70,7 @@
         </tbody>
     </table>
 
-    <a href="#">Cancelar</a>
+    <a <?=$v?> href="../pet-farma/pedido_cancelar.php?numpedido=<?=$pedido->numpedido?>" >Cancelar</a>
 
     <section <?=$visibilidade?>>
         <h4>Protocolo: <?=$pedido->protocolo?></h4>

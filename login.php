@@ -28,7 +28,7 @@ if(isset($_POST['acao'])) {
 if(isset($_GET['status'])) {
   switch($_GET['status']){
     case 'alerta':
-      $mensagem = "Faça login ou cadastre-se para poder comprar os produtos do seu pet!";
+      $mensagem = "Faça login ou cadastre-se para poder comprar os produtos do seu pet! &#128054;";
       break;
   }
 }

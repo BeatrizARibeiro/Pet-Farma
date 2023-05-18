@@ -8,6 +8,10 @@
 
 }
 
+a{
+    text-decoration: none!important;
+}
+
 h1 {
     font-size: 50px;
     line-height: 60px;
@@ -140,6 +144,17 @@ body {
     top: 0;
     left: 0;
 }
+
+.f-admin a, .usuario, .categoria a{
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.f-admin a:hover{
+    color: #137373;
+}
+
 
 #navbar {
     display: flex;

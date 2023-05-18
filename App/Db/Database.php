@@ -266,6 +266,8 @@ class Database{
     on p.codprod = pc.codprod
     inner join categoria c
     on pc.codcate = c.codcate
+    inner join usuario u
+    on pd.codus = u.codus
     where pd.numpedido = ".$numpedido." group by i.codprod";
 
     return $this->execute($query);

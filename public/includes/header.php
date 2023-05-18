@@ -9,7 +9,7 @@ if ($usuarioLogado) {
   if ($usuarioLogado['admin'] == 1) {
     $primeiroNome .= " (Admin)";
   }
-  $usuario = $primeiroNome . '<a href="logout.php" class="">Sair</a>';
+  $usuario = $primeiroNome . '<a href="logout.php" style="color:#137373; font-weight: 600; margin-left:5px;" class="">Sair <i class="fa-solid fa-right-from-bracket fa-ls" style="color: #137373;"></i></a>';
 } else {
   $usuario = 'Visitante <a href="login.php" class="">Entrar</a> <a href="cadastro.php" class="">Criar conta</a>';
 }
@@ -25,9 +25,10 @@ if ($usuarioLogado) {
     
     <title>PetFarma</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
-    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
@@ -36,7 +37,7 @@ if ($usuarioLogado) {
 
   <body>
 
-  <section id="header">
+  <section id="header" >
     <a href="index.php"><img src="public/img/logopetfarma2.png" class="logo" alt=""></a>
     <form method="post">
       <div class="search-box" <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>><!--Essa dive nao sera exibida para o admin-->
@@ -55,19 +56,19 @@ if ($usuarioLogado) {
       }
     ?>
     
-    <div class="f-admin" <?php if(!Login::isLogged() || $usuarioLogado['admin'] == 0) { echo 'style="display: none;"'; } ?>><!--funcoes do admin, apenas o admin ve codus=1 ou codus=2-->
-        <a href="">Pedidos</a>
+    <div  class="f-admin" <?php if(!Login::isLogged() || $usuarioLogado['admin'] == 0) { echo 'style="display: none;"'; } ?>><!--funcoes do admin, apenas o admin ve codus=1 ou codus=2-->
+        <a href="pedidos.php">Pedidos</a>
         <a href="prod_listar.php">Produtos</a>
         <a href="cate_listar.php">Categorias</a>
         <a href="marca_listar.php">Marcas</a>
         <a href="espe_listar.php">Espécies</a>
       </div>
-      <p>Olá, <?=$usuario?></p>
+      <p class="usuario">Olá, <?=$usuario?></p>
 
       
 
     <div <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>> <!--apenas clientes e pessoas nao logadas podem ver (adm nao ve)-->
-    <a href="carrinho.php"><img src="public/img/cesta.png" class="cesta"></a><!--colocar icone bonitinho no lugar-->
+    <a href="carrinho.php"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffff"></i></a><!--colocar icone bonitinho no lugar-->
     <a <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus dados</a>
     <a <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="pedido_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus Pedidos</a>
     <!--colocar icone bonitinho no lugar-->
@@ -80,10 +81,10 @@ if ($usuarioLogado) {
     </div>
   </section>
 
-  <nav class="categoria" <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>>
+  <nav class="categoria">
     <div class="divHeader2">
       <ul>
-          <li><i class="fas fa-solid fa-bars"></i>Categoria
+          <li><i class="fas fa-solid fa-bars"></i><strong>Categoria</strong>
             <ul>
               <li><a href="./medi.php">Medicamentos</a></li>
               <li><a href="./trat.php">Tratamentos</a></li>
