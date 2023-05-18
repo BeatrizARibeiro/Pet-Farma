@@ -39,17 +39,28 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
     <link rel="stylesheet" href="./public/css/StyleDetalhes.css">
   </head>
 
+  <div class="container">
+    <div class="main-content">
   <h2><?=$objProd->nome_prod?></h2>
   <img class="imgDetalhes" src="./public/img/<?=$objProd->imagem?>" alt="">
-<h4>Informações: <?=$objProd->descricao?></h4>
-<h4>Peso: <?=$objProd->peso?></h4>
-<h4>R$ <?=$objProd->preco?></h4>
-<form method="post">
-    <button type="button" onclick="diminuir()">-</button>
-    <input type="number" id="qtde" name="qtde" value="1">
-    <button type="button" onclick="aumentar()">+</button>
-    <button type="submit" name="btnqtde">Adicionar ao Carrinho</button>
-</form>
+<h4>Detalhes</h4>
+    <p><?=$objProd->descricao?></p>
+</div>
+
+<aside class="sidebar">
+    <h4>Peso: <?=$objProd->peso?></h4>
+    <hr>
+    <div class="inputQtdAside"> 
+        <h4>R$ <?=$objProd->preco?></h4>
+        <form method="post" class="inputQtd">
+            <button type="button" onclick="diminuir()">-</button>
+            <input type="number" id="qtde" name="qtde" value="1">
+            <button type="button" onclick="aumentar()">+</button>
+        </form>
+    </div>
+    <button type="submit" name="btnqtde" class="btnAddCar">Adicionar ao Carrinho</button>
+</aside>
+</div>
 
 <script>
     function diminuir() {

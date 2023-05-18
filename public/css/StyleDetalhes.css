@@ -15,5 +15,114 @@
 }
 
 h2 {
-    margin: 30px;
+    margin: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+.main-content h4 {
+    margin: 40px 50px 30px;
+    font-size: 24px;
+}
+
+.main-content p {
+    margin: 0px 50px;
+    font-size: 20px;
+}
+
+.main-content img {
+    margin: 0px 50px;
+}
+
+.sidebar {
+    flex-shrink: 0;
+    width: 30%;
+    height: 330px;
+    margin: 50px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between;*/
+    justify-content: space-around;
+}
+
+.inputQtdAside {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnAddCar {
+    background: #238F86;
+    border: none;
+    padding: 15px;
+    color: #fff;
+    border-radius: 5px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnAddCar button {
+    display: flex;
+}
+
+
+.inputQtd {
+    background: #eee;
+    /* border: 3px solid #eee; */
+    display: inline-flex;
+    padding: 0;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.inputQtd button {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    padding: 0 10px;
+    font-size: 15px;
+    height: 100%;
+}
+
+.inputQtd button:hover {
+    background: #a798af;
+    color: #fff;
+}
+
+.inputQtd span {
+    margin: 0 10px;
+}
+
+.inputQtd input {
+    border: 1px solid #eee;
+    height: 100%;
+    padding-left: 10px;
+    justify-items: center;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
 }
