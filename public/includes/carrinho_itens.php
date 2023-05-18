@@ -99,6 +99,7 @@
 
     <?=$mensagem?>
     <div class="content" <?=$visibilidade?>>
+    <div class="alinahmentoCar">
         <form method="post">
             <section>
             <input name="numpedido" value="<?=$numpedido?>" style="display:none;"></input>
@@ -117,6 +118,8 @@
                 </tbody>
             </table>
             </section>
+</div>
+
             <aside>
                     <div class="box">
                         <header>Endereço de Entrega</header>
@@ -127,8 +130,7 @@
                         </div>
                     </div>
                     
-                </aside>
-            <aside>
+              
                     <div class="box">
                         <header>Resumo do Pedido</header>
                         <div class="info">
@@ -147,7 +149,7 @@
                         </footer>
                     </div>
                     <button type="submit" name="finalizar" <?=$enabled?>>Finalizar Compra</button>
-                </aside>
+            </aside>
             </form>
     </div>
 

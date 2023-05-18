@@ -62,19 +62,21 @@ h2 {
 }
 
 .btnAddCar {
+    cursor: pointer;
     background: #238F86;
     border: none;
     padding: 15px;
     color: #fff;
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
-
+/* 
 .btnAddCar button {
     display: flex;
-}
+} */
 
 
 .inputQtd {

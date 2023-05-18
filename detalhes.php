@@ -52,13 +52,15 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
     <hr>
     <div class="inputQtdAside"> 
         <h4>R$ <?=$objProd->preco?></h4>
-        <form method="post" class="inputQtd">
+        <form method="post" >
+            <div class="inputQtd">
             <button type="button" onclick="diminuir()">-</button>
             <input type="number" id="qtde" name="qtde" value="1">
             <button type="button" onclick="aumentar()">+</button>
+        </div>
+            <button type="submit" name="btnqtde" class="btnAddCar">Adicionar ao Carrinho</button>
         </form>
     </div>
-    <button type="submit" name="btnqtde" class="btnAddCar">Adicionar ao Carrinho</button>
 </aside>
 </div>
 
