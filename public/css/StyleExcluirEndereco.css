@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+
+}
+.form-group {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .form-group h2 {
+    margin-top: 0;
+  }
+
+  .form-group p {
+    margin-bottom: 20px;
+  }
+
+  .form-group .btnContainer {
+    text-align: right;
+  }
+
+  .form-group .btnExcluir {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .form-group .btnExcluir:hover {
+    background-color: #45a049;
+  }
+
+  .form-group .btn.cancel {
+    background-color: #ccc;
+    margin-right: 10px;
+  }
