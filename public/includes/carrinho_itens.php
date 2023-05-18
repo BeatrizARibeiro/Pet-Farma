@@ -145,7 +145,7 @@
                         </div>
                         <footer>
                             <span>Total</span>
-                            <input id="totalfinal" name="totalfinal" value="R$ <?=number_format($soma + 25.00, 2, ',', '.')?>"></input>
+                            <input class="inputTotal" id="totalfinal" name="totalfinal" value="R$ <?=number_format($soma + 25.00, 2, ',', '.')?>" disabled></input>
                         </footer>
                     </div>
                     <button type="submit" name="finalizar" <?=$enabled?>>Finalizar Compra</button>

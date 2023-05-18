@@ -232,6 +232,7 @@ aside .box footer {
     background: #BCDEDB;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    display: flex;
 }
 
 aside button {
@@ -246,3 +247,11 @@ aside button {
     letter-spacing: 1px;
     font-size: 16px;
 }
+
+.inputTotal {
+    text-align: right;
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
