@@ -18,8 +18,6 @@ class Pedido{
   public $codus;
 
   public $codend;
-
-  public $codpag;
   
   public function cadastrar(){
     //INSERIR A VAGA NO BANCO
