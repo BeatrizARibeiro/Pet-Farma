@@ -24,7 +24,7 @@
                               <span>'.$prod->peso.'</span>
                               <h4>R$'.$prod->preco.'</h4>
                           </div>
-                          <a  href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.'>Comprar</a>
+                          <a href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.' id="btncomprar"><i class="fa-solid fa-cart-shopping cart"></i></a>
                       </div>
                   </a>';
   }
@@ -53,6 +53,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
     <link rel="stylesheet" href="./public/css/style.css">
@@ -80,37 +81,37 @@
     <a href="./aves.php">
       <div class="fe-box">
         <img src="public/img/aveshome.png" alt="">
-        <h6>AVES</h6>
+        <h6 style="background: #528dd4;">AVES</h6>
       </div>
     </a>
     <a href="./silvestres.php">
       <div class="fe-box">
         <img src="public/img/silvestreshome.png" alt="">
-        <h6>SILVESTRES</h6>
+        <h6 style="background: #e4bf1e;">SILVESTRES</h6>
       </div>
     </a>
     <a href="./equinos.php">
       <div class="fe-box">
         <img src="public/img/equinoshome.png" alt="">
-        <h6>EQUINOS</h6>
+        <h6 style="background:#613116;">EQUINOS</h6>
       </div>
     </a>
     <a href="./peixes.php">
         <div class="fe-box">
         <img src="public/img/peixeshome.png" alt="">
-        <h6>PEIXES</h6>
+        <h6 style="background: #ff6a00;">PEIXES</h6>
       </div>
     </a>
     <a href="./repteis.php">
       <div class="fe-box">
         <img src="public/img/repteishome.png" alt="">
-        <h6>RÉPTEIS</h6>
+        <h6 style="background: #34ce00;">RÉPTEIS</h6>
       </div>
     </a>
     <a href="./mamiferos.php">
       <div class="fe-box">
         <img src="public/img/mamiferoshome.png" alt="">
-        <h6>MAMÍFEROS</h6>
+        <h6 style="background: #903ec7;">MAMÍFEROS</h6>
       </div>
     </a>
   </section>

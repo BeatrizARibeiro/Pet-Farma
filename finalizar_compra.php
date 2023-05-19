@@ -16,7 +16,7 @@
 
     
 
-    $pedido->status_pedido = "Finalizado";
+    $pedido->status_pedido = "Pago";
 
     $pedido->codend = $_GET['codend'];
 

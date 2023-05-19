@@ -13,7 +13,7 @@
     $objPagi = new Pagination($qtdePedido, $_GET['pagina'] ?? 1, 10);
 
     //variavel com array de pedidos
-    $pedidos = Pedido::getPedidos('codus = '.$sessao['codus'].' and status_pedido <> "Em Aberto"', null, $objPagi->getLimit());
+    $pedidos = Pedido::getPedidos('codus = '.$sessao['codus'].' and status_pedido <> "Em Aberto"', "dt_pedido desc", $objPagi->getLimit());
 
    
     //percorrendo o array
@@ -35,7 +35,7 @@
         $res_pedido .='<tr '.$cancelado.'>
                             <td>'.$pedido->numpedido.'</td>
                             <td>'.$pedido->status_pedido.'</td>
-                            <td>'.$pedido->dt_pedido.'</td>
+                            <td>'.implode('/', array_reverse(explode('-', $pedido->dt_pedido))).'</td>
                             <td>R$ '.number_format($valorTotal, 2, ',', '.').'</td>
                             <td><a href="pedido_ver.php?numpedido='.$pedido->numpedido.'">Ver</a></td>
                     </tr>';

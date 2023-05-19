@@ -36,9 +36,9 @@ foreach($pedidos as $pedido){
     $res_pedido .='<tr '.$cancelado.'>
                         <td>'.$pedido->numpedido.'</td>
                         <td>'.$pedido->status_pedido.'</td>
-                        <td>'.$pedido->dt_pedido.'</td>
+                        <td>'.implode('/', array_reverse(explode('-', $pedido->dt_pedido))).'</td>
                         <td>R$ '.number_format($valorTotal, 2, ',', '.').'</td>
-                        <td><a href="pedido_ver.php?numpedido='.$pedido->numpedido.'">Ver</a></td>
+                        <td><a href="pedido_ver_adm.php?numpedido='.$pedido->numpedido.'">Ver</a></td>
                 </tr>';
 }
 

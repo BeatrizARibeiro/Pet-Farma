@@ -36,6 +36,7 @@ h6 {
 
 p {
     font-size: 16px;
+    font-weight: 700;
     color: #465b52;
     margin: 15px 0 20px 0;
 }
@@ -145,13 +146,13 @@ body {
     left: 0;
 }
 
-.f-admin a, .usuario, .categoria a{
+.f-admin a, .f-cli,.usuario, .categoria a{
     color: #ffffff;
     font-weight: 500;
     font-size: 17px;
 }
 
-.f-admin a:hover{
+.f-admin a:hover, .f-cli:hover{
     color: #137373;
 }
 
@@ -347,7 +348,6 @@ body {
     line-height: 1;
     border-radius: 4px;
     color: #ffffff;
-    background-color: #528dd4;
 }
 
 #feature .fe-box:nth-child(2) h6 {
@@ -405,7 +405,7 @@ body {
 }
 
 #product1 p {
-    color: #31ce77;
+    color:#903ec7;
 }
 
 #product1 .pro img {
@@ -416,7 +416,7 @@ body {
 
 #product1 .pro .des {
     text-align: start;
-    padding: 10px 0;
+    padding: 10px 5px;
 }
 
 #product1 .pro .des span {
@@ -447,13 +447,12 @@ body {
     line-height: 40px;
     border-radius: 50px;
     background-color: #def8e2;
-    font-weight: 500;
-    color: #087539;
-    border: 1px solid #c0f8c8;
+    font-size: 18px;
+    color: #087554;
+    border: 1px solid #087554;
     position: absolute;
-    bottom: 20px;
-    right: 10px;
-
+    bottom: 23px;
+    right: 17px;
 }
 
 #banner {

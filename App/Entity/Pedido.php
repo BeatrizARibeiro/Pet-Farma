@@ -61,8 +61,8 @@ class Pedido{
   //Método para atualizar o status do pedido
   public function atuzaliarStatus(){
     return (new Database('pedido'))->update('numpedido = '.$this->numpedido,[
-                                                'status_pedido' => $this->status_pedido,
-                                                'protocolo' => $this->protocolo
+                                              'status_pedido' => $this->status_pedido,
+                                              'protocolo' => $this->protocolo
                                             ]);
   }
 

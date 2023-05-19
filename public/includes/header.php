@@ -2,14 +2,15 @@
   use \App\Session\Login;
 
 $usuarioLogado = Login::getUsuarioLogado();
-
+$sair = '';
 if ($usuarioLogado) {
   $nomeUsuario = $usuarioLogado['nome'];
   $primeiroNome = explode(' ', $nomeUsuario)[0]; // Pega o primeiro nome do usuário
   if ($usuarioLogado['admin'] == 1) {
     $primeiroNome .= " (Admin)";
   }
-  $usuario = $primeiroNome . '<a href="logout.php" style="color:#137373; font-weight: 600; margin-left:5px;" class="">Sair <i class="fa-solid fa-right-from-bracket fa-ls" style="color: #137373;"></i></a>';
+  $usuario = $primeiroNome;
+  $sair = '<a href="logout.php" style="color:#137373; font-weight: 600; margin-left:5px;" class="">Sair <i class="fa-solid fa-right-from-bracket fa-ls" style="color: #137373;"></i></a>';
 } else {
   $usuario = 'Visitante <a href="login.php" class="">Entrar</a> <a href="cadastro.php" class="">Criar conta</a>';
 }
@@ -67,18 +68,14 @@ if ($usuarioLogado) {
 
       
 
-    <div <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>> <!--apenas clientes e pessoas nao logadas podem ver (adm nao ve)-->
-    <a href="carrinho.php"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffff"></i></a><!--colocar icone bonitinho no lugar-->
-    <a <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus dados</a>
-    <a <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="pedido_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus Pedidos</a>
-    <!--colocar icone bonitinho no lugar-->
-                            <!--colocar icone bonitinho no lugar e fazer um DROPDOWN COM
-                                                                          LOGIN/LOGOUT
-                                                                          MEUS PEDIDOS
-                                                                          MEUS DADOS-->
-                                                                          
-                                                                          
+    <div <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>>
+    <div class="dropdown"></div>
+    <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
+    <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus dados</a>
+    <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="pedido_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus Pedidos</a>
+    <a href="carrinho.php"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffff"></i></a>
     </div>
+    <?=$sair?>  
   </section>
 
   <nav class="categoria">

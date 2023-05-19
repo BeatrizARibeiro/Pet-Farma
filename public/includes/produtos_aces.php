@@ -24,7 +24,7 @@
                         <span>'.$prod->peso.'</span>
                         <h4>R$'.$prod->preco.'</h4>
                     </div>
-                    <a href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.'>Comprar</a>
+                    <a href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.'><i class="fa-solid fa-cart-shopping cart"></i></a>
                 </div>
              </a>';
   }
