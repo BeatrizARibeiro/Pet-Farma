@@ -71,8 +71,8 @@ if ($usuarioLogado) {
     <div <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>>
     <div class="dropdown"></div>
     <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
-    <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus dados</a>
-    <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="pedido_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Meus Pedidos</a>
+    <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">Meus dados</a>
+    <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="pedido_listar.php?codus=<?=$usuarioLogado['codus']?>">Meus Pedidos</a>
     <a href="carrinho.php"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffff"></i></a>
     </div>
     <?=$sair?>  

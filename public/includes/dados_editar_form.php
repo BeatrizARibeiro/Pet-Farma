@@ -7,7 +7,7 @@
     <script src="./public/js/masks.js"></script>
   </head>
 <main>
-  <a href="dados_listar.php?codus=<?php echo $usuario['codus']; ?>">Voltar</a>
+  <a href="dados_listar.php?codus=<?=$usuario['codus']; ?>">Voltar</a>
   <h1>Editar dados</h1>
     <form  method="POST">
       <?=$alertaEditarDados?>
@@ -19,7 +19,7 @@
           id="nome"
           class="inputUser"
           required
-          value="<?php echo $obUsuario->nome; ?>"
+          value="<?=$obUsuario->nome?>"
         />
       </div>
 
@@ -31,7 +31,7 @@
           id="email"
           class="inputUser"
           required
-          value="<?php echo $obUsuario->email; ?>"
+          value="<?=$obUsuario->email?>"
         />
       </div>
 
@@ -43,7 +43,7 @@
           id="cpf"
           class="inputUser"
           required
-          value="<?php echo $obUsuario->cpf; ?>"
+          value="<?=$obUsuario->cpf?>"
         />
       </div>
 
@@ -56,7 +56,7 @@
           id="telefone"
           class="inputUser"
           required
-          value="<?php echo $obUsuario->telefone; ?>"
+          value="<?=$obUsuario->telefone?>"
         />
       </div>
 

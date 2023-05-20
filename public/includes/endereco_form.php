@@ -32,7 +32,7 @@
   <main>
     <div class="form-container">
       <form method="POST">
-        <a href="dados_listar.php?codus=<?php echo $usuario['codus']; ?>">Voltar</a>
+        <a href="dados_listar.php?codus=<?=$usuario['codus']?>">Voltar</a>
         <h1>Cadastrar endereço</h1>
         
         <div class="form-group">

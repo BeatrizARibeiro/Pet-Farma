@@ -35,7 +35,7 @@ const selectUF = document.getElementById("uf");
 fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
   .then((response) => response.json())
   .then((data) => {
-    const enderecoUF = "<?php echo $obEndereco->uf; ?>"; // Obtém a UF atual do PHP
+    const enderecoUF = "<?=$obEndereco->uf?>"; // Obtém a UF atual do PHP
 
     data.forEach((estado) => {
       const option = document.createElement("option");

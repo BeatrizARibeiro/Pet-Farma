@@ -1,6 +1,5 @@
 <?php
-  $alertaEditarDados = strlen($alertaEditarDados) ? '<div>'.$alertaEditarDados.'</div>' : '';
-?>
+  $alertaEditarDados = strlen($alertaEditarDados) ? '<div>'.$alertaEditarDados.'</div>' : ''?>
   <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
@@ -8,7 +7,7 @@
   </head>
 <main>
   <body>
-    <a href="dados_listar.php?codus=<?php echo $usuarioLogado['codus']; ?>">Voltar</a>
+    <a href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">Voltar</a>
     <h1>Editar Endereço</h1>
     <form  method="POST">
       <?=$alertaEditarDados?>
@@ -20,7 +19,7 @@
         id="cep"
         class="inputUser"
         required
-        value="<?php echo $obEndereco->cep; ?>"
+        value="<?=$obEndereco->cep?>"
         />
       </div>
 
@@ -32,7 +31,7 @@
           class="inputUser"
           required
           >
-          <option value="<?php echo $obEndereco->uf; ?>">Selecione um estado</option>
+          <option value="<?=$obEndereco->uf?>">Selecione um estado</option>
         </select>
       </div>
       
@@ -44,7 +43,7 @@
           id="cidade"
           class="inputUser"
           required
-          value="<?php echo $obEndereco->cidade; ?>"
+          value="<?=$obEndereco->cidade?>"
           />
       </div>
       
@@ -56,7 +55,7 @@
         id="rua"
         class="inputUser"
         required
-        value="<?php echo $obEndereco->rua; ?>"
+        value="<?=$obEndereco->rua?>"
         />
       </div>
       
@@ -68,7 +67,7 @@
           id="bairro"
           class="inputUser"
           required
-          value="<?php echo $obEndereco->bairro; ?>"
+          value="<?=$obEndereco->bairro?>"
           />
         </div>
         
@@ -80,21 +79,21 @@
           id="numero"
           class="inputUser"
           required
-          value="<?php echo $obEndereco->numero; ?>"
+          value="<?=$obEndereco->numero?>"
           />
         </div>
 
         <div class="inputBox">
           <label for="tipo" class="inputLabel">Tipo</label>
           <select name="tipo" id="tipo" class="inputUser" required>
-            <option value="casa" <?php if($obEndereco->tipo === 'casa') echo 'selected'; ?>>Casa</option>
-            <option value="apartamento" <?php if($obEndereco->tipo === 'apartamento') echo 'selected'; ?>>Apartamento</option>
+            <option value="casa" <?php if($obEndereco->tipo === 'casa') echo 'selected'?>>Casa</option>
+            <option value="apartamento" <?php if($obEndereco->tipo === 'apartamento') echo 'selected'?>>Apartamento</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="padrao">Definir como padrão</label>
-          <input type="checkbox" name="padrao" id="padrao" value="1" <?php echo ($obEndereco->padrao == 1) ? 'checked' : '' ?>>
+          <input type="checkbox" name="padrao" id="padrao" value="1" <?=($obEndereco->padrao == 1) ? 'checked' : '' ?>>
         </div>
 
       <button type="submit" name="acao" value="atualizar">Atualizar</button>
