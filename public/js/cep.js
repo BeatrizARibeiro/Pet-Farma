@@ -19,9 +19,9 @@ function pesquisarCep() {
       console.error(error)
       limparCampos()
     })
+  }
   document.getElementById("cep").addEventListener("blur", limparCampos)
   document.getElementById("cep").addEventListener("blur", pesquisarCep)
-}
 
 function limparCampos() {
   document.getElementById("cidade").value = ""
@@ -30,24 +30,24 @@ function limparCampos() {
   document.getElementById("bairro").value = ""
 }
 
-const selectUF = document.getElementById("uf")
+const selectUF = document.getElementById("uf");
 
 fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
   .then((response) => response.json())
   .then((data) => {
-    const enderecoUF = "SP" // substitua pelo valor atual do campo UF
+    const enderecoUF = "<?php echo $obEndereco->uf; ?>"; // Obtém a UF atual do PHP
 
     data.forEach((estado) => {
-      const option = document.createElement("option")
-      option.value = estado.sigla
-      option.text = estado.sigla
-      selectUF.appendChild(option)
+      const option = document.createElement("option");
+      option.value = estado.sigla;
+      option.text = estado.sigla;
+      selectUF.appendChild(option);
 
       if (enderecoUF === estado.sigla) {
-        selectUF.value = enderecoUF
+        option.selected = true;
       }
-    })
+    });
   })
   .catch((error) => {
-    console.log(error)
-  })
+    console.log(error);
+  });

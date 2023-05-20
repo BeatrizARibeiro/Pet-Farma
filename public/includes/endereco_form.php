@@ -1,3 +1,6 @@
+  <?php
+  $alertaCadastroEndereco = strlen($alertaCadastroEndereco) ? '<div>'.$alertaCadastroEndereco.'</div>' : '';
+?>
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -109,9 +112,11 @@
         </div>
 
         <div class="form-group">
-          <label for="padrao">Definir como padrão</label>
+          <label for="padrao">Definir como padrão (opcional)</label>
           <input type="checkbox" name="padrao" id="padrao" value="1">
         </div>
+
+        <?=$alertaCadastroEndereco?>
 
         <div class="form-group">
           <input type="submit" name="acao" value="cadastrar" class="form-button">

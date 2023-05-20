@@ -9,8 +9,6 @@ Login::requireLogout();
 $alertaCadastro = "";
 
 
-
-
 if(isset($_POST['acao'])) {
     switch($_POST['acao']){
     case 'cadastrar':
@@ -19,6 +17,11 @@ if(isset($_POST['acao'])) {
       $obUsuario = Usuario::getUsuarioPorEmail($_POST['email']);
       if($obUsuario instanceof Usuario){
         $alertaCadastro = "O e-mail já está em uso.";
+        break;
+      }
+
+      if (strlen($_POST['telefone']) != 15) {
+        $alertaCadastro = "Número de telefone inválido.";
         break;
       }
 

@@ -42,6 +42,11 @@ if(isset($_POST['acao'])) {
         break;
       }
 
+      if (strlen($_POST['telefone']) != 15) {
+        $alertaEditarDados = "Número de telefone inválido.";
+        break;
+      }
+
       $obUsuario->atualizar([
         $obUsuario->nome = $_POST['nome'],
         $obUsuario->email = $_POST['email'],
