@@ -7,7 +7,7 @@
     <script src="./public/js/masks.js"></script>
   </head>
 <main>
-  <a href="dados_listar.php?codus=<?=$usuario['codus']; ?>">Voltar</a>
+  <a href="dados_listar.php?codus=<?=$usuario['codus']?>">Voltar</a>
   <h1>Editar dados</h1>
     <form  method="POST">
       <?=$alertaEditarDados?>
