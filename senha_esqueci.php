@@ -24,6 +24,8 @@ if(isset($_POST['acao'])) {
 
       $email = trim($_POST['email']);
       $obUsuario = Usuario::getUsuarioPorEmail($email);
+      $nomeUsuario = $obUsuario->nome;
+      $primeiroNome = explode(' ', $nomeUsuario)[0];
 
       if(!$obUsuario instanceof Usuario) {
         $alerta = "Email não cadastrado.";
@@ -33,8 +35,19 @@ if(isset($_POST['acao'])) {
         $obUsuario->setToken($token);
         print_r($token);
 
-        $link = "http://localhost/pet-farma/senha_redefinir.php?token=$token";
-        $mensagem = "Olá, " . $obUsuario->nome . ". Você solicitou uma troca de senha, Clique no link abaixo para realizar a alteração: \n$link";
+        $serverPort = $_SERVER['SERVER_PORT'];
+        $directoryName = basename(__DIR__);
+
+        // Verifica se a porta é diferente da porta padrão do XAMPP (80 para HTTP, 443 para HTTPS)
+        if ($serverPort != 80 && $serverPort != 443) {
+          $serverPort = ':' . $serverPort;
+        } else {
+          $serverPort = ''; // Deixa vazio se for a porta padrão
+        }
+
+        $link = "http://localhost$serverPort/$directoryName/senha_redefinir.php?token=$token";
+        $mensagem = 'Olá, ' . $primeiroNome . '. Se você solicitou uma troca de senha, clique <a href="' . $link . '">aqui</a> para realizar a alteração. Caso contrário, basta ignorar esta mensagem. 🐶';
+
 
 
         try {
