@@ -12,7 +12,7 @@ if ($usuarioLogado) {
   $usuario = $primeiroNome;
   $sair = '<a href="logout.php" style="color:#137373; font-weight: 600; margin-left:5px;" class="">Sair <i class="fa-solid fa-right-from-bracket fa-ls" style="color: #137373;"></i></a>';
 } else {
-  $usuario = 'Visitante <a href="login.php" class="">Entrar</a> <a href="cadastro.php" class="">Criar conta</a>';
+  $usuario = 'Visitante <a href="login.php" class="f-cli">Entrar</a> <a href="cadastro.php" class="f-cli">Criar conta</a>';
 }
 
 ?>
@@ -69,8 +69,6 @@ if ($usuarioLogado) {
       
 
     <div <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>>
-    <div class="dropdown"></div>
-    <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
     <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">Meus dados</a>
     <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="pedido_listar.php?codus=<?=$usuarioLogado['codus']?>">Meus Pedidos</a>
     <a href="carrinho.php"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffff"></i></a>
