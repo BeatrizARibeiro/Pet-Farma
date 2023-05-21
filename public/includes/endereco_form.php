@@ -1,4 +1,4 @@
-  <?php
+<?php
   $alertaCadastroEndereco = strlen($alertaCadastroEndereco) ? '<div>'.$alertaCadastroEndereco.'</div>' : '';
 ?>
   <head>
@@ -31,10 +31,9 @@
   
   <main>
     <div class="form-container">
+      <a href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">Voltar</a>
+      <h1>Cadastrar enadereço</h1>
       <form method="POST">
-        <a href="dados_listar.php?codus=<?=$usuario['codus']?>">Voltar</a>
-        <h1>Cadastrar endereço</h1>
-        
         <div class="form-group">
           <label for="cep" class="inputLabel">CEP</label>
           <input
