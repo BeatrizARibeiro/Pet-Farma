@@ -22,6 +22,8 @@ class Usuario{
 
   public $token;
 
+  public $situacao;
+
   public function cadastrar() {
   $obDatabase = new Database('usuario');
 
@@ -47,6 +49,16 @@ public function atualizar($dados) {
     'senha' => $this->senha,
 ]);
 }
+
+public function setStatus($codus, $status) {
+  $obDatabase = new Database('usuario');
+  $this->situacao = $status;
+  $obDatabase->update('codus = '.$codus, [
+    'situacao' => $this->situacao,
+  ]);
+}
+
+
 
 public function atualizarSenha($novaSenha) {
     $obDatabase = new Database('usuario');
