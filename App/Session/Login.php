@@ -48,6 +48,11 @@ class Login {
   return isset($_SESSION['usuario']['admin']) && $_SESSION['usuario']['admin'] == 1;
 }
 
+  public static function isActive() {
+  self::init();
+  return isset($_SESSION['usuario']['situacao']) && $_SESSION['usuario']['admin'] == "ativo";
+}
+
   //Obriga o usuário estar logado para acessar 
   //Chamar esse função onde o precise estar logado para acessar
   public static function requireLogin() {

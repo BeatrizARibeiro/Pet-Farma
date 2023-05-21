@@ -24,7 +24,7 @@
     <div class="form-group">
       
       <div class="btnContainer">
-<a href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">
+        <a href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">
         <button type="button">Cancelar</button>
       </a>
   <button class="btnExcluir" type="submit" name="excluir">Excluir</button>

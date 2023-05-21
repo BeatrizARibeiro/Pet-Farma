@@ -5,9 +5,14 @@ use \App\Session\Login;
 
   $usuarioLogado = Login::getUsuarioLogado();
   $obEndereco = Endereco::getEnderecosCli($usuarioLogado['codus']);
+  $status = $obUsuario->situacao;
 
   $nomeUsuario = $usuarioLogado['nome'];
   $primeiroNome = explode(' ', $nomeUsuario)[0];
+
+  $botaoTexto = ($obUsuario->situacao == 'ativa') ? 'Desativar conta' : 'Ativar conta';
+  $botaoEstilo = ($obUsuario->situacao == 'ativa') ? 'background: red;' : 'background: green;';
+  $pEstilo = ($obUsuario->situacao == 'ativa') ? 'color: green;' : 'color: orange;';
 
 ?>
 
@@ -39,9 +44,10 @@ use \App\Session\Login;
 
 <div class="divOlaUsuario">
 <h1>Olá, <?=$primeiroNome?>!</h1>
+<p style="<?=$pEstilo?>">Conta <?=$status?></p>
   <div>
     <a href="index.php" class="">Voltar</a>
-    <a href="conta_desativar.php?codus=<?=$usuarioLogado['codus']?>" class="" style="background: red;">Desativar conta</a>
+    <a href="conta_desativar.php?codus=<?=$usuarioLogado['codus']?>" class="" style="<?=$botaoEstilo?>"><?=$botaoTexto?></a>
 
   </div>
 </div>
