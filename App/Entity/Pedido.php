@@ -48,14 +48,6 @@ class Pedido{
                                             ]);
   }
 
-  /**
-   * M�todo responsavel por excluir 
-   * @return boolean
-   */
-  public function excluir(){
-    return (new Database('pedido'))->delete('numpedido = '.$this->numpedido);
-  }
-  
   //Método para atualizar o status do pedido
   public function atuzaliarStatus(){
     return (new Database('pedido'))->update('numpedido = '.$this->numpedido,[
@@ -109,6 +101,4 @@ class Pedido{
   return (new Database('pedido'))->selectProdutosPedido($numpedido)
                                  ->fetchAll(PDO::FETCH_CLASS,self::class);//passa a classe que vc quer instanciar
   }
-
-
 }
