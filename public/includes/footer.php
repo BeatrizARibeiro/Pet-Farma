@@ -26,11 +26,12 @@
         </div>
 
         <div class="col">
-            <h4>Sobre</h4>
-            <a href="ScreenLogin.html">Entrar</a>
-            <a href="#">Ver carrinho</a>
+            <h4>Sobre a PetFarma</h4>
+            <a href="#">Sobre Nós</a>
+            <a href="login.php">Entrar</a>
+            <a href="carrinho.php">Ver carrinho</a>
             <!-- <a href="#">Minha lista de Desejos</a> -->
-            <a href="#">Meus pedidos</a>
+            <a href="pedido_listar.php?codus=3">Meus pedidos</a>
             <a href="#">Ajuda</a>
         </div>
 

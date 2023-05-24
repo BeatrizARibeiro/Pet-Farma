@@ -121,7 +121,7 @@ table tbody tr:last-child {
 
 
 table tbody tr td {
-    padding: 30px 0;
+    padding: 30px 20px;
 }
 
 .product {
@@ -145,10 +145,48 @@ table tbody tr td {
 .product .info .categoryProduct {
     color: #adadad;
 }
-
-.qty {
+.inputQtd {
     background: #eee;
     /* border: 3px solid #eee; */
+    display: inline-flex;
+    padding: 0;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.inputQtd button {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    padding: 0 10px;
+    font-size: 15px;
+    height: 100%;
+}
+
+.inputQtd button:hover {
+    background: #a798af;
+    color: #fff;
+}
+
+.inputQtd span {
+    margin: 0 10px;
+}
+
+.inputQtd input {
+    border: 1px solid #eee;
+    height: 100%;
+    padding-left: 10px;
+    justify-items: center;
+}
+
+/* .qty {
+    background: #eee;
+    /* border: 3px solid #eee; 
     display: inline-flex;
     padding: 0;
     justify-content: space-around;
@@ -176,7 +214,7 @@ table tbody tr td {
 
 .qty span {
     margin: 0 10px;
-}
+} */
 
 .remove {
     background: transparent;

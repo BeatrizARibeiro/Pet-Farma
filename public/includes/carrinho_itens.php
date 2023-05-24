@@ -43,7 +43,7 @@
                             </td>
                             <td id="preco'.$prod->codprod.'" >R$ '.number_format($prod->preco, 2, ',', '.').'</td>
                             <td>
-                                <div class="qty">
+                                <div class="inputQtd">
                                     <button type="button" onclick="diminuir('.$prod->codprod.')"><i class="fas fa-light fa-minus"></i></button>
                                     <input type="number" id="'.$prod->codprod.'" name="qtde'.$prod->codprod.'" value="'.$prod->qtde.'">
                                     <button type="button" onclick="aumentar('.$prod->codprod.')"><i class="fas fa-light fa-plus"></i></button>
@@ -110,7 +110,7 @@
                     <th>Preço</th>
                     <th>Quantidade</th>
                     <th>Total</th>
-                    <th>-</th>
+                    <th> </th>
                 </tr>
                 </thead>
                 <tbody>
