@@ -50,6 +50,8 @@ p {
 }
 
 
+
+
 button.normal {
     font-size: 14px;
     font-weight: 600;
@@ -133,6 +135,7 @@ body {
     padding: 10px;
 }
 
+
 /* HEADER START */
 
 #header {
@@ -196,6 +199,8 @@ body {
     left: 20px;
 }
 
+
+
 /* CATEGORIA */
 .divHeader2 {
     background-color: #2db3a7;
@@ -212,6 +217,8 @@ body {
     margin-left: 40px;
     margin-right: 20px;
 }
+
+
 
 /*
 .divHeader2 h3{
@@ -263,6 +270,9 @@ body {
     background-color: #2db3a8ec;
 }
 
+
+
+
 /* MOBILE */
 
 #mobile {
@@ -302,27 +312,19 @@ body {
     color: #798f8c;
 }
 
-#hero button {
-    background-image: url("../img/buttonhome.png");
-    background-color: transparent;
-    color: #065a4f;
-    border: 0;
-    padding: 18px 50px 20px 50px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-}
-
 .animaishome img {
-    width: 100vh;
-    padding: 0 80px;
+    /* width: 100vh;
+    padding: 0 80px; */
+    width: 100%;
+        height: auto;
+        padding: 0 10px;
 }
 
 .homeimgtexto {
     display: flex;
     flex-direction: inline;
 }
+
 
 #feature {
     display: flex;
@@ -412,7 +414,8 @@ body {
 }
 
 #product1 .pro img {
-    width: 100%;
+    width: 200px;
+    height: 220px;
     border-radius: 20px;
     background: #eeeeee;
 }
@@ -577,14 +580,139 @@ footer .copyright {
     text-align: center;
 }
 
-/* .fixarRodape {
-    bottom: 0;
-    position: fixed;
-    width: 90%;
-    text-align: center;
-} */
+
+
 
 /* MEDIA QUERY */
+@media only screen and (max-width: 600px) {
+    a {
+        text-decoration: none !important;
+    }
+    
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+        color: #2c2c2c;
+    }
+    
+    h2 {
+        font-size: 32px;
+        line-height: 38px;
+        color: #2c2c2c;
+    }
+    
+    h4 {
+        font-size: 18px;
+        color: #2c2c2c;
+    }
+    
+    h6 {
+        font-size: 12px;
+        font-weight: 700;
+    }
+    
+    p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #465b52;
+        margin: 10px 0 15px 0;
+    }
+    
+    .section-p1 {
+        padding: 20px 40px;
+    }
+    
+    .section-m1 {
+        margin: 20px 0;
+    }
+
+    .logo {
+        width: 30px;
+    }
+
+    .cesta {
+        width: 20px;
+    }
+
+    .search-box {
+        height: 30px;
+    }
+
+    .search-txt {
+        font-size: 14px;
+    }
+
+    .search-btn {
+        width: 70px;
+        height: 30px;
+    }
+
+    .search-btn .lupa {
+        width: 30px;
+        padding: 5px;
+    }
+
+    #header {
+        padding: 20px;
+    }
+
+    .f-admin a, .f-cli, .usuario, .categoria a {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    #navbar li {
+        padding: 0 10px;
+    }
+
+    #navbar li a {
+        font-size: 14px;
+    }
+
+    .divHeader2 i {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    .categoria ul li {
+        width: 100%;
+        font-size: 20px;
+    }
+    
+    .categoria ul li li:hover {
+        background-color: #08555a;
+        color: #ffffff;
+    }
+
+    .categoria ul ul ul {
+        margin-left: 0;
+        top: 40px;
+    }
+
+    footer .col {
+        width: 50%;
+    }
+
+    footer .logo {
+        margin-bottom: 20px;
+    }
+
+    footer h4 {
+        font-size: 12px;
+        padding-bottom: 15px;
+    }
+
+    footer p {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    footer .pagamento img {
+        width: 80px;
+        margin: 8px 0 12px 0;
+    }
+}
+
 
 @media (max-width:799px) {
     .section-p1 {
@@ -602,8 +730,6 @@ footer .copyright {
         height: 100vh;
         width: 300px;
         background-color: #95d1c3f5;
-        /* background-color: #93c4b8; */
-        /* background-color: #7cdac2ef; */
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
         padding: 80px 0 0 10px;
         transition: 0.3s;
@@ -615,16 +741,6 @@ footer .copyright {
 
     #navbar li {
         margin-bottom: 25px;
-    }
-
-    .animaishome img {
-        width: 70vh;
-        padding: 20px;
-    }
-
-    .homeimgtexto {
-        display: flex;
-        flex-direction: column;
     }
 
     #mobile {
@@ -676,5 +792,19 @@ footer .copyright {
     #signup .form {
         width: 70%;
     }
+
+}
+
+@media only screen and (max-width: 1400px) {
+    .animaishome img {
+        width: 100%;
+        height: auto;
+        padding: 0 20px;
+    }
+    
+.homeimgtexto {
+    display: flex;
+    flex-direction: column;
+}
 
 }
