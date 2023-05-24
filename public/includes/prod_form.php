@@ -68,95 +68,113 @@
 
 ?>
 
-<main>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categoria</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
+  <link rel="stylesheet" href="./public/css/StyleCadastroProduto.css">
+</head>
 
-  <section>
-    <a href="prod_listar.php">
-      <button>Voltar</button>
-    </a>
-  </section>
 
-  <h2><?=TITLE?></h2>
-
-  <form method="post" enctype="multipart/form-data" name="prod_cadastro">
-
+<body>
+  <!-- <main> -->
+  <div class="container">
+    <section>
     <div class="form-group">
-      <label>Nome: </label>
-      <input type="text" name="nome_prod" value="<?=$objProd->nome_prod?>">
+      <a href="prod_listar.php">
+        <button>Voltar</button>
+      </a>
     </div>
-
-    <div class="form-group">
-      <label>Descrição: </label>
-      <textarea name="descricao" rows="4" cols="50"><?=$objProd->descricao?></textarea>
+    </section>
+    
+    <h2><?=TITLE?></h2>
+    
+    <form method="post" enctype="multipart/form-data" name="prod_cadastro">
+      
+      <div class="form-group">
+        <label>Nome: </label>
+        <input type="text" name="nome_prod" value="<?=$objProd->nome_prod?>">
+      </div>
+      
+      <div class="form-group">
+        <label>Descrição: </label>
+        <textarea name="descricao" rows="4" cols="50"><?=$objProd->descricao?></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label>Preço R$: </label>
+        <input type="text" id="preco" name="preco" onkeyup="formatarMoeda()" value="<?=$objProd->preco?>">
     </div>
-
-    <div class="form-group">
-      <label>Preço R$: </label>
-      <input type="text" id="preco" name="preco" onkeyup="formatarMoeda()" value="<?=$objProd->preco?>">
-    </div>
-
+    
     <div class="form-group">
       <label>Peso: </label>
       <input type="text" name="peso" value="<?=$objProd->peso?>">
     </div>
-
+    
     <div class="form-group">
-        <label>Espécie:</label>
-        <select class="form-select" name="codespe">
-            <option>Selecione...</option>
-            <?=$resEspecie?>;
-        </select>
+      <label>Espécie:</label>
+      <select class="form-select" name="codespe">
+        <option>Selecione...</option>
+        <?=$resEspecie?>;
+      </select>
     </div>
-
+    
     <div class="form-group">
-        <label>Marca:</label>
-        <select class="form-select" name="codmarca">
-            <option>Selecione...</option>
-            <?=$resMarca?>;
-        </select>
+      <label>Marca:</label>
+      <select class="form-select" name="codmarca">
+        <option>Selecione...</option>
+        <?=$resMarca?>;
+      </select>
     </div>
-
+    
     <div class="form-group">
       <label>Categorias:</label>
       <select class="form-select" name="categorias[]" multiple>
-            <?=$resCate?>;
-        </select>
+        <?=$resCate?>;
+      </select>
       <p style="color:rebeccapurple;">Aperte ctrl ou shift para selecionar todas as categorias de sua escolha</p>
     </div>
     
-
+    
     <div class="form-group">
       <label>Imagem: </label>
       <input type="file" id="upload" name="imagem" accept="image/*"/>
       <img src="./public/img/<?=$imagem?>" alt=""/>
-
+      
     </div>
     
-
+    
     <div class="form-group">
       <button type="submit" id="salvar" name="salvar" >Salvar</button>
     </div>
-
+    
   </form>
-
+  
   <script>
     function formatarMoeda() {
-        var elemento = document.getElementById('preco');
-        var valor = elemento.value;
-
-        valor = valor + '';
-        valor = parseInt(valor.replace(/[\D]+/g, ''));
-        valor = valor + '';
-        valor = valor.replace(/([0-9]{2})$/g, ",$1");
-
-        if (valor.length > 6) {
-            valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-        }
-
-        elemento.value = valor;
-        if(valor == 'NaN') elemento.value = '';
+      var elemento = document.getElementById('preco');
+      var valor = elemento.value;
+      
+      valor = valor + '';
+      valor = parseInt(valor.replace(/[\D]+/g, ''));
+      valor = valor + '';
+      valor = valor.replace(/([0-9]{2})$/g, ",$1");
+      
+      if (valor.length > 6) {
+        valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+      }
+      
+      elemento.value = valor;
+      if(valor == 'NaN') elemento.value = '';
     }
     
-</script>
+    </script>
 
-</main>
+<!-- </main> -->
+  </div>
+</body>

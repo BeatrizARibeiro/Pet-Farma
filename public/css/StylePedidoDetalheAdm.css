@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+body {
+    position: absolute;
+    background-image: url("../img/fundopet.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    width: 100%;
+    height: 100%;
+}
+
+.form-container {
+    /* max-width: 600px; */
+    width: 50%; 
+    margin-left: auto;
+    margin-right: auto; 
+
+    /* width: 100vw; */
+    height: 50vh;
+    margin: 50px Auto;
+    margin-bottom: 150px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    /* margin: 50px; */
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    /* width: 30%; */
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* .form-group button, */
+
+.form-group .form-button{
+    width: 30%;
+    background-color: #52C1B7;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+button:hover {
+  
+    background-color: #fff;
+    color: #52C1B7;
+    border: 1px solid #52C1B7;
+
+}
+button i {
+    margin-right: 10px;
+}
+
+h2 {
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead tr th {
+    text-align: left;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: #353535;
+}
+
+table thead tr {
+    border-bottom: 3px solid #eee;
+}
+
+
+table tbody tr {
+    border-bottom: 3px solid #eee;
+}
+
+table tbody tr:last-child {
+    border: 0;
+}
+
+
+table tbody tr td {
+    padding: 30px 0;
+}
+.product {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.product img {
+    border-radius: 5px;
+}
+
+.product .info {
+    margin-left: 20px;
+}
+
+.product .info .nameProduct {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product .info .categoryProduct {
+    color: #adadad;
+}

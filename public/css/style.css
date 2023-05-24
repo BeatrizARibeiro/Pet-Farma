@@ -108,14 +108,15 @@ body {
 }
 
 .search-txt {
+    margin: 0;
+    width: 100%;
     border: none;
     background: none;
     outline: none;
-    padding: 0;
+    padding: 5px;
     color: #0d8d82;
     font-size: 16px;
-    line-height: 40px;
-    width: 100%;
+    /* line-height: 40px; */
 }
 
 .search-btn {
@@ -124,6 +125,7 @@ body {
     border-radius: 0px 30px 30px 0px;
     border: none;
     background: #1aaa97;
+    cursor: pointer;
 }
 
 .search-btn .lupa {
@@ -150,6 +152,7 @@ body {
     color: #ffffff;
     font-weight: 500;
     font-size: 17px;
+    margin-left: 20px;
 }
 
 .f-admin a:hover, .f-cli:hover{
@@ -455,129 +458,6 @@ body {
     right: 17px;
 }
 
-#banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url("/img/banneracessorio2.png");
-    width: 100%;
-    height: 40vh;
-    background-size: cover;
-    background-position: center;
-}
-
-#banner h4 {
-    color: #ffffff;
-    font-size: 16px;
-}
-
-#banner h2 {
-    color: #ffffff;
-    font-size: 30px;
-    padding: 10px 0;
-}
-
-#banner h2 span {
-    color: #d40909;
-}
-
-#banner button:hover {
-    background: #ffffff;
-    color: #2c2c2c;
-}
-
-#sm-banner {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-#sm-banner .banner-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-image: url("/img/bannermedicamento.png");
-    /* min-width: 580px; */
-    min-width: 48%;
-    height: 50vh;
-    background-size: cover;
-    background-position: center;
-    padding: 30px;
-}
-
-#sm-banner .banner-box2 {
-    background-image: url("/img/banneracessorio3.png");
-}
-
-#sm-banner h4 {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-#sm-banner h2 {
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: 800;
-}
-
-#sm-banner span {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    padding-bottom: 15px;
-}
-
-#sm-banner .banner-box:hover button {
-    background: #065a4f;
-    border: 1px solid #065a4f;
-}
-
-#banner3 {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0 80px;
-}
-
-#banner3 .banner-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-image: url("/img/bannerroupa.jpg");
-    /* min-width: 580px; */
-    min-width: 30%;
-    height: 30vh;
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-#banner3 .banner-box2 {
-    background-image: url("/img/bannervitaminas.png");
-}
-
-#banner3 .banner-box3 {
-    background-image: url("/img/bannercomidapassaro.jpg");
-}
-
-#banner3 h2 {
-    color: #ffffff;
-    font-weight: 900;
-    font-size: 22px;
-}
-
-#banner3 h3 {
-    color: #ee2222;
-    font-weight: 800;
-    font-size: 15px;
-}
-
 
 #signup {
     display: flex;
@@ -638,6 +518,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background: #52C1B7;
 }
 
 footer .col {
@@ -655,17 +536,19 @@ footer .logo {
 footer h4 {
     font-size: 14px;
     padding-bottom: 20px;
+    color: #eee;
 }
 
 footer p {
     font-size: 13px;
     margin: 0 0 8px 0;
+    color: #eee;
 }
 
 footer a {
     font-size: 13px;
     text-decoration: none;
-    color: #465b52;
+    color: #eee;
     margin-bottom: 10px;
 }
 
@@ -674,7 +557,7 @@ footer .follow {
 }
 
 footer .follow i {
-    color: #465b52;
+    color: #eee;
     padding-right: 4px;
     cursor: pointer;
 }
@@ -686,7 +569,7 @@ footer .pagamento img {
 
 footer .follow i:hover,
 footer a:hover {
-    color: #25b38f;
+    color: #003f3a;
 }
 
 footer .copyright {
@@ -694,6 +577,12 @@ footer .copyright {
     text-align: center;
 }
 
+/* .fixarRodape {
+    bottom: 0;
+    position: fixed;
+    width: 90%;
+    text-align: center;
+} */
 
 /* MEDIA QUERY */
 
@@ -782,24 +671,6 @@ footer .copyright {
 
     #product1 .pro {
         margin: 15px;
-    }
-
-    #banner {
-        height: 20vh;
-    }
-
-    #sm-banner .banner-box {
-        min-width: 100%;
-        height: 30vh;
-        margin-bottom: 10px;
-    }
-
-    #banner3 {
-        padding: 0 40px;
-    }
-
-    #banner3 .banner-box {
-        width: 28%;
     }
 
     #signup .form {

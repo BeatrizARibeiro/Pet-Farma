@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+body {
+    background: #F9F9F9;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Main */
+main {
+    background: #fff;
+    padding: 0 150px 30px;
+}
+
+main .page-title {
+    font-size: 40px;
+    padding: 50px 0;
+    padding-left: 50px;
+    text-align: left;
+    color: #52C1B7;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    /* margin-right: 20px;
+    margin-left: 20px; */
+}
+
+main .content section {
+    /* background: #063f3a; */
+    flex: 1;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead tr th {
+    text-align: left;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: #353535;
+}
+
+table thead tr {
+    border-bottom: 3px solid #eee;
+}
+
+
+table tbody tr {
+    border-bottom: 3px solid #eee;
+}
+
+table tbody tr:last-child {
+    border: 0;
+}
+
+
+table tbody tr td {
+    padding: 30px 0;
+}
+
+section a button {
+    border: 1px solid transparent;
+    background: #52C1B7;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 20px 10px;
+    font-size: 15px;
+    color: #fff;
+
+}
+section a button:hover{
+    border: 1px solid #52C1B7;
+    background: #fff;
+    color: #52C1B7;
+}
+
+section  label{
+    font-size: 15px;
+}
+section  input{
+    font-size: 20px;
+    border: 1px solid #52C1B7;
+    border-radius: 50px 0px 0px 50px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* .col button {
+    border: none;
+    background: #52C1B7;
+    border-radius: 0px 50px 50px 0px;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px;
+} */
+
+.alinharProcurar {
+    display: flex;
+    margin: 20px auto;
+    /* margin: 30px 0; */
+}
+.alinharProcurar label{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    /* margin: 30px 0; */
+}
+
+/* procurar */
+.search-box2 {
+   /* margin: 20px auto; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    /* transform: translate(-50%, -50%); */
+    background: #ffffff;
+    /* height: 40px; */
+    width: 40%;
+    padding: 10px;
+    padding-right: 0px;
+    border-radius: 30px;
+    /* align-items: baseline; */
+}
+
+
+.search-txt2 {
+    margin: 0;
+    border: 1px solid #0d8d82;
+    background: none;
+    outline: none;
+    padding: 0px;
+    color: #0d8d82;
+    font-size: 16px;
+    width: 40%;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.search-btn2 {
+    font-size: 16px;
+    width: 90px;
+    height: 30px;
+    border-radius: 0px 30px 30px 0px;
+    border: 1px solid #1aaa97;
+    background: #1aaa97;
+    color: #fff;
+}
+
+.mensagem {
+    margin: 30px Auto;
+    font-weight: bold;
+}

@@ -32,7 +32,7 @@
   <main>
     <div class="form-container">
       <a href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">Voltar</a>
-      <h1>Cadastrar enadereço</h1>
+      <h1>Cadastrar endereço</h1>
       <form method="POST">
         <div class="form-group">
           <label for="cep" class="inputLabel">CEP</label>

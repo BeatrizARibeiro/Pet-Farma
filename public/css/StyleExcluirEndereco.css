@@ -5,19 +5,83 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Spartan', sans-serif;
+    
+  }
+  
+  body {
+    position: absolute;
+    background-image: url("../img/fundopet.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    width: 100%;
+    height: 100%;
+  }
 
+  /* ICON */
+  .logo {
+    width: 40px;
+  }
+
+  
+  /* HEADER START */
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #52C1B7;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  transition: 0.3s ease;
+}
+
+
+#navbar i,
+h3 {
+  color: #fff;
+  display: flex;
+  margin: 10px;
+}
+
+
 .form-group {
-    width: 400px;
-    margin: 0 auto;
+  width: 400px;
+    margin: 30px auto;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
+    /* color: #1a1a1a; */
   }
-
+  
   .form-group h2 {
+    font-size: 30px;
     margin-top: 0;
+    margin-bottom: 10px;
   }
 
   .form-group p {
@@ -29,19 +93,29 @@
   }
 
   .form-group .btnExcluir {
-    background-color: #4CAF50;
+    background-color: #52C1B7;
     color: #fff;
     padding: 10px 15px;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 4px;
+    font-weight: bold;
     cursor: pointer;
   }
 
   .form-group .btnExcluir:hover {
-    background-color: #45a049;
+    background-color: #fff;
+    color: #52C1B7;
+    border: 1px solid #52C1B7;
+    font-weight: bold;
   }
 
   .form-group .btn.cancel {
     background-color: #ccc;
     margin-right: 10px;
   }
+
+  .btnContainer a{
+    text-decoration: none;
+  }
+
+  
