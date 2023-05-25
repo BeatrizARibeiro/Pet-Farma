@@ -66,25 +66,40 @@ $res_pedido = strlen($res_pedido) ? $res_pedido : '<tr>
  }
 ?>
 
-<main>
-<h2>Pedidos</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" type="imagem/png" href="/img/logopetfarma.png" />
+    <link rel="stylesheet" href="./public/css/StylePedidosAdm.css">
+    
+    <title>Pedidos</title>
+</head>
 
-<table>
+<body>
+    
+    <main>
+    <div class="page-title"><h2>Pedidos</h2></div>
+<div class="content">
+        <table>
     <thead>
-    <tr>
-        <th>Códgio</th>
-        <th>Status</th>
-        <th>Data</th>
-        <th>Valor Total</th>
+        <tr>
+            <th>Código</th>
+            <th>Status</th>
+            <th>Data</th>
+            <th>Valor Total</th>
         <th></th>
     </tr>
-    </thead>
-    <tbody>
-        <?=$res_pedido?>
-    </tbody>
+</thead>
+<tbody>
+    <?=$res_pedido?>
+</tbody>
 </table>
-
 <section>
     <?=$paginacao?>
 </section>
+</div>
 </main>
+
+</body>

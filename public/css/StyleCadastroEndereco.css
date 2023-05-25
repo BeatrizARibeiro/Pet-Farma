@@ -92,6 +92,7 @@ justify-content: center;
 }
 
 .form-group input,
+.form-group button,
 .form-group select,
 .form-group textarea {
     width: 100%;
@@ -123,6 +124,7 @@ justify-content: center;
     }
 
     .form-group input,
+    .form-group button,
     .form-group select,
     .form-group textarea {
         width: 70%;

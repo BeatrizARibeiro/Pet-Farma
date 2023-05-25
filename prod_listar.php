@@ -90,44 +90,61 @@
     }
    
    ?>
-<main>
 
-<section>
-        <a href="index.php">
-            <button>Voltar</button>
-        </a>
-        <a href="prod_cadastrar.php">
-            <button >Novo Produto</button>
-        </a>
-</section>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" type="imagem/png" href="/img/logopetfarma.png" />
+    <link rel="stylesheet" href="./public/css/StylePedidosAdm.css">
+    
+    <title>Produtos</title>
+</head>
 
-<section>
-  <form method="get">
-    <div class="row my-4">
-      <div class="col">
-        <label>Buscar Produto</label>
-        <input type="text" name="busca" VALUE="<?=$busca?>">
-        <button type="submit">Buscar</button>
-      </div>
-    </div>
-  </form>
-</section>
-<?=$mensagem?><!--exibe a mensagem de erro ou sucesso na tela-->
-<section>
+   <body>
+       <main>
+           
+           <section>
+               <a href="index.php">
+                   <button>Voltar</button>
+                </a>
+                <a href="prod_cadastrar.php">
+                    <button >Novo Produto</button>
+                </a>
+            </section>
+            
+            <section>
+                <form method="get">
+                    <div class="alinharProcurar">
+                        <label>Buscar Produto</label>
+                        <!-- <div class="search-box2"> -->
+                            <input class="search-txt2" type="text" name="busca" VALUE="<?=$busca?>">
+                            <button class="search-btn2" type="submit">Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
 
-    <table>
-        <thead><!--cabecalho da tabela-->
+            <div class="mensagem">
+            <?=$mensagem?><!--exibe a mensagem de erro ou sucesso na tela-->
+            </div>
+            
+            <section>
+                
+                <table>
+                    <thead><!--cabecalho da tabela-->
         <tr>
-            <th>Códgio</th>
+            <th>Código</th>
             <th>Nome</th>
             <th>Peso</th>
-            <th>Preco</th>
+            <th>Preço</th>
         </tr>
-        </thead>
-        <tbody>
-            <?=$res_prod?><!--variavel que recebe o array de produtos la em cima-->
-        </tbody>
-    </table>
+    </thead>
+    <tbody>
+        <?=$res_prod?><!--variavel que recebe o array de produtos la em cima-->
+    </tbody>
+</table>
 
 </section>
 <section>
@@ -135,7 +152,9 @@
 </section>
 </main>
 
+</body>
+
 <?php
     
     include __DIR__.'/public/includes/footer.php';
-?>
+    ?>

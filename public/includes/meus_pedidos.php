@@ -65,9 +65,24 @@
      }
 ?>
 
-<main>
-    <h2>Meus Pedidos</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" type="imagem/png" href="/img/logopetfarma.png" />
+    <link rel="stylesheet" href="./public/css/StylePedidosAdm.css">
+    
+    <title>Pedidos</title>
+</head>
 
+<body>
+ 
+<main>
+    <body>
+    <div class="page-title"><h2>Meus Pedidos</h2></div>
+
+    <div class="content">
     <table>
         <thead>
         <tr>
@@ -86,4 +101,7 @@
     <section>
         <?=$paginacao?>
     </section>
+    </div>
 </main>
+    </body>
+ 

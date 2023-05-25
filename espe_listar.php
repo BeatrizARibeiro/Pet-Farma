@@ -87,6 +87,17 @@
     }
    
    ?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" type="imagem/png" href="/img/logopetfarma.png" />
+    <link rel="stylesheet" href="./public/css/StylePedidosAdm.css">
+    
+    <title>Pedidos</title>
+</head>
 <main>
  
 <section>
@@ -100,16 +111,20 @@
 
 <section>
   <form method="get">
-    <div class="row my-4">
-      <div class="col">
+    <div class="alinharProcurar">
+      <!-- <div class="col"> -->
         <label>Buscar Espécie</label>
-        <input type="text" name="busca" VALUE="<?=$busca?>">
-        <button type="submit">Buscar</button>
-      </div>
+        <input class="search-txt2" type="text" name="busca" VALUE="<?=$busca?>">
+        <button class="search-btn2" type="submit">Buscar</button>
+      <!-- </div> -->
     </div>
   </form>
 </section>
+
+<div class="mensagem">
 <?=$mensagem?><!--exibe a mensagem de erro ou sucesso na tela-->
+</div>
+
 <section>
 
     <table>

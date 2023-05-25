@@ -11,7 +11,7 @@ use \App\Session\Login;
   $primeiroNome = explode(' ', $nomeUsuario)[0];
 
   $botaoTexto = ($obUsuario->situacao == 'ativa') ? 'Desativar conta' : 'Ativar conta';
-  $botaoEstilo = ($obUsuario->situacao == 'ativa') ? 'background: red;' : 'background: green;';
+  $botaoEstilo = ($obUsuario->situacao == 'ativa') ? 'background: #DC143C;' : 'background: #67CB57;';
   $pEstilo = ($obUsuario->situacao == 'ativa') ? 'color: green;' : 'color: orange;';
 
 ?>
