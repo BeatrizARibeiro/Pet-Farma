@@ -273,6 +273,19 @@ class Database{
     return $this->execute($query);
   }
 
+  public function selectPedidosSituacoes($where = null, $order = null, $limit = null, $fields = '*'){
+    //DADOS DA QUERY
+    $where = strlen($where) ? 'WHERE '.$where : '';
+    $order = strlen($order) ? 'ORDER BY '.$order : '';
+    $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+    $query = 'SELECT '.$fields.' FROM '.$this->table.' 
+    inner join usuario
+    on '.$this->table.'.codus = usuario.codus '.$where.' '.$order.' '.$limit;
+
+    return $this->execute($query);
+  }
+
   //QUERY PARA PEGAR PEDIDO ABERTO
   public function selectPedidoAberto($codus){
     $query = "select * from pedido

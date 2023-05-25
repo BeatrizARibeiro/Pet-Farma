@@ -13,7 +13,7 @@ $qtdePedido = Pedido::getQtdePedidos();
 $objPagi = new Pagination($qtdePedido, $_GET['pagina'] ?? 1, 10);
 
 //variavel com array de pedidos
-$pedidos = Pedido::getPedidos('status_pedido <> "Em Aberto"', 'dt_pedido desc', $objPagi->getLimit());
+$pedidos = Pedido::getPedidosSituacoes('status_pedido <> "Em Aberto"', 'dt_pedido desc', $objPagi->getLimit());
 
 
 
@@ -29,7 +29,7 @@ foreach($pedidos as $pedido){
 
     $valorTotal += 25.00;
 
-    if($pedido->status_pedido == "Cancelado" ){//verificar ativo || $pedido->situacao == "Desativo"
+    if($pedido->status_pedido == "Cancelado" || $pedido->situacao == "inativa"){//verificar ativo || $pedido->situacao == "Desativo"
         $cancelado = 'style="color:grey;"';
     }
 

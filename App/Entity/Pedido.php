@@ -70,6 +70,15 @@ class Pedido{
                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
+  /**
+   * Método responsavel por obter todos os pedidos
+   * @return array
+   */
+  public static function getPedidosSituacoes($where = null, $order = null, $limit = null){
+    return (new Database('pedido'))->selectPedidosSituacoes($where,$order,$limit)
+                                   ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
   //funcao para pegar a quantidade de pedidos
   public static function getQtdePedidos($where = null){
     return (new Database('pedido'))->select($where, null, null, 'COUNT(*) as qtde')
