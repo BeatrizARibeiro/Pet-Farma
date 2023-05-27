@@ -8,11 +8,16 @@ use App\Session\Login;
 
 $alertaAlterarSenha = "";
 
-$usuario = Login::getUsuarioLogado();
+$usuarioLogado = Usuario::getUsuarioPorCodus($_GET['codus']);
+
 
 if(isset($_POST['acao'])) {
   switch($_POST['acao']){
     case 'alterar-senha':
+      if ($_GET['codus'] != $usuarioLogado->codus) {
+        header('Location: index.php?status=coduserr');
+        exit;
+      }
       // Verifica se o email foi informado
       if(empty($_POST['email'])){
         $alertaAlterarSenha = "Por favor, informe o email.";
@@ -41,6 +46,12 @@ if(isset($_POST['acao'])) {
       if($_POST['senha'] != $_POST['confirmar-senha']){
         $alertaAlterarSenha = "As novas senhas não conferem.";
         break;
+      }
+
+      $senha = $_POST['senha'];
+      if (strlen($senha) < 6 || !preg_match('/[A-Z]/', $senha)) {
+          $alertaAlterarSenha = "A senha deve ter no mínimo 6 caracteres e pelo menos uma letra maiúscula.";
+          break;
       }
 
       // Obtém o usuário a partir do email informado
