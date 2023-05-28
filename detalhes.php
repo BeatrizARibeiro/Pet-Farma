@@ -5,6 +5,16 @@ require __DIR__.'/vendor/autoload.php';
 include __DIR__.'/public/includes/header.php';
 
 use \App\Entity\Produto;
+use App\Session\Login;
+
+$usuarioLogado = Login::getUsuarioLogado();
+
+  $enabled = '';
+  
+
+  if($usuarioLogado && $usuarioLogado['admin'] == 1){
+    $enabled = 'disabled';
+  }
 
 //validacao do id
 if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
@@ -26,6 +36,8 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
     $input = $_POST['qtde'];
         header("location: ".$qtde_url.$input);
     }
+
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -58,7 +70,7 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
             <input type="number" id="qtde" name="qtde" value="1">
             <button type="button" onclick="aumentar()">+</button>
         </div>
-            <button type="submit" name="btnqtde" class="btnAddCar">Adicionar ao Carrinho</button>
+            <button type="submit" <?=$enabled?> name="btnqtde" class="btnAddCar">Adicionar ao Carrinho</button>
         </form>
     </div>
 </aside>

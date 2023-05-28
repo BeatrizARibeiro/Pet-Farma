@@ -1,10 +1,12 @@
 <?php
 
-
+    use App\Entity\Categoria;
     use App\Entity\Item_Pedido;
     use App\Entity\Pedido;
     use App\Entity\Produto;
     use App\Entity\Endereco;
+    use App\Entity\Prod_Cate;
+
 
     $pedidoAberto = Pedido::getPedidoAberto($sessao['codus']);
 
@@ -36,7 +38,14 @@
                                     <img style="height: 100px;" src="public/img/'.$prod->imagem.'" alt="">
                                     <div class="info">
                                         <div class="nameProduct">'.$prod->nome_prod.'</div>
-                                        <div class="categoryProduct">'.$prod->nome_cate.'</div>
+                                        <div class="categoryProduct">';
+                                        $categorias = Prod_Cate::getProd_Cate($prod->codprod);
+                                        foreach($categorias as $categoria){
+                                            $cate = Categoria::getCategoria($categoria->codcate);
+                                            $resultado .= '<span>'.$cate->nome_cate . '</span>';
+                                        }
+
+                                        $resultado .= '</div>
                                         <input name="cod'.$prod->codprod.'" value="'.$prod->codprod.'" style="display:none;"></input>
                                     </div>
                                 </div>
@@ -64,11 +73,13 @@
         if($end){
             $endereco .= '<p>CEP: '.$end->cep.'</p>
                         <p>Rua: '.$end->rua.' , nº '.$end->numero.'</p>
+                        <div class="link"> <a href="dados_listar.php?codus='.$sessao['codus'].'">Mudar Endereço</a></div>
                         <input name="codend" value="'.$end->codend.'" style="display:none;"></input>';
         }
         else{
             $endereco .= '<p>Você ainda não possui um endereço padrão!</p>
-                        <p>Defina um endereço padrão em <a href="dados_listar.php?codus='.$sessao['codus'].'">Meus Dados</a>, para poder terminar sua compra</p>';
+                        <p>Defina um endereço padrão para poder terminar sua compra.</p>
+                        <div class="link"> <a href="dados_listar.php?codus='.$sessao['codus'].'">Adicionar Endereço Padrão</a></div>';
             $enabled = 'disabled';
         }
     
@@ -123,7 +134,7 @@
             <aside>
                     <div class="box">
                         <header>Endereço de Entrega</header>
-                        <div class="info">
+                        <div class="end">
                             <div>
                                 <?=$endereco?>
                             </div>
@@ -132,7 +143,7 @@
                     
               
                     <div class="box">
-                        <header>Resumo do Pedido</header>
+                        <header >Resumo do Pedido</header>
                         <div class="info">
                             <div>
                                 <span>Sub-total</span>
@@ -144,7 +155,7 @@
                             </div>
                         </div>
                         <footer>
-                            <span>Total</span>
+                            <span style="font-weight: 500;">Total</span>
                             <input class="inputTotal" id="totalfinal" name="totalfinal" value="R$ <?=number_format($soma + 25.00, 2, ',', '.')?>"></input>
                         </footer>
                     </div>
