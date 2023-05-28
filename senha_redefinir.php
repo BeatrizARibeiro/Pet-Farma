@@ -49,6 +49,15 @@ if(isset($_POST['acao'])) {
         break;
       }
 
+      // Verifica se a senha atende aos requisitos
+      $senha = $_POST['senha'];
+      if (strlen($senha) < 6 || !preg_match('/[A-Z]/', $senha)) {
+          $alerta = "A senha deve ter no mínimo 6 caracteres e pelo menos uma letra maiúscula.";
+          break;
+      }
+
+      
+
       // Cria o hash da nova senha e atualiza o registro do usuário
       $novaSenha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
       if(!$obUsuario->atualizarSenha($novaSenha)){

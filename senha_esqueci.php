@@ -1,17 +1,18 @@
 <?php
 
+require __DIR__.'/vendor/autoload.php';
+
 use App\Entity\Usuario;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require __DIR__.'/vendor/autoload.php';
+$alerta = "";
 
 $mail = new PHPMailer(true);
 $mail->CharSet = 'UTF-8';
 $mail->Encoding = 'base64';
 
-$alerta = '';
 
 if(isset($_POST['acao'])) {
   switch($_POST['acao']) {
@@ -32,7 +33,6 @@ if(isset($_POST['acao'])) {
       }else {
         $token = bin2hex(random_bytes(16));
         $obUsuario->setToken($token);
-        print_r($token);
 
         $serverPort = $_SERVER['SERVER_PORT'];
         $directoryName = basename(__DIR__);
@@ -201,11 +201,9 @@ if(isset($_POST['acao'])) {
           $mail->addAddress($_POST['email'], $obUsuario->nome);
           $mail->Subject = 'Solicitação para redefinir senha';
           $mail->Body = $mensagem;
-
+          
           $mail->send();
           $alerta = "E-mail enviado com sucesso!";
-          header('Location: email_enviado.php');
-          exit;
 
         } catch (Exception $e) {
             $alerta = "Erro ao enviar e-mail: " . $mail->ErrorInfo;

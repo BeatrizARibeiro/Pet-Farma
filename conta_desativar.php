@@ -10,7 +10,8 @@ Login::requireLogin();
 
 $usuarioLogado = Login::getUsuarioLogado();
 $obUsuario = Usuario::getUsuarioPorCodus($_GET['codus']);
-$obPedido = Pedido::getPedidoAberto($_GET['codus']);
+$obPedidos = Pedido::getPedidosCli($_GET['codus']);
+$temPedidoAberto = false;
 
 $alertaDesativar = "";
 
@@ -32,17 +33,22 @@ if(!$obUsuario instanceof Usuario) {
 
 if (isset($_POST['desativar'])) {
   // Verifique se existem pedidos pendentes antes de desativar a conta
-  // if ($obPedido->status_pedido == "Em aberto") {
-  //   $alertaDesativar = "Você tem pedidos pendentes e não será possível desativar sua conta no momento.";
-  // }
+  foreach ($obPedidos as $obPedido) {
+    if ($obPedido->status_pedido == "Em aberto") {
+      $temPedidoAberto = true;
+      break;
+    }
+  }
 
-  // Altere o status da conta entre ativo e inativo
-  $novoStatus = ($obUsuario->situacao == 'ativa') ? 'inativa' : 'ativa';
-  $obUsuario->setStatus($obUsuario->codus, $novoStatus);
-
-  // Redirecione para a página de listagem de dados
-  header("Location: dados_listar.php?codus=" . $usuarioLogado['codus']);
-  exit;
+  if ($temPedidoAberto) {
+    $alertaDesativar = "Você tem pedidos pendentes e não será possível desativar sua conta no momento.";
+  } else {
+    // Altere o status da conta entre ativo e inativo
+    $novoStatus = ($obUsuario->situacao == 'ativa') ? 'inativa' : 'ativa';
+    $obUsuario->setStatus($obUsuario->codus, $novoStatus);
+    Login::logout();
+    exit;
+  }
 }
 
 

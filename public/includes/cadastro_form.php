@@ -82,7 +82,7 @@
           </label>
           <label class="label-input" for="senha">
             <i class="fas fa-light fa-lock icon-modify"></i>
-            <input type="password" placeholder="Senha"
+            <input type="password" placeholder="Mínimo 6 caracteres e uma letra maiúscula"
             name="senha"
             id="senha"
             required>
