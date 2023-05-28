@@ -23,6 +23,8 @@ h2 {
     flex-direction: row;
 }
 
+
+
 .main-content {
     flex-grow: 1;
 }
@@ -41,6 +43,8 @@ h2 {
 .main-content img {
     margin: 0px 50px;
 }
+
+
 
 .sidebar {
     flex-shrink: 0;
@@ -74,11 +78,6 @@ h2 {
     justify-content: center;
     margin-top: 20px;
 }
-/* 
-.btnAddCar button {
-    display: flex;
-} */
-
 
 .inputQtd {
     background: #eee;
@@ -119,7 +118,12 @@ h2 {
     justify-items: center;
 }
 
+
+
 /* Estilos para dispositivos móveis */
+
+
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -129,3 +133,153 @@ h2 {
         width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    .imgDetalhes {
+      width: 100%;
+    }
+    
+    h2 {
+      margin: 20px;
+      font-size: 20px;
+    }
+    
+    .container {
+      flex-direction: column;
+    }
+    
+    .main-content h4 {
+      margin: 20px 30px;
+      font-size: 18px;
+    }
+    
+    .main-content p {
+      margin: 0px 30px;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+    
+    .main-content img {
+      margin: 0px 30px;
+      width: 100%;
+    }
+
+    .sidebar {
+      width: 100%;
+      height: auto;
+      margin: 20px;
+      padding: 10px;
+    }
+    
+    .inputQtdAside {
+      flex-direction: column;
+    }
+    
+    .btnAddCar {
+      padding: 10px;
+      font-size: 14px;
+    }
+    
+    .inputQtd {
+      min-width: auto;
+      width: 100%;
+      margin-top: 10px;
+      height: 40px;
+    }
+    
+    .inputQtd input {
+      width: 60%;
+      font-size: 14px;
+    }
+    
+    .inputQtd button {
+      font-size: 14px;
+      padding: 0 8px;
+    }
+    
+    .inputQtd span {
+      margin: 0 8px;
+    }
+  }
+
+
+
+
+@media (max-width: 300px) {
+    /* .sidebar {
+      width: 100%;
+      height: auto;
+      margin: 20px;
+    }
+    
+    .inputQtdAside {
+      flex-direction: column;
+    }
+    
+    .inputQtd {
+      min-width: auto;
+      width: 100%;
+      margin-top: 10px;
+    }
+    
+    .inputQtd input {
+      width: 60%;
+    } */
+
+    .main-content {
+      flex-grow: 1;
+    }
+    
+    .main-content h4 {
+      margin: 20px;
+      font-size: 18px;
+    }
+    
+    .main-content p {
+      margin: 0px 20px;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+    
+    .main-content img {
+      margin: 0px 20px;
+      width: 100%;
+    }
+
+    .imgDetalhes {
+      width: 80%;
+      margin: 0 auto;
+    }
+    
+    h2 {
+      margin: 20px;
+      font-size: 20px;
+    }
+    
+    .container {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      margin: 20px;
+    }
+    
+    .inputQtdAside {
+      flex-direction: column;
+    }
+    
+    .btnAddCar {
+      width: 100%;
+      margin-top: 10px;
+    }
+    
+    .inputQtd {
+      min-width: auto;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }

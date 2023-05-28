@@ -94,18 +94,29 @@ h3 {
     border-radius: 5px;
 }
 
+@media (max-width: 1000px) {
+    .divOlaUsuario {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+    }
+    
+    .divOlaUsuario h1 {
+      padding-left: 0;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .divOlaUsuario a {
+      margin-top: 10px;
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
 .meusDadosPessoais .tbDadosPessoais {
-    /* background-color: #ffffff;
-    color: #52C1B7;
-    /* width: 80%; 
-    height: auto;
-    display: flex;
-    align-items: center;
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-
-    margin: 30px; */
-
     background-color: #ffffff;
     color: #52C1B7;
     /* width: 80%; */
@@ -114,8 +125,6 @@ h3 {
     align-items: center;
     border: 1px solid #eeeeee;
     border-radius: 10px;
-    /* padding-top: 30px; */
-    /* padding-bottom: 30px; */
     margin: 30px;
 }
 
@@ -164,6 +173,39 @@ h3 {
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 480px) {
+    .meusDadosPessoais .tbDadosPessoais {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    
+    .meusDadosPessoais .tbDadosPessoais table {
+      width: 100%;
+      margin: 0;
+    }
+    
+    .meusDadosPessoais .tbDadosPessoais table tbody {
+      align-items: center;
+    }
+    
+    .meusDadosPessoais .tbDadosPessoais table tbody tr {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .meusDadosPessoais .tbDadosPessoais table tbody tr td {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .meusDadosPessoais h1,
+    .divTitleEndereco {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
 
 
 /* Endereços */
@@ -229,4 +271,131 @@ h3 {
     border: 1px solid #A252C1;
     border-radius: 5px;
     padding: 5px;
+}
+
+@media (max-width: 480px) {
+    .meusDadosPessoais .enderecos {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    
+    .meusDadosPessoais .enderecos table {
+      width: 100%;
+      margin: 0;
+    }
+    
+    .meusDadosPessoais .enderecos table tbody {
+      align-items: center;
+    }
+    
+    .meusDadosPessoais .enderecos table tbody tr {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .meusDadosPessoais .enderecos table tbody tr th {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .enderecos a {
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .meusDadosPessoais .enderecos {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    
+    .meusDadosPessoais .enderecos table {
+      width: 100%;
+      margin: 0;
+    }
+    
+    .meusDadosPessoais .enderecos table tbody {
+      align-items: center;
+    }
+    
+    .meusDadosPessoais .enderecos table tbody tr {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .meusDadosPessoais .enderecos table tbody tr th {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .enderecos a {
+      margin-top: 10px;
+    }
+  
+    .meusDadosPessoais .tbDadosPessoais {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    
+    .meusDadosPessoais .tbDadosPessoais table {
+      width: 100%;
+      margin: 0;
+    }
+    
+    .meusDadosPessoais .tbDadosPessoais table tbody {
+      align-items: center;
+    }
+    
+    .meusDadosPessoais .tbDadosPessoais table tbody tr {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .meusDadosPessoais .tbDadosPessoais table tbody tr td {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .meusDadosPessoais h1,
+    .divTitleEndereco {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  
+  
+  
+  @media (max-width: 800px) {
+  .meusDadosPessoais .enderecos {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .meusDadosPessoais .enderecos table {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .meusDadosPessoais .enderecos table tbody {
+    align-items: center;
+  }
+  
+  .meusDadosPessoais .enderecos table tbody tr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .meusDadosPessoais .enderecos table tbody tr th {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .enderecos a {
+    margin-top: 10px;
+  }
 }

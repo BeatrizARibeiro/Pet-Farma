@@ -54,12 +54,32 @@
     }
 
 ?>
-    <a href="pedido_listar.php?codus=<?=$sessao['codus']?>">Voltar</a>
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
+  <link rel="stylesheet" href="./public/css/StylePedidoDetalheAdm.css">
+</head>
+
+<body>
+    
+    
+<div class="form-container">
+
+<div class="form-group">
+    <a href="pedido_listar.php?codus=<?=$sessao['codus']?>" class="form-button">Voltar</a>
+    </div>
+    
     <h2>Pedido <?=$num?></h2>
-
+    
     <h4><?=$pedido->status_pedido?></h4>
-
+    
     <table>
         <thead>
             <th></th>
@@ -69,11 +89,14 @@
             <?=$res?>
         </tbody>
     </table>
-
-    <a <?=$v?> href="../pet-farma/pedido_cancelar.php?numpedido=<?=$pedido->numpedido?>" >Cancelar</a>
+    <div class="form-group">
+    <a <?=$v?> href="../pet-farma/pedido_cancelar.php?numpedido=<?=$pedido->numpedido?>" class="form-button">Cancelar</a>
+    </div>
 
     <section <?=$visibilidade?>>
         <h4>Protocolo: <?=$pedido->protocolo?></h4>
         <p>Seu pedido foi entregue a transportadora.</p>
         <p>Use seu número de protocolo para acompanhar seu pedido na <a href="">Transportadora Maravilha</a></p>
     </section>
+    </div> 
+</body>
