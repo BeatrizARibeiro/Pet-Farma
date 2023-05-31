@@ -64,7 +64,7 @@ if ($usuarioLogado) {
         <a href="marca_listar.php">Marcas</a>
         <a href="espe_listar.php">Espécies</a>
       </div>
-      <p class="usuario">Olá, <?=$usuario?></p>
+      <p class="usuario">Olá, <?=$usuario?>!</p>
 
       
 

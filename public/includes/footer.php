@@ -15,7 +15,7 @@
             <img class="logo" src="./public/img/logopetfarma2.png" alt="">
             <h4>Contato</h4>
             <p><strong>WhatsApp: </strong>(15) 66666-6666</p>
-            <p><strong>E-mail: </strong>@gmail.com</p>
+            <p><strong>E-mail: </strong>petfarma.dev@gmail.com</p>
             <div class="follow">
                 <h4>Siga-nos nas redes sociais</h4>
                 <div class="icon">
