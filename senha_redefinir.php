@@ -66,6 +66,7 @@ if(isset($_POST['acao'])) {
       }
 
       // Redireciona o usuário para a página de sucesso
+      $obUsuario->setToken(null);
       Login::logout();
       exit;
 

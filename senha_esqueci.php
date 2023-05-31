@@ -167,14 +167,14 @@ if(isset($_POST['acao'])) {
                         <div class="center subtitle">Redefinição de senha</div>
                         <div class="message">
                           <p>
-                            Olá, <strong>' . $primeiroNome . '.</strong><br />
+                            Olá, <strong>' . $primeiroNome . '!</strong><br />
                             Se você solicitou uma troca de senha, basta clicar no botão abaixo e
-                            criar uma nova senha!
+                            criar uma nova senha, caso contrário, pode ignorar esta mensagem. 🐶
                           </p>
                           <a href="' . $link . '" class="center link">
                             <button class="link">Solicitar nova senha</button>
                           </a>
-                          <p>Caso contrário, pode ignorar esta mensagem. 🐶</p>
+                          <p>A troca só funciona uma vez por link.</p>
                         </div>
                       </div>
                     </div>
