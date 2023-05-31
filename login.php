@@ -19,8 +19,7 @@ if(isset($_POST['acao'])) {
         $alertaLogin = "E-mail ou senha inválidos.";
         break;
       }
-      $novoStatus = ($obUsuario->situacao == 'ativa') ? 'inativa' : 'ativa';
-      $obUsuario->setStatus($obUsuario->codus, $novoStatus);
+      $obUsuario->setStatus($obUsuario->codus, "ativa");
       Login::login($obUsuario);
       
       break;

@@ -13,7 +13,7 @@ $obUsuario = Usuario::getUsuarioPorCodus($_GET['codus']);
 $obPedidos = Pedido::getPedidosCli($_GET['codus']);
 $temPedidoAberto = false;
 
-$alertaDesativar = "";
+$alerta = "";
 
 
 if(!isset($_GET['codus']) or !is_numeric($_GET['codus'])) {
@@ -32,17 +32,18 @@ if(!$obUsuario instanceof Usuario) {
 }
 
 if (isset($_POST['desativar'])) {
+  $temPedidoAberto = false;
   // Verifique se existem pedidos pendentes antes de desativar a conta
-  foreach ($obPedidos as $obPedido) {
-    if ($obPedido->status_pedido == "Em aberto") {
-      $temPedidoAberto = true;
-      break;
+    foreach ($obPedidos as $obPedido) {
+        if ($obPedido->codus == $_GET['codus'] && in_array($obPedido->status_pedido, ["Pago", "Em aberto", "Em preparação", "Entregue a transportadora"])) {
+            $temPedidoAberto = true;
+            break;
+        }
     }
-  }
 
-  if ($temPedidoAberto) {
-    $alertaDesativar = "Você tem pedidos pendentes e não será possível desativar sua conta no momento.";
-  } else {
+    if ($temPedidoAberto) {
+        $alerta = "Não é possível desativar a conta pois existem pedidos em andamento.";
+    } else {
     // Altere o status da conta entre ativo e inativo
     $novoStatus = ($obUsuario->situacao == 'ativa') ? 'inativa' : 'ativa';
     $obUsuario->setStatus($obUsuario->codus, $novoStatus);

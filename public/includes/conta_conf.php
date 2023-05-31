@@ -1,9 +1,9 @@
 <?php
-$acao = ($obUsuario->situacao == 'ativa') ? 'desativar' : 'ativar';
-$botaoTexto = ($acao == 'desativar') ? 'Desativar 😥' : 'Ativar 🐶';
-$botaoEstilo = ($acao == 'desativar') ? 'background: red;' : 'background: green;';
-$alertaTexto = ($acao == 'desativar') ? 'Sentiremos sua falta... Deseja realmente desativar sua conta ?' : 'Você está de volta :) deseja reativar sua conta agora ?';
-$alertaMensagem = ($acao == 'desativar') ? 'Não será possível realizar novos pedidos até que a ative novamente.' : '';
+  $acao = ($obUsuario->situacao == 'ativa') ? 'desativar' : 'ativar';
+
+  $alerta = strlen($alerta) ? '<div>'.$alerta.'</div>' : '';
+  print_r($obPedidos);
+
 ?>
 
 <main>
@@ -21,18 +21,18 @@ $alertaMensagem = ($acao == 'desativar') ? 'Não será possível realizar novos 
   
   <form method="post">
     <div class="form-group">
-      <h3><?=$alertaTexto?></h3>
-      <p><?=$alertaMensagem?></p>
+      <h3>Sentiremos sua falta... Deseja realmente desativar sua conta ?</h3>
+      <p>Não será possível realizar novos pedidos até que a ative novamente.</p>
     </div>
 
-    <?=$alertaDesativar?>
+    <?=$alerta?>
 
     <div class="form-group">
       <a href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">
         <button type="button">Agora não</button>
       </a>
 
-      <button type="submit" name="desativar" style="<?=$botaoEstilo?>"><?=$botaoTexto?></button>
+      <button type="submit" name="desativar">Desativar 😥</button>
     </div>
   </form>
 </main>
