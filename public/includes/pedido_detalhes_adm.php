@@ -83,10 +83,9 @@
 <form method="post" <?=$v?>>
 <div class="form-group">
     <select name="status_pedido">
-        <option value="0"><?=$pedido->status_pedido?></option>
-        <option value="1">Em preparação</option>
-        <option value="2">Entregue a transportadora</option>
-        <option value="3">Cancelado</option>
+        <option value="0">Em preparação</option>
+        <option value="1">Entregue a transportadora</option>
+        <option value="2">Cancelado</option>
     </select>
     </div>
    <div class="form-group">

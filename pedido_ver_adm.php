@@ -8,18 +8,18 @@
 
 
     if(isset($_POST['salvar'])){
-        if($_POST['status_pedido'] == 1){
+        if($_POST['status_pedido'] == 0){
             $pedido->status_pedido = "Em preparação";
             $pedido->atuzaliarStatus();
         }
 
-        if($_POST['status_pedido'] == 2){
+        if($_POST['status_pedido'] == 1){
             $pedido->status_pedido = "Entregue a transportadora";
             $pedido->protocolo = rand(1000000000, 4294967295);
             $pedido->atuzaliarStatus();
         }
 
-        if($_POST['status_pedido'] == 3){
+        if($_POST['status_pedido'] == 2){
             $pedido->status_pedido = "Cancelado";
             $pedido->atuzaliarStatus();
         }
