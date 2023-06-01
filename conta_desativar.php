@@ -42,7 +42,7 @@ if (isset($_POST['desativar'])) {
     }
 
     if ($temPedidoAberto) {
-        $alerta = "Não é possível desativar a conta pois existem pedidos em andamento.";
+        $alerta = "Não é possível desativar a conta pois existem pedidos pendentes.";
     } else {
     // Altere o status da conta entre ativo e inativo
     $novoStatus = ($obUsuario->situacao == 'ativa') ? 'inativa' : 'ativa';

@@ -2,7 +2,6 @@
   $acao = ($obUsuario->situacao == 'ativa') ? 'desativar' : 'ativar';
 
   $alerta = strlen($alerta) ? '<div>'.$alerta.'</div>' : '';
-  print_r($obPedidos);
 
 ?>
 

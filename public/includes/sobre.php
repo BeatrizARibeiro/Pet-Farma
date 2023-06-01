@@ -1,3 +1,6 @@
+<a href="index.php">
+    <button>Voltar</button>
+</a>
 <h1>Quem somos</h1>
 <h3>Bem-vindo(a) à Pet-Farma - Sua Farmácia para Animais de Estimação!</h3>
 <p>Na Pet-Farma, temos o prazer de oferecer a você e seus amados animais de estimação uma experiência única em cuidados farmacêuticos. Somos uma farmácia especializada em fornecer produtos de alta qualidade, exclusivamente para animais de estimação.</p>
