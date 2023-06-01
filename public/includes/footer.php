@@ -27,7 +27,7 @@
 
         <div class="col">
             <h4>Sobre a PetFarma</h4>
-            <a href="#">Sobre Nós</a>
+            <a href="pag_sobre.php">Sobre Nós</a>
             <a href="login.php">Entrar</a>
             <a href="carrinho.php">Ver carrinho</a>
             <!-- <a href="#">Minha lista de Desejos</a> -->
