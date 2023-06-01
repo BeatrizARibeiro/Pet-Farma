@@ -5,14 +5,14 @@ $usuarioLogado = Login::getUsuarioLogado();
 $sair = '';
 if ($usuarioLogado) {
   $nomeUsuario = $usuarioLogado['nome'];
-  $primeiroNome = explode(' ', $nomeUsuario)[0]; // Pega o primeiro nome do usuário
+  $primeiroNome = explode(' ', $nomeUsuario)[0]. '!'; // Pega o primeiro nome do usuário
   if ($usuarioLogado['admin'] == 1) {
     $primeiroNome .= " (Admin)";
   }
   $usuario = $primeiroNome;
   $sair = '<a href="logout.php" style="color:#137373; font-weight: 600; margin-left:5px;" class="">Sair <i class="fa-solid fa-right-from-bracket fa-ls" style="color: #137373;"></i></a>';
 } else {
-  $usuario = 'Visitante <a href="login.php" class="f-cli">Entrar</a> <a href="cadastro.php" class="f-cli">Criar conta</a>';
+  $usuario = 'Visitante! <a href="login.php" class="f-cli">Entrar</a> <a href="cadastro.php" class="f-cli">Criar conta</a>';
 }
 
 ?>
@@ -64,7 +64,7 @@ if ($usuarioLogado) {
         <a href="marca_listar.php">Marcas</a>
         <a href="espe_listar.php">Espécies</a>
       </div>
-      <p class="usuario">Olá, <?=$usuario?>!</p>
+      <p class="usuario">Olá, <?=$usuario?></p>
 
       
 
