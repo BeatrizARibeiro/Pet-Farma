@@ -2,7 +2,6 @@
   $alertaLogin = strlen($alertaLogin) ? '<div>'.$alertaLogin.'</div>' : '';
 ?>
 
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +10,12 @@
   <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
   <link rel="stylesheet" href="./public/css/StyleLogin.css">
   <title>Entrar</title>
+  <style>
+    .password-toggle {
+      margin-left: 35px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -55,10 +60,14 @@
           <label class="label-input" for="senha">
             <i class="fas fa-light fa-lock icon-modify"></i>
             <input type="password" 
-        name="senha" 
-        class="inputUser" 
-        placeholder="Senha" 
-        required >
+                  name="senha" 
+                  id="senha"
+                  class="inputUser" 
+                  placeholder="Senha" 
+                  required>
+            <span class="password-toggle" onclick="mostrarSenha('senha', 'eyeIconOriginal')">
+              <i id="eyeIconOriginal" class="fas fa-solid fa-eye icon-modify"></i>
+            </span>
           </label>
           <a class="password" href="senha_esqueci.php">esqueceu a sua senha?</a>
             
@@ -72,53 +81,5 @@
     </div>
 
   </div>
-  <!-- <script src="/script/scriptLogin.js"></script> -->
+  <script src="./public/js/senha.js"></script>
 </body>
-
-
-
-
-<!-- 
-<main>
-  <a href="index.php">Voltar</a>
-  <h1>Login</h1>
-
-  <?=$alertaLogin?>
-
-  <form method="post">
-
-    <div class="inputBox">
-      <label for="email" class="inputLabel">Email</label>
-      <input 
-        type="text" 
-        name="email" 
-        class="inputUser" 
-        placeholder="Email" 
-        required 
-      />
-    </div>
-
-    <div class="inputBox">
-      <label for="senha" class="inputLabel">Senha</label>
-      <input 
-        type="password" 
-        name="senha" 
-        class="inputUser" 
-        placeholder="Senha" 
-        required 
-      />
-    </div>
-
-    <button 
-      type="submit" 
-      name="acao" 
-      value="logar">
-      Acessar
-    </button>
-
-  </form>
-
-    <a href="senha_esqueci.php">Esqueci minha senha</a>
-
-  
-</main> -->

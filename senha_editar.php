@@ -8,15 +8,15 @@ use App\Session\Login;
 
 $alertaAlterarSenha = "";
 
-$usuarioLogado = Usuario::getUsuarioPorCodus($_GET['codus']);
-
-
 if(isset($_POST['acao'])) {
   switch($_POST['acao']){
     case 'alterar-senha':
+
+      $usuarioLogado = Usuario::getUsuarioPorEmail($_POST['email']);
+
       if ($_GET['codus'] != $usuarioLogado->codus) {
-        header('Location: index.php?status=coduserr');
-        exit;
+        $alertaAlterarSenha = "Por favor, informe seu email.";
+        break;
       }
       // Verifica se o email foi informado
       if(empty($_POST['email'])){

@@ -12,7 +12,13 @@
   />
   <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
   <link rel="stylesheet" href="./public/css/StyleLogin.css" />
-  <title>Entrar</title>
+  <title>Editar senha</title>
+  <style>
+    .password-toggle {
+      margin-left: 35px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -55,31 +61,44 @@
             <i class="fas fa-light fa-lock icon-modify"></i>
             <input
               type="password"
+              id="senhaAtual"
               name="senha-atual"
               placeholder="Senha atual"
               required
             />
+            <span class="password-toggle" onclick="mostrarSenha('senhaAtual', 'eyeIconAtual')">
+              <i id="eyeIconAtual" class="fas fa-solid fa-eye icon-modify"></i>
+            </span>
           </label>
 
           <label class="label-input" for="senha">
             <i class="fas fa-light fa-lock icon-modify"></i>
             <input
               type="password"
+              id="senhaNova"
               name="senha"
               placeholder="Nova senha"
               required
             />
+            <span class="password-toggle" onclick="mostrarSenha('senhaNova', 'eyeIconNova')">
+              <i id="eyeIconNova" class="fas fa-solid fa-eye icon-modify"></i>
+            </span>
           </label>
 
           <label class="label-input" for="confirmar-senha">
             <i class="fas fa-light fa-lock icon-modify"></i>
             <input
               type="password"
+              id="senhaConf"
               name="confirmar-senha"
               placeholder="Confirma a Nova Senha"
               required
             />
+            <span class="password-toggle" onclick="mostrarSenha('senhaConf', 'eyeIconConf')">
+              <i id="eyeIconConf" class="fas fa-solid fa-eye icon-modify"></i>
+            </span>
           </label>
+
           <?=$alertaAlterarSenha?>
           <button
             class="btn btn-second"
@@ -93,5 +112,5 @@
       </div>
     </div>
   </div>
-  <!-- <script src="/script/scriptLogin.js"></script> -->
+  <script src="./public/js/senha.js"></script>
 </body>
