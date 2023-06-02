@@ -69,7 +69,6 @@
           <h2>Qualidade e preços que cabem no seu bolso?</h2>
           <h1>Confira as novidades</h1>
           <p>Você economiza e não precisa sair de casa!</p>
-          <!--tirei o botão pq ele não faz sentido no contexto do site-->
       </div>
       <div class="animaishome">
           <img src="public/img/animaishome.png">
