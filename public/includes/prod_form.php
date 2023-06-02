@@ -66,6 +66,12 @@
     //tratamento de erro, caso nao tenha nenhuma categoria no banco
     $resCate = strlen($resCate) ? $resCate : '<option>Nenhuma categoria cadastrada</option>';
 
+    $enabled = '';
+  
+
+    if(TITLE == 'Cadastrar Produto'){
+      $enabled = 'style="display:none"';
+    }
 ?>
 
 <head>
@@ -112,8 +118,8 @@
     </div>
     
     <div class="form-group">
-      <label>Peso: </label>
-      <input type="text" name="peso" value="<?=$objProd->peso?>">
+      <label>Apresentação: </label>
+      <input type="text" name="apresentacao" value="<?=$objProd->apresentacao?>">
     </div>
     
     <div class="form-group">
@@ -137,14 +143,14 @@
       <select class="form-select" name="categorias[]" multiple>
         <?=$resCate?>;
       </select>
-      <p style="color:rebeccapurple;">Aperte ctrl ou shift para selecionar todas as categorias de sua escolha</p>
+      <p style="color:darkcyan; font-weight:600;">Aperte CTRL ou SHIFT para selecionar as categorias de sua escolha!</p>
     </div>
     
     
     <div class="form-group">
       <label>Imagem: </label>
       <input type="file" id="upload" name="imagem" accept="image/*"/>
-      <img src="./public/img/<?=$imagem?>" alt=""/>
+      <img <?=$enabled?> src="./public/img/<?=$imagem?>" alt=""/>
       
     </div>
     

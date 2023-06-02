@@ -53,7 +53,7 @@
         $res_prod .='<tr>
                         <td>'.$produto->codprod.'</td>
                         <td>'.$produto->nome_prod.'</td>
-                        <td>'.$produto->peso.'</td>
+                        <td>'.$produto->apresentacao.'</td>
                         <td>R$ '.number_format($produto->preco, 2, ',', '.').'</td>
                         <td>
                             <a href="prod_editar.php?codprod='.$produto->codprod.'">
@@ -137,7 +137,7 @@
         <tr>
             <th>Código</th>
             <th>Nome</th>
-            <th>Peso</th>
+            <th>Apresentação</th>
             <th>Preço</th>
         </tr>
     </thead>

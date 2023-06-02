@@ -68,7 +68,7 @@ if ($usuarioLogado) {
 
       
 
-    <div <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>>
+    <div class="f-cli" <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>>
     <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">Meus dados</a>
     <a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="pedido_listar.php?codus=<?=$usuarioLogado['codus']?>">Meus Pedidos</a>
     <a href="carrinho.php"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffff"></i></a>

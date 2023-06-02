@@ -39,7 +39,7 @@
                         <img src="public/img/'.$prod->imagem.'" alt="">
                         <div class="des">
                             <h5>'.$prod->nome_prod.'</h5>
-                            <span>'.$prod->peso.'</span>
+                            <span>'.$prod->apresentacao.'</span>
                             <h4>R$'.$prod->preco.'</h4>
                         </div>
                         <a href="#">Comprar</a>

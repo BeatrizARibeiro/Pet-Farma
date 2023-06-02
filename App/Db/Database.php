@@ -136,7 +136,7 @@ class Database{
   public function selectAves(){
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
-    where e.nome_espe like '%Ave%' or e.nome_espe like '%Pássaro%'";
+    where e.nome_espe like '%Ave%' or e.nome_espe like '%Pássaro%' or e.nome_espe like '%Diversos%'";
 
     return $this->execute($query);
   }
@@ -148,7 +148,7 @@ class Database{
     on p.codespe = e.codespe
     where e.nome_espe like '%Coelho%' or e.nome_espe like '%Roedores%'
     or e.nome_espe like '%Rato%' or e.nome_espe like '%Hamster%'
-    or e.nome_espe like '%Porquinho%da%India%'";
+    or e.nome_espe like '%Porquinho%da%India%' or e.nome_espe like '%Diversos%'";
 
     return $this->execute($query);
   }
@@ -157,7 +157,7 @@ class Database{
   public function selectEquinos(){
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
-    where e.nome_espe like '%Cavalo%'";
+    where e.nome_espe like '%Cavalo%' or e.nome_espe like '%Diversos%'";
 
     return $this->execute($query);
   }
@@ -166,7 +166,7 @@ class Database{
   public function selectPeixes(){
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
-    where e.nome_espe like '%Peixe%'";
+    where e.nome_espe like '%Peixe%' or e.nome_espe like '%Diversos%'";
 
     return $this->execute($query);
   }
@@ -176,7 +176,7 @@ class Database{
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
     where e.nome_espe like '%Réptil%' or e.nome_espe like '%Tartatuga%'
-    or e.nome_espe like '%Cobra%' or e.nome_espe like '%Lagarto%'";
+    or e.nome_espe like '%Cobra%' or e.nome_espe like '%Lagarto%' or e.nome_espe like '%Diversos%'";
 
     return $this->execute($query);
   }
@@ -186,7 +186,7 @@ class Database{
     $query = "select * from produto p inner join especie e
     on p.codespe = e.codespe
     where e.nome_espe like '%Mamífero%' or e.nome_espe like '%Cachorro%' 
-    or e.nome_espe like '%Gato%'";
+    or e.nome_espe like '%Gato%' or e.nome_espe like '%Diversos%'";
 
     return $this->execute($query);
   }
@@ -252,7 +252,7 @@ class Database{
     on p.codprod = pc.codprod
     inner join categoria c
     on pc.codcate = c.codcate
-    where c.nome_cate like '%Higiene%' or c.nome_cate like '%Cométicos%'";
+    where c.nome_cate like '%Higiene%' or c.nome_cate like '%Cosméticos%'";
 
     return $this->execute($query);
   }

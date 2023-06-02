@@ -21,8 +21,8 @@
                     <img src="public/img/'.$prod->imagem.'" alt="">
                     <div class="des">
                         <h5>'.$prod->nome_prod.'</h5>
-                        <span>'.$prod->peso.'</span>
-                        <h4>R$'.$prod->preco.'</h4>
+                        <span>'.$prod->apresentacao.'</span>
+                        <h4>R$'.number_format($prod->preco, 2, ',', '.').'</h4>
                     </div>
                     <a href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.'><i class="fa-solid fa-cart-shopping cart"></i></a>
                 </div>

@@ -30,7 +30,7 @@ if(isset($_POST['salvar'])){
     $objProd->descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
     $objProd->preco = str_replace(',','.', $preco);
-    $objProd->peso = $_POST['peso'];
+    $objProd->apresentacao = $_POST['apresentacao'];
     $objProd->codespe = $_POST['codespe'];
     $objProd->codmarca = $_POST['codmarca'];
 

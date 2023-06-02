@@ -59,7 +59,7 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
         <h3>Informações:</h3>
         <p><?=str_replace('-', '&bull;',(str_replace(' -', '<br>-', $objProd->descricao)))?></p>
         <h3>Apresentação: </h3>
-        <p><?=$objProd->peso?></p>
+        <p><?=$objProd->apresentacao?></p>
         <hr>
         <div class="inputQtdAside"> 
             <h3 id="preco">R$ <?=number_format($objProd->preco, 2, ',', '.')?></h3>

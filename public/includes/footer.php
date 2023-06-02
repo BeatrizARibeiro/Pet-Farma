@@ -32,7 +32,6 @@
             <a href="carrinho.php">Ver carrinho</a>
             <!-- <a href="#">Minha lista de Desejos</a> -->
             <a href="pedido_listar.php?codus=3">Meus pedidos</a>
-            <a href="#">Ajuda</a>
         </div>
 
         <div class="col pagamento">
