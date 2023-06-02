@@ -18,6 +18,8 @@ class Pedido{
   public $codus;
 
   public $codend;
+
+  public $nf;
   
   public function cadastrar(){
     //INSERIR A VAGA NO BANCO
@@ -44,7 +46,8 @@ class Pedido{
                                                 'dt_pedido' => $this->dt_pedido,
                                                 'status_pedido' => $this->status_pedido,
                                                 'codus' => $this->codus,
-                                                'codend' => $this->codend
+                                                'codend' => $this->codend,
+                                                'nf' => $this->nf
                                             ]);
   }
 

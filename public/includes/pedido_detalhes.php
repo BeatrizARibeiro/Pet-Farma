@@ -90,6 +90,7 @@
         </tbody>
     </table>
     <div class="form-group">
+    <a href="../pet-farma/nfe_imprimir.php?numpedido=<?=$pedido->numpedido?>" class="form-button">Nota Fiscal</a><br>
     <a <?=$v?> href="../pet-farma/pedido_cancelar.php?numpedido=<?=$pedido->numpedido?>" class="form-button">Cancelar</a>
     </div>
 
