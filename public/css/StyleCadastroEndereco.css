@@ -1,132 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Spartan', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
 }
 
 body {
-    position: absolute;
-    background-image: url("../img/fundopet.png");
-    background-repeat: no-repeat;
-    background-position: 20% 30%;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  background-image: url("../img/fundopet.png");
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  width: 100%;
+  height: 100%;
 }
 
 /* ICON */
 .logo {
-    width: 40px;
+  width: 40px;
 }
 
 /* HEADER START */
 #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #52C1B7;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
-    position: sticky;
-    width: 100%;
-    top: 0;
-    left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #52c1b7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #navbar li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-    display: flex;
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
 }
 
 #navbar li a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    transition: 0.3s ease;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  transition: 0.3s ease;
 }
-
 
 #navbar i,
 h3 {
-    color: #fff;
-    display: flex;
-    margin: 10px;
+  color: #fff;
+  display: flex;
+  margin: 10px;
 }
 
-h1{
-padding-bottom: 20px;
-display: flex;
-justify-content: center;
+h1 {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #eeeeee;
-    border-radius: 4px;
-    margin-top: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  margin-top: 50px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .form-group input,
 .form-group button,
 .form-group select,
 .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .form-button {
-    background-color: #52C1B7;
-    color: #fff;
-    cursor: pointer;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #52c1b7;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (min-width: 300px) {
-    .form-group {
-        display: flex;
-        align-items: center;
-    }
+  .form-group {
+    display: flex;
+    align-items: center;
+  }
 
-    .form-group label {
-        width: 30%;
-        text-align: right;
-        margin-bottom: 0;
-        margin-right: 20px;
-    }
+  .form-group label {
+    width: 30%;
+    text-align: right;
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
 
-    .form-group input,
-    .form-group button,
-    .form-group select,
-    .form-group textarea {
-        width: 70%;
-    }
+  .form-group input,
+  .form-group button,
+  .form-group select,
+  .form-group textarea {
+    width: 70%;
+  }
 }
