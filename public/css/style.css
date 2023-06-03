@@ -674,6 +674,50 @@ footer .copyright {
     width: 30px;
   }
 
+<<<<<<< HEAD
+    .navbar li {
+        padding: 0 10px;
+    }
+
+    .navbar li a {
+        font-size: 14px;
+    }
+
+  .cesta {
+    width: 20px;
+  }
+
+  .search-box {
+    height: 30px;
+  }
+
+  .search-txt {
+    font-size: 14px;
+  }
+
+  .search-btn {
+    width: 70px;
+    height: 30px;
+  }
+
+  .search-btn .lupa {
+    width: 30px;
+    padding: 5px;
+  }
+
+  #header {
+    padding: 20px;
+  }
+
+  .f-admin a,
+  .f-cli,
+  .usuario,
+  .categoria a {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+=======
   .navbar li {
     padding: 0 10px;
   }
@@ -681,6 +725,7 @@ footer .copyright {
   .navbar li a {
     font-size: 14px;
   }
+>>>>>>> caf42948c0d53e4dcd348f8d6943643b9f42b68f
 
     .search-btn {
         width: 70px;
@@ -754,6 +799,35 @@ footer .copyright {
 }
 
 
+<<<<<<< HEAD
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #95d1c3f5;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    .navbar.active {
+        right: 0px;
+    }
+
+    .navbar li {
+        margin-bottom: 25px;
+    }
+
+  #mobile {
+    display: flex;
+    align-items: center;
+=======
 @media (max-width:799px) {
     .section-p1 {
         padding: 40PX 40PX;
@@ -777,6 +851,7 @@ footer .copyright {
 
   .navbar.active {
     right: 0px;
+>>>>>>> caf42948c0d53e4dcd348f8d6943643b9f42b68f
   }
 
   .navbar li {
@@ -794,6 +869,20 @@ footer .copyright {
     padding: 20px;
   }
 
+<<<<<<< HEAD
+    .close {
+        display: inline;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #2c2c2c;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+  #lg-cesta {
+    display: none;
+=======
   #close {
     display: inline;
     position: absolute;
@@ -810,6 +899,7 @@ footer .copyright {
     left: 30px;
     color: #2c2c2c;
     font-size: 24px;
+>>>>>>> caf42948c0d53e4dcd348f8d6943643b9f42b68f
   }
 
     #lg-cesta {

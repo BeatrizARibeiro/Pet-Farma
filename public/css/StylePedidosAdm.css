@@ -217,6 +217,18 @@ section  input{
     font-weight: bold;
 }
 
+.btnVer {
+    text-decoration: none;
+    border: 1px solid transparent;
+    background: #52C1B7;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 20px 10px;
+    font-size: 15px;
+    color: #fff;
+
+}
+
 @media only screen and (max-width: 600px) {
     .alinharProcurar {
         flex-direction: column;
