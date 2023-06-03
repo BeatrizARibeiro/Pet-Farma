@@ -96,7 +96,7 @@
       </div>
 
       <div class="btn" >
-        <center><button type="submit" name="acao" value="atualizar" class="form-button">ATUALIZAR</button></center>
+        <center><button type="submit" name="acao" value="atualizar" class="form-button">Atualizar</button></center>
       </div>
 
   </form>
