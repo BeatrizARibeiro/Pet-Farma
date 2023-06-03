@@ -37,7 +37,10 @@
 
         <div class="col pagamento">
             <p>Pagamento seguro</p>
-            <img src="./public/img/visamastercard.png" alt="">
+            <div>
+                <img src="./public/img/visamastercard.png" alt="">
+                <img src="./public/img/americanexpss.png" alt="">
+            </div>
         </div>
 
         <div class="copyright">
