@@ -118,8 +118,8 @@
           <input type="checkbox" name="padrao" id="padrao" value="1" <?=($obEndereco->padrao == 1) ? 'checked' : '' ?>>
         </div>
 
-        <div class="form-group">
-          <button type="submit" name="acao" value="atualizar" class="form-button">Atualizar</button>
+        <div class="btn">
+          <center><button type="submit" name="acao" value="atualizar" class="form-button">Atualizar</button></center>
         </div>
       
     </form>
