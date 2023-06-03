@@ -38,7 +38,7 @@
             <p>Pagamento seguro</p>
             <div>
                 <img src="./public/img/visamastercard.png" alt="">
-                <img style="width:80px !important;" src="./public/img/americanexpss.png" alt="">
+                <img style="width:75px !important;" src="./public/img/americanexpss.png" alt="">
             </div>
         </div>
 
