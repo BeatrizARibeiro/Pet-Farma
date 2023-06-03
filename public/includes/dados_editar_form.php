@@ -95,9 +95,9 @@
         />
       </div>
 
-      <div class="form-group">
-        <button type="submit" name="acao" value="atualizar" class="form-button">Atualizar</button>
-        </div>
+      <div class="btn" >
+        <center><button type="submit" name="acao" value="atualizar" class="form-button">ATUALIZAR</button></center>
+      </div>
 
   </form>
 </div>

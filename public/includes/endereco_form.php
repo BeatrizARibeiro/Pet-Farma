@@ -117,8 +117,8 @@
 
         <?=$alertaCadastroEndereco?>
 
-        <div class="form-group">
-          <input type="submit" name="acao" value="cadastrar" class="form-button">
+        <div class="btn">
+          <center><input type="submit" name="acao" value="CADASTRAR" class="form-button"></center>
         </div>
       </form>
     </div>
