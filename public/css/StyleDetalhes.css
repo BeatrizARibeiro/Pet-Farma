@@ -9,33 +9,50 @@
 }
 
 .imgDetalhes {
-    width: 40%;
+    width: 75%;
     border: 1px solid #eee;
     border-radius: 5px;
-}
-
-h2 {
-    margin: 50px;
 }
 
 .container {
     display: flex;
     flex-direction: row;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
-
-
 
 .main-content {
-    flex-grow: 1;
+    flex-grow: 2;
+    margin-top: 40px;
+    margin-bottom: 5%;
 }
 
-.main-content h4 {
-    margin: 40px 50px 30px;
-    font-size: 24px;
+h4{
+  color:#238F86 !important;
+  padding-top: 16px;
+  margin-bottom: 10px;
+}
+
+p{
+  padding-right: 10%;
+  line-height: 150%;
+  text-justify: distribute;
+}
+
+#preco{
+  color:#238F86;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.main-content h3 {
+  margin: 40px 50px 30px;
+  font-size: 20px;
 }
 
 .main-content p {
-    margin: 0px 50px;
+    margin: 50px;
     margin-bottom: 50px;
     font-size: 20px;
 }
@@ -44,29 +61,28 @@ h2 {
     margin: 0px 50px;
 }
 
-
-
 .sidebar {
     flex-shrink: 0;
-    width: 30%;
-    height: 330px;
-    margin: 50px;
+    width: 35%;
+    height: 100%;
+    margin: 40px;
     background: #fff;
     border: 1px solid #eee;
     border-radius: 5px;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between;*/
     justify-content: space-around;
 }
 
-.inputQtdAside {
+.inputQtdAside{
     display: flex;
     justify-content: space-between;
 }
 
 .btnAddCar {
+    display: none;
     cursor: pointer;
     background: #238F86;
     border: none;
@@ -77,46 +93,60 @@ h2 {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    align-items: center;
+    font-weight: 700;
+}
+
+.btnAddCar:hover{
+  background:#1a7a72;
 }
 
 .inputQtd {
-    background: #eee;
-    /* border: 3px solid #eee; */
-    display: inline-flex;
-    padding: 0;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 60px;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 30px;
+  background: #eee;
+  /* border: 3px solid #eee; */
+  display: inline-flex;
+  padding: 0;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+  margin-top: 7px;
 }
 
 .inputQtd button {
-    display: flex;
-    align-items: center;
-    background: transparent;
-    border: 0;
-    padding: 0 10px;
-    font-size: 15px;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 15px;
+  height: 100%;
 }
 
 .inputQtd button:hover {
-    background: #a798af;
-    color: #fff;
+  background: #a798af;
+  color: #fff;
 }
 
 .inputQtd span {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .inputQtd input {
-    border: 1px solid #eee;
-    height: 100%;
-    padding-left: 10px;
-    justify-items: center;
+  border: 1px solid #eee;
+  height: 100%;
+  padding-left: 10px;
+  justify-items: center;
+  width: 50px;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
 
 
@@ -152,7 +182,12 @@ h2 {
       margin: 20px 30px;
       font-size: 18px;
     }
-    
+
+    .main-content h3 {
+      margin: 20px 30px;
+      font-size: 18px;
+    }
+
     .main-content p {
       margin: 0px 30px;
       margin-bottom: 30px;
@@ -235,6 +270,11 @@ h2 {
       font-size: 18px;
     }
     
+    .main-content h3 {
+      margin: 20px;
+      font-size: 18px;
+    }
+
     .main-content p {
       margin: 0px 20px;
       margin-bottom: 30px;

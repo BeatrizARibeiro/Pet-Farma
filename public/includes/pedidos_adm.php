@@ -44,7 +44,7 @@ foreach($pedidos as $pedido){
 
 //caso nao tenha nenhuma marca cadastrada no banco
 $res_pedido = strlen($res_pedido) ? $res_pedido : '<tr>
-                                                    <td colspan="6" class="text-center">
+                                                    <td colspan="6" class="text-center" align="center">
                                                         Você não possui pedidos ainda
                                                     </td>
                                                     </tr>';

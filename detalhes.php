@@ -6,6 +6,7 @@ include __DIR__.'/public/includes/header.php';
 
 use \App\Entity\Produto;
 use App\Session\Login;
+use Com\Tecnick\Barcode\Type\Square\Datamatrix\Steps;
 
 $usuarioLogado = Login::getUsuarioLogado();
 
@@ -43,9 +44,6 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Detalhes</title>
-
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
     <link rel="stylesheet" href="./public/css/StyleDetalhes.css">
@@ -53,27 +51,29 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
 
   <div class="container">
     <div class="main-content">
-  <h2><?=$objProd->nome_prod?></h2>
-  <img class="imgDetalhes" src="./public/img/<?=$objProd->imagem?>" alt="">
-<h4>Detalhes</h4>
-    <p><?=$objProd->descricao?></p>
-</div>
-
-<aside class="sidebar">
-    <h4>Peso: <?=$objProd->peso?></h4>
-    <hr>
-    <div class="inputQtdAside"> 
-        <h4>R$ <?=$objProd->preco?></h4>
-        <form method="post" >
-            <div class="inputQtd">
-            <button type="button" onclick="diminuir()">-</button>
-            <input type="number" id="qtde" name="qtde" value="1">
-            <button type="button" onclick="aumentar()">+</button>
-        </div>
-            <button type="submit" <?=$enabled?> name="btnqtde" class="btnAddCar">Adicionar ao Carrinho</button>
-        </form>
+        <img class="imgDetalhes" src="./public/img/<?=$objProd->imagem?>" alt="">
     </div>
-</aside>
+
+    <aside class="sidebar">
+        <h4><?=$objProd->nome_prod?></h4>
+        <h3>Informações:</h3>
+        <p><?=str_replace('-', '&bull;',(str_replace(' -', '<br>-', $objProd->descricao)))?></p>
+        <h3>Apresentação: </h3>
+        <p><?=$objProd->apresentacao?></p>
+        <hr>
+        <div class="inputQtdAside"> 
+            <h3 id="preco">R$ <?=number_format($objProd->preco, 2, ',', '.')?></h3>
+            <form method="post" >
+                <div class="inputQtd">
+                    <button type="button" onclick="diminuir()"><i class="fas fa-light fa-minus"></i></button>
+                    <input type="number" id="qtde" name="qtde" value="1">
+                    <button type="button" onclick="aumentar()"><i class="fas fa-light fa-plus"></i></button>
+                </div>
+            
+        </div>
+        <button  type="submit" <?=$enabled?> name="btnqtde" class="btnAddCar">ADICIONAR AO CARRINHO</button>
+            </form>
+    </aside>
 </div>
 
 <script>

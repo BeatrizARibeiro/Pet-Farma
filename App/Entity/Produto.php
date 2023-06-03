@@ -16,7 +16,7 @@ class Produto{
 
   public $preco;
 
-  public $peso;
+  public $apresentacao;
 
   public $imagem;
 
@@ -35,7 +35,7 @@ class Produto{
                                             'nome_prod' => $this->nome_prod,
                                             'descricao' => $this->descricao,
                                             'preco'     => $this->preco,
-                                            'peso'      => $this->peso,
+                                            'apresentacao'      => $this->apresentacao,
                                             'imagem'    => $this->imagem,
                                             'codespe'   => $this->codespe,
                                             'codmarca'  => $this->codmarca
@@ -56,7 +56,7 @@ class Produto{
                                               'nome_prod' => $this->nome_prod,
                                               'descricao' => $this->descricao,
                                               'preco'     => $this->preco,
-                                              'peso'      => $this->peso,
+                                              'apresentacao' => $this->apresentacao,
                                               'imagem'    => $this->imagem,
                                               'codespe'   => $this->codespe,
                                               'codmarca'  => $this->codmarca
@@ -115,7 +115,7 @@ class Produto{
 
   //Função para pegar os produtos para peixes
   public static function getProdutosRepteis(){
-    return (new Database('produto'))->selectPeixes()
+    return (new Database('produto'))->selectRepteis()
                                     ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
