@@ -82,7 +82,9 @@ use \App\Session\Login;
     </tr>
     <tr>
       <td class="titleTd">Ações:</td>
-      <td><a href="dados_editar.php?codus=<?=$usuarioLogado['codus']?>">Editar</a></td>
+      <td>
+        <a href="dados_editar.php?codus=<?=$usuarioLogado['codus']?>">Editar</a>
+      </td>
     </tr>
   </tbody>
 </table>

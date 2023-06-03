@@ -163,19 +163,19 @@ body {
 }
 
 
-#navbar {
+.navbar {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#navbar li {
+.navbar li {
     list-style: none;
     padding: 0 20px;
     position: relative;
 }
 
-#navbar li a {
+.navbar li a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
@@ -183,13 +183,13 @@ body {
     transition: 0.3s ease;
 }
 
-#navbar li a:hover,
-#navbar li a.active {
+.navbar li a:hover,
+.navbar li a.active {
     color: #065a4f;
 }
 
-#navbar li a.active::after,
-#navbar li a:hover::after {
+.navbar li a.active::after,
+.navbar li a:hover::after {
     content: "";
     width: 30%;
     height: 2px;
@@ -280,7 +280,7 @@ body {
     align-items: center;
 }
 
-#close {
+.close {
     display: none;
 }
 
@@ -666,11 +666,11 @@ footer .copyright {
         margin-left: 10px;
     }
 
-    #navbar li {
+    .navbar li {
         padding: 0 10px;
     }
 
-    #navbar li a {
+    .navbar li a {
         font-size: 14px;
     }
 
@@ -724,7 +724,7 @@ footer .copyright {
         padding: 40PX 40PX;
     }
 
-    #navbar {
+    .navbar {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -740,11 +740,11 @@ footer .copyright {
         transition: 0.3s;
     }
 
-    #navbar.active {
+    .navbar.active {
         right: 0px;
     }
 
-    #navbar li {
+    .navbar li {
         margin-bottom: 25px;
     }
 
@@ -759,7 +759,7 @@ footer .copyright {
         padding: 20px;
     }
 
-    #close {
+    .close {
         display: inline;
         position: absolute;
         top: 30px;
