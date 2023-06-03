@@ -12,11 +12,14 @@ if ($usuarioLogado) {
   $usuario = $primeiroNome;
   $sair = '<a href="logout.php" style="color:#137373; font-weight: 600; margin-left:5px;" class="">Sair <i class="fa-solid fa-right-from-bracket fa-ls" style="color: #137373;"></i></a>';
 } else {
-  $usuario = 'Visitante! <div class="f-user"> <ul id="navbar">
-  <li><a href="login.php" class="f-cli">Entrar</a></li> 
+  $usuario = 'Visitante! 
+  <div>
+  <ul class="navbar">
+  <li><a href="login.php" class="f-cli">Entrar</a> </li>
   <li><a href="cadastro.php" class="f-cli">Criar conta</a></li>
-  <a href="#" id="close"><i class="far fa-times"></i></a>
-  </ul></div>';
+  <a href="#" class="close"><i class="far fa-times"></i></a>
+  </ul>
+  </div>';
 }
 
 ?>
@@ -64,14 +67,15 @@ if ($usuarioLogado) {
       ?>
  
  <div class="f-admin" <?php if(!Login::isLogged() || $usuarioLogado['admin'] == 0) { echo 'style="display: none;"'; } ?>><!--funcoes do admin, apenas o admin ve codus=1 ou codus=2-->
-      <ul id="navbar">
+ 
+ <ul class="navbar">
         <li><a href="pedidos.php">Pedidos</a></li>
       <li><a href="prod_listar.php">Produtos</a></li>
       <li><a href="cate_listar.php">Categorias</a></li>
       <li><a href="marca_listar.php">Marcas</a></li>
       <li><a href="espe_listar.php">Espécies</a></li>
       <li><?=$sair?></li> 
-      <a href="#" id="close"><i class="far fa-times"></i></a>
+      <a href="#" class="close"><i class="far fa-times"></i></a>
     </ul>
   </div>
   
@@ -79,12 +83,12 @@ if ($usuarioLogado) {
   <p class="usuario">Olá, <?=$usuario?></p>
 
   <div class="f-user"  <?php if(Login::isLogged() && $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?>>
-    <ul id="navbar">
+    <ul class="navbar">
     <li><a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="dados_listar.php?codus=<?=$usuarioLogado['codus']?>">Meus dados</a></li>
     <li><a class="f-cli" <?php if(!Login::isLogged() || $usuarioLogado['admin']) { echo 'style="display: none;"'; } ?> href="pedido_listar.php?codus=<?=$usuarioLogado['codus']?>">Meus Pedidos</a></li>
     <li><a href="carrinho.php"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffff"></i></a></li>
     <li><?=$sair?></li> 
-    <a href="#" id="close"><i class="far fa-times"></i></a>
+    <a href="#" class="close"><i class="far fa-times"></i></a>
   </ul>
 </div>
 
