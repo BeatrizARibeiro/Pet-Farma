@@ -1,400 +1,403 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Spartan', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
 }
 
 body {
-    position: absolute;
-    background-image: url("../img/fundopet.png");
-    background-repeat: no-repeat;
-    background-position: 20% 30%;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  background-image: url("../img/fundopet.png");
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  width: 100%;
+  height: 100%;
 }
 
 /* ICON */
 .logo {
-    width: 40px;
+  width: 40px;
 }
 
 /* HEADER START */
 #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #52C1B7;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
-    position: sticky;
-    width: 100%;
-    top: 0;
-    left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #52c1b7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #navbar li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-    display: flex;
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
 }
 
 #navbar li a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    transition: 0.3s ease;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  transition: 0.3s ease;
 }
-
 
 #navbar i,
 h3 {
-    color: #fff;
-    display: flex;
-    margin: 10px;
+  color: #fff;
+  display: flex;
+  margin: 10px;
 }
 
 /* div */
 .divOlaUsuario {
-    background-color: #ffffff75;
-    color: #1a1a1a;
-    width: 100%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding-right: 2%;
+  background-color: #ffffff75;
+  color: #1a1a1a;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2%;
 }
-
 
 /* meus dados */
 .divOlaUsuario h1 {
-    padding-left: 80px;
+  padding-left: 80px;
 }
 
 .divOlaUsuario a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    background: #A252C1;
-    padding: 10px 20px;
-    border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  background: #a252c1;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 @media (max-width: 1000px) {
-    .divOlaUsuario {
-      flex-direction: column;
-      height: auto;
-      padding: 10px;
-    }
-    
-    .divOlaUsuario h1 {
-      padding-left: 0;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    
-    .divOlaUsuario a {
-      margin-top: 10px;
-      display: block;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  .divOlaUsuario {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
   }
 
+  .divOlaUsuario h1 {
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .divOlaUsuario a {
+    margin-top: 10px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .meusDadosPessoais .tbDadosPessoais {
-    background-color: #ffffff;
-    color: #52C1B7;
-    /* width: 80%; */
-    height: auto;
-    display: flex;
-    align-items: center;
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    margin: 30px;
+  background-color: #ffffff;
+  color: #52c1b7;
+  /* width: 80%; */
+  height: auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  margin: 30px;
 }
 
 .meusDadosPessoais .tbDadosPessoais table {
-    width: 50%;
-    /* align-items: center; */
-    margin: 80px;
+  width: 50%;
+  /* align-items: center; */
+  margin: 80px;
 }
 
 .meusDadosPessoais .tbDadosPessoais table tbody {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .meusDadosPessoais .tbDadosPessoais table tbody tr {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 20px;
 }
 
 .meusDadosPessoais .tbDadosPessoais table tbody tr .titleTd {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .meusDadosPessoais .tbDadosPessoais table tbody tr td {
-    width: 30%;
-    display: flex;
-    align-items: flex-start;
-    /* margin-left: 10%; */
-    /* padding-right: 10px; */
+  width: 30%;
+  display: flex;
+  align-items: flex-start;
+  /* margin-left: 10%; */
+  /* padding-right: 10px; */
 }
 
 .meusDadosPessoais h1 {
-    margin-left: 50px;
-    margin-right: 10%;
-    display: flex;
-    align-items: flex-start;
+  margin-left: 50px;
+  margin-right: 10%;
+  display: flex;
+  align-items: flex-start;
 }
 
 .divTitleEndereco {
-    margin-left: 50px;
-    margin-right: 10%;
-    display: flex;
-    flex-direction: column;
+  margin-left: 50px;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 480px) {
-    .meusDadosPessoais .tbDadosPessoais {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px;
-    }
-    
-    .meusDadosPessoais .tbDadosPessoais table {
-      width: 100%;
-      margin: 0;
-    }
-    
-    .meusDadosPessoais .tbDadosPessoais table tbody {
-      align-items: center;
-    }
-    
-    .meusDadosPessoais .tbDadosPessoais table tbody tr {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .meusDadosPessoais .tbDadosPessoais table tbody tr td {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    
-    .meusDadosPessoais h1,
-    .divTitleEndereco {
-      margin-left: 20px;
-      margin-right: 20px;
-    }
+  .meusDadosPessoais .tbDadosPessoais {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
   }
 
+  .meusDadosPessoais .tbDadosPessoais table {
+    width: 100%;
+    margin: 0;
+  }
+
+  .meusDadosPessoais .tbDadosPessoais table tbody {
+    align-items: center;
+  }
+
+  .meusDadosPessoais .tbDadosPessoais table tbody tr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meusDadosPessoais .tbDadosPessoais table tbody tr td {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .meusDadosPessoais h1,
+  .divTitleEndereco {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 
 /* Endereços */
 
 .meusDadosPessoais .enderecos {
-    background-color: #ffffff;
-    color: #52C1B7;
-    /* width: 80%; */
-    height: auto;
-    display: flex;
-    align-items: center;
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin: 30px;
+  background-color: #ffffff;
+  color: #52c1b7;
+  /* width: 80%; */
+  height: auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 30px;
 }
 
 .meusDadosPessoais .enderecos table {
-    width: 100%;
-    /* align-items: center; */
-    margin: 80px;
+  width: 100%;
+  /* align-items: center; */
+  margin: 80px;
 }
 
 .meusDadosPessoais .enderecos table tbody {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .meusDadosPessoais .enderecos table tbody tr {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 20px;
 }
 
 .meusDadosPessoais .enderecos table tbody tr .titleTd {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .meusDadosPessoais .enderecos table tbody tr th {
-    width: 20%;
-    display: flex;
-    align-items: flex-start;
-    /* margin-left: 10%; */
-    /* padding-right: 10px; */
+  width: 20%;
+  display: flex;
+  align-items: flex-start;
+  /* margin-left: 10%; */
+  /* padding-right: 10px; */
 }
 
 .enderecos a {
-    color: #A252C1;
-    text-decoration: none;
-    border: 1px solid #A252C1;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 16px;
+  color: #a252c1;
+  text-decoration: none;
+  border: 1px solid #a252c1;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.meusDadosPessoais a {
+  color: #a252c1;
+  text-decoration: none;
+  border: 1px solid #a252c1;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
 }
 
 .enderecos a:hover {
-    color: #ffffff;
-    background: #A252C1;
-    border: 1px solid #A252C1;
-    border-radius: 5px;
-    padding: 5px;
+  color: #ffffff;
+  background: #a252c1;
+  border: 1px solid #a252c1;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 @media (max-width: 480px) {
-    .meusDadosPessoais .enderecos {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px;
-    }
-    
-    .meusDadosPessoais .enderecos table {
-      width: 100%;
-      margin: 0;
-    }
-    
-    .meusDadosPessoais .enderecos table tbody {
-      align-items: center;
-    }
-    
-    .meusDadosPessoais .enderecos table tbody tr {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .meusDadosPessoais .enderecos table tbody tr th {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    
-    .enderecos a {
-      margin-top: 10px;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    .meusDadosPessoais .enderecos {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px;
-    }
-    
-    .meusDadosPessoais .enderecos table {
-      width: 100%;
-      margin: 0;
-    }
-    
-    .meusDadosPessoais .enderecos table tbody {
-      align-items: center;
-    }
-    
-    .meusDadosPessoais .enderecos table tbody tr {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .meusDadosPessoais .enderecos table tbody tr th {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    
-    .enderecos a {
-      margin-top: 10px;
-    }
-  
-    .meusDadosPessoais .tbDadosPessoais {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px;
-    }
-    
-    .meusDadosPessoais .tbDadosPessoais table {
-      width: 100%;
-      margin: 0;
-    }
-    
-    .meusDadosPessoais .tbDadosPessoais table tbody {
-      align-items: center;
-    }
-    
-    .meusDadosPessoais .tbDadosPessoais table tbody tr {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .meusDadosPessoais .tbDadosPessoais table tbody tr td {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    
-    .meusDadosPessoais h1,
-    .divTitleEndereco {
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-  }
-
-  
-  
-  
-  @media (max-width: 800px) {
   .meusDadosPessoais .enderecos {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
   }
-  
+
   .meusDadosPessoais .enderecos table {
     width: 100%;
     margin: 0;
   }
-  
+
   .meusDadosPessoais .enderecos table tbody {
     align-items: center;
   }
-  
+
   .meusDadosPessoais .enderecos table tbody tr {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .meusDadosPessoais .enderecos table tbody tr th {
     width: 100%;
     margin-bottom: 10px;
   }
-  
+
+  .enderecos a {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .meusDadosPessoais .enderecos {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .meusDadosPessoais .enderecos table {
+    width: 100%;
+    margin: 0;
+  }
+
+  .meusDadosPessoais .enderecos table tbody {
+    align-items: center;
+  }
+
+  .meusDadosPessoais .enderecos table tbody tr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meusDadosPessoais .enderecos table tbody tr th {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .enderecos a {
+    margin-top: 10px;
+  }
+
+  .meusDadosPessoais .tbDadosPessoais {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .meusDadosPessoais .tbDadosPessoais table {
+    width: 100%;
+    margin: 0;
+  }
+
+  .meusDadosPessoais .tbDadosPessoais table tbody {
+    align-items: center;
+  }
+
+  .meusDadosPessoais .tbDadosPessoais table tbody tr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meusDadosPessoais .tbDadosPessoais table tbody tr td {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .meusDadosPessoais h1,
+  .divTitleEndereco {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .meusDadosPessoais .enderecos {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .meusDadosPessoais .enderecos table {
+    width: 100%;
+    margin: 0;
+  }
+
+  .meusDadosPessoais .enderecos table tbody {
+    align-items: center;
+  }
+
+  .meusDadosPessoais .enderecos table tbody tr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meusDadosPessoais .enderecos table tbody tr th {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
   .enderecos a {
     margin-top: 10px;
   }
