@@ -13,7 +13,7 @@ $qtdePedido = Pedido::getQtdePedidos();
 $objPagi = new Pagination($qtdePedido, $_GET['pagina'] ?? 1, 10);
 
 //variavel com array de pedidos
-$pedidos = Pedido::getPedidosSituacoes('status_pedido <> "Em Aberto"', 'dt_pedido desc', $objPagi->getLimit());
+$pedidos = Pedido::getPedidosSituacoes('status_pedido <> "Em Aberto"', 'dt_pedido desc, numpedido desc', $objPagi->getLimit());
 
 
 

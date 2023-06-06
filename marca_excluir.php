@@ -19,14 +19,23 @@ if(!isset($_GET['codmarca']) or !is_numeric($_GET['codmarca'])){
     exit;
   }
 
+$tem = Marca::getMarcasEmProdutos($_GET['codmarca']);
 
 //VALIDACAO DO POST
 if(isset($_POST['excluir'])){
-  
-  $objMarca->excluir();
 
-  header('location: marca_listar.php?status=success');
-  exit;
+  if($tem == null){
+    $objMarca->excluir();
+
+    header('location: marca_listar.php?status=success');
+    exit;
+  } 
+  else{
+    header('location: marca_listar.php?status=errore');
+    exit;
+  }
+  
+  
 }
 
 include __DIR__.'/public/includes/header.php';

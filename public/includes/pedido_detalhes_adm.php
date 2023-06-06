@@ -1,8 +1,10 @@
 <?php
+    use App\Entity\Categoria;
     use App\Entity\Item_Pedido;
     use App\Entity\Pedido;
     use App\Entity\Produto;
     use App\Entity\Endereco;
+    use App\Entity\Prod_Cate;
 
     $num = $_GET['numpedido'];
 
@@ -28,7 +30,14 @@
                             <img style="height: 100px;" src="public/img/'.$item->imagem.'" alt="">
                             <div class="info">
                                 <div class="nameProduct">'.$item->nome_prod.'</div>
-                                <div class="categoryProduct">'.$item->nome_cate.'</div>
+                                <div class="categoryProduct">';
+                                        $categorias = Prod_Cate::getProd_Cate($item->codprod);
+                                        foreach($categorias as $categoria){
+                                            $cate = Categoria::getCategoria($categoria->codcate);
+                                            $res .= '<span>'.$cate->nome_cate . '</span>';
+                                        }
+
+                                        $res .= '</div>
                             </div>
                         </div>
                     </td>
@@ -83,10 +92,9 @@
 <form method="post" <?=$v?>>
 <div class="form-group">
     <select name="status_pedido">
-        <option value="0"><?=$pedido->status_pedido?></option>
-        <option value="1">Em preparação</option>
-        <option value="2">Entregue a transportadora</option>
-        <option value="3">Cancelado</option>
+        <option value="0">Em preparação</option>
+        <option value="1">Entregue a transportadora</option>
+        <option value="2">Cancelado</option>
     </select>
     </div>
    <div class="form-group">

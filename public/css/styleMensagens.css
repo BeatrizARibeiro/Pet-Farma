@@ -1,0 +1,14 @@
+.erro{
+    color:rgb(191, 17, 51);
+    font-weight: 600;
+}
+
+.sucesso{
+    color:rgb(19, 205, 62);
+    font-weight: 600;
+}
+
+.neutro{
+    color:rgb(9, 102, 117);
+    font-weight: 600;
+}

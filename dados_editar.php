@@ -34,16 +34,16 @@ if(isset($_POST['acao'])) {
     case 'atualizar':
 
       if(!isset($_POST['nome'], $_POST['email'], $_POST['cpf'], $_POST['telefone'], $_POST['senha'])){
-        $alertaEditarDados = "Por favor, preencha todos os campos.";
+        $alertaEditarDados = '<div class="erro">Por favor, preencha todos os campos.</div>';
       }
 
       if(!$obUsuario instanceof Usuario || !password_verify($_POST['senha'],$obUsuario->senha)) {
-        $alertaEditarDados = "Senha inválida.";
+        $alertaEditarDados = '<div class="erro">Senha inválida.</div>';
         break;
       }
 
       if (strlen($_POST['telefone']) != 15) {
-        $alertaEditarDados = "Número de telefone inválido.";
+        $alertaEditarDados = '<div class="erro">Número de telefone inválido.</div>';
         break;
       }
 

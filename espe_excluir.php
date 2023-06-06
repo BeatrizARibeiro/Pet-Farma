@@ -19,13 +19,19 @@ if(!$objEspe instanceof Especie){
   exit;
 }
 
+$tem = Especie::getEspeciesEmProdutos($_GET['codespe']);
+
 //VALIDAÇÃO DO POST
 if(isset($_POST['excluir'])){
   
+  if($tem == null){
     $objEspe->excluir();
 
-  header('location: espe_listar.php?status=success');
-  exit;
+    header('location: espe_listar.php?status=success');
+    exit;
+  }
+    header('location: espe_listar.php?status=errore');
+    exit;
 }
 
 include __DIR__.'/public/includes/header.php';

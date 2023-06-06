@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
     <link rel="stylesheet" href="./public/css/StyleExcluirEndereco.css">
+    <link rel="stylesheet" href="./public/css/styleMensagens.css">
 </head>
 
 <body>

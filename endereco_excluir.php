@@ -34,7 +34,7 @@ if (isset($_POST['acao']) && $_POST['acao'] == 'excluir') {
     }
 
     if ($temPedidoAberto) {
-        $alerta = "Não é possível excluir o endereço, pois existem pedidos associados a ele.";
+        $alerta = '<div class="erro" style="margin:15px; text-align:center;">Não é possível excluir o endereço, pois existem pedidos associados a ele.</div>';
     } else {
         $obEndereco->excluir();
         header('Location: dados_listar.php?codus=' . $usuarioLogado['codus']);

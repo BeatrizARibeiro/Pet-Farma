@@ -64,6 +64,10 @@ class Marca{
   }
 
 
+  public static function getMarcasEmProdutos($codmarca){
+    return (new Database('marca'))->selectMarcasEmProdutos($codmarca)
+                                  ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
   /**
    * Metodo responsavel por buscar uma marca com base em seu codigo
    * @param  integer $codmarca

@@ -56,6 +56,11 @@ class Categoria{
                                       ->qtde;
   }
 
+  public static function getCategoriasEmProdutos($codcate){
+    return (new Database('categoria'))->selectCategoriasEmProdutos($codcate)
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
   /**
    * M�todo responsavel por buscar uma categoria com base em seu C�digo
    * @param  integer $codcate

@@ -62,6 +62,10 @@ class Especie{
                                     ->fetchObject()
                                     ->qtde;
   }
+  public static function getEspeciesEmProdutos($codespe){
+    return (new Database('especie'))->selectEspeciesEmProdutos($codespe)
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
 
 
   /**
