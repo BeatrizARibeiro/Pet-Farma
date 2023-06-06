@@ -8,7 +8,7 @@
   "require": {
     "phpmailer/phpmailer": "^6.8",
     "mercadopago/dx-php": "^2.5",
-    "nfephp-org/sped-da": "^0.1.26",
+    "nfephp-org/sped-da": "^1.1.5",
     "nfephp-org/sped-nfe": "^5.1.15"  
   }
 }

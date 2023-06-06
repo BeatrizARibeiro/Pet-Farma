@@ -19,7 +19,7 @@ if(isset($_POST['acao'])) {
     case 'trocar':
 
       if(empty($_POST['email'])){
-        $alerta = "Por favor, informe seu email.";
+        $alerta = '<div class="erro">Por favor, informe seu email.</div>';
         break;
       }
       $email = trim($_POST['email']);
@@ -28,7 +28,7 @@ if(isset($_POST['acao'])) {
       $primeiroNome = explode(' ', $nomeUsuario)[0];
 
       if(!$obUsuario instanceof Usuario) {
-        $alerta = "Email não cadastrado.";
+        $alerta = '<div class="erro">Email não cadastrado.</div>';
         break;
       }else {
         $token = bin2hex(random_bytes(16));
@@ -203,10 +203,10 @@ if(isset($_POST['acao'])) {
           $mail->Body = $mensagem;
           
           $mail->send();
-          $alerta = "E-mail enviado com sucesso!";
+          $alerta = '<div class="erro" style="margin:15px; text-align:center;">E-mail enviado com sucesso!</div>';
 
         } catch (Exception $e) {
-            $alerta = "Erro ao enviar e-mail: " . $mail->ErrorInfo;
+            $alerta = '<div class="erro" style="margin:15px; text-align:center;">Erro ao enviar e-mail: ' . $mail->ErrorInfo.'</div>';
         }
       }
 

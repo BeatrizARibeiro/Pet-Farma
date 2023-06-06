@@ -9,7 +9,7 @@ namespace NFePHP\DA\NFe;
  * @category  Library
  * @package   nfephp-org/sped-da
  * @name      Daevento.php
- * @copyright 2009-2016 NFePHP
+ * @copyright 2009-2019 NFePHP
  * @license   http://www.gnu.org/licenses/lgpl.html GNU/LGPL v.3
  * @link      http://github.com/nfephp-org/sped-da for the canonical source repository
  * @author    Roberto L. Machado <linux.rlm at gmail dot com>
@@ -18,29 +18,18 @@ namespace NFePHP\DA\NFe;
 use Exception;
 use NFePHP\DA\Legacy\Dom;
 use NFePHP\DA\Legacy\Pdf;
-use NFePHP\DA\Legacy\Common;
+use NFePHP\DA\Common\DaCommon;
 
-class Daevento extends Common
+class Daevento extends DaCommon
 {
     public $chNFe;
-    
-    protected $logoAlign = 'C';
+
     protected $yDados = 0;
-    protected $debugMode = 0;
-    protected $aEnd = array();
-    protected $pdf;
+    protected $dadosEmitente = array();
     protected $xml;
-    protected $logomarca = '';
     protected $errMsg = '';
     protected $errStatus = false;
-    protected $orientacao = 'P';
-    protected $papel = 'A4';
-    protected $destino = 'I';
-    protected $pdfDir = '';
-    protected $fontePadrao = 'Times';
     protected $version = '0.1.4';
-    protected $wPrint;
-    protected $hPrint;
     protected $wCanhoto;
     protected $formatoChave = "#### #### #### #### #### #### #### #### #### #### ####";
     protected $id;
@@ -57,7 +46,7 @@ class Daevento extends Common
     protected $dhRegEvento;
     protected $nProt;
     protected $tpEvento;
-    
+
     private $dom;
     private $procEventoNFe;
     private $evento;
@@ -68,66 +57,54 @@ class Daevento extends Common
     /**
      * __construct
      *
-     * @param string $docXML      Arquivo XML (diretório ou string)
-     * @param string $sOrientacao (Opcional) Orientação da impressão P-retrato L-Paisagem
-     * @param string $sPapel      Tamanho do papel (Ex. A4)
-     * @param string $sPathLogo   Caminho para o arquivo do logo
-     * @param string $sDestino    Destino do PDF I-browser D-download S-string F-salva
-     * @param string $sDirPDF     Caminho para o diretorio de armazenamento dos arquivos PDF
-     * @param string $fonteDANFE  Nome da fonte alternativa
-     * @param array  $aEnd        array com o endereço do emitente
-     * @param number $mododebug   0-Não 1-Sim e 2-nada (2 default)
+     * @param string $xml Arquivo XML (diretório ou string)
+     * @param array $dadosEmitente Dados do endereço do emitente
      */
-    public function __construct(
-        $docXML = '',
-        $sOrientacao = '',
-        $sPapel = '',
-        $sPathLogo = '',
-        $sDestino = 'I',
-        $sDirPDF = '',
-        $fontePDF = '',
-        $aEnd = '',
-        $mododebug = 0
-    ) {
-        if (is_numeric($mododebug)) {
-            $this->debugMode = (int) $mododebug;
+    public function __construct($xml, $dadosEmitente)
+    {
+        $this->dadosEmitente = $dadosEmitente;
+        $this->debugMode();
+        $this->loadDoc($xml);
+    }
+
+    /**
+     * Ativa ou desativa o modo debug
+     * @param bool $activate
+     * @return bool
+     */
+    public function debugMode($activate = null)
+    {
+        if (isset($activate) && is_bool($activate)) {
+            $this->debugmode = $activate;
         }
-        if ($this->debugMode === 1) {
-            // ativar modo debug
+        if ($this->debugmode) {
+            //ativar modo debug
             error_reporting(E_ALL);
             ini_set('display_errors', 'On');
-        } elseif ($this->debugMode === 0) {
-            // desativar modo debug
+        } else {
+            //desativar modo debug
             error_reporting(0);
             ini_set('display_errors', 'Off');
         }
-        if (is_array($aEnd)) {
-            $this->aEnd = $aEnd;
+        return $this->debugmode;
+    }
+
+    /**
+     * Dados brutos do PDF
+     * @return string
+     */
+    public function render($logo = null)
+    {
+        if (empty($this->pdf)) {
+            $this->monta($logo);
         }
-        $this->orientacao = $sOrientacao;
-        $this->papel = $sPapel;
-        $this->pdf = '';
-        $this->logomarca = $sPathLogo;
-        $this->destino = $sDestino;
-        $this->pdfDir = $sDirPDF;
-        // verifica se foi passa a fonte a ser usada
-        if (empty($fontePDF)) {
-            $this->fontePadrao = 'Times';
-        } else {
-            $this->fontePadrao = $fontePDF;
-        }
-        // se for passado o xml
-        if (!is_file($docXML)) {
-            if (empty($docXML)) {
-                $this->errMsg = 'Um caminho ou um arquivo XML de evento de NFe deve ser passado.';
-                $this->errStatus = true;
-                return false;
-            }
-        } else {
-            $docXML = file_get_contents($docXML);
-        }
+        return $this->pdf->getPdf();
+    }
+
+    protected function loadDoc($xml)
+    {
         $this->dom = new Dom();
-        $this->dom->loadXML($docXML);
+        $this->dom->loadXML($xml);
         $this->procEventoNFe = $this->dom->getElementsByTagName("procEventoNFe")->item(0);
         $this->evento = $this->dom->getElementsByTagName("evento")->item(0);
         $this->infEvento = $this->evento->getElementsByTagName("infEvento")->item(0);
@@ -135,17 +112,18 @@ class Daevento extends Common
         $this->rinfEvento = $this->retEvento->getElementsByTagName("infEvento")->item(0);
         $this->tpEvento = $this->infEvento->getElementsByTagName("tpEvento")->item(0)->nodeValue;
         if (!in_array($this->tpEvento, ['110110','110111'])) {
-            $this->errMsg = 'Evento não implementado ' . $tpEvento . ' !!';
+            $this->errMsg = 'Evento não implementado ' . $this->tpEvento . ' !!';
             $this->errStatus = true;
             return false;
         }
         $this->id = str_replace('ID', '', $this->infEvento->getAttribute("Id"));
         $this->chNFe = $this->infEvento->getElementsByTagName("chNFe")->item(0)->nodeValue;
-        $this->aEnd['CNPJ'] = $this->infEvento->getElementsByTagName("CNPJ")->item(0)->nodeValue;
+        $this->dadosEmitente['CNPJ'] = $this->infEvento->getElementsByTagName("CNPJ")->item(0)->nodeValue;
         $this->tpAmb = $this->infEvento->getElementsByTagName("tpAmb")->item(0)->nodeValue;
         $this->cOrgao = $this->infEvento->getElementsByTagName("cOrgao")->item(0)->nodeValue;
         $this->xCorrecao = $this->infEvento->getElementsByTagName("xCorrecao")->item(0);
         $this->xCorrecao = (empty($this->xCorrecao) ? '' : $this->xCorrecao->nodeValue);
+        $this->xCorrecao = str_replace(';', ";\n", $this->xCorrecao);
         $this->xCondUso = $this->infEvento->getElementsByTagName("xCondUso")->item(0);
         $this->xCondUso = (empty($this->xCondUso) ? '' : $this->xCondUso->nodeValue);
         $this->xJust = $this->infEvento->getElementsByTagName("xJust")->item(0);
@@ -166,43 +144,24 @@ class Daevento extends Common
     /**
      * monta
      *
-     * @param  string  $orientacao
-     * @param  string  $papel
-     * @param  string  $logoAlign
-     * @param  boolean $classe_pdf
-     * @return number
-     */
-    public function monta($orientacao = '', $papel = 'A4', $logoAlign = 'C', $classe_pdf = false)
-    {
-        return $this->montaDaEventoNFe($orientacao, $papel, $logoAlign, $classe_pdf);
-    }
-
-    /**
-     * montaDAEventoNFe
-     *
      * Esta função monta a DaEventoNFe conforme as informações fornecidas para a classe
      * durante sua construção.
      * A definição de margens e posições iniciais para a impressão são estabelecidas no
      * pelo conteúdo da funçao e podem ser modificados.
      *
-     * @param  string $orientacao (Opcional) Estabelece a orientação da impressão (ex. P-retrato),
-     *  se nada for fornecido será usado o padrão da NFe
-     * @param  string $papel      (Opcional) Estabelece o tamanho do papel (ex. A4)
+     * @param  string $logo
      * @return string O ID do evento extraido do arquivo XML
      */
-    public function montaDaEventoNFe($orientacao = '', $papel = 'A4', $logoAlign = 'C', $classe_pdf = false)
-    {
-        if ($orientacao == '') {
-            $orientacao = 'P';
+    protected function monta(
+        $logo = ''
+    ) {
+        if (!empty($logo)) {
+            $this->logomarca = $this->adjustImage($logo);
         }
-        $this->orientacao = $orientacao;
-        $this->papel = $papel;
-        $this->logoAlign = $logoAlign;
-        if ($classe_pdf !== false) {
-            $this->pdf = $classe_pdf;
-        } else {
-            $this->pdf = new Pdf($this->orientacao, 'mm', $this->papel);
+        if (empty($this->orientacao)) {
+            $this->orientacao = 'P';
         }
+        $this->pdf = new Pdf($this->orientacao, 'mm', $this->papel);
         if ($this->orientacao == 'P') {
             // margens do PDF
             $margSup = 2;
@@ -223,7 +182,7 @@ class Daevento extends Common
             // posição inicial do relatorio
             $xInic = 5;
             $yInic = 5;
-            if ($papel == 'A4') { // A4 210x297mm
+            if ($this->papel == 'A4') { // A4 210x297mm
                 $maxH = 210;
                 $maxW = 297;
             }
@@ -249,28 +208,21 @@ class Daevento extends Common
         $x = $xInic;
         $y = $yInic;
         // coloca o cabeçalho
-        $y = $this->pHeader($x, $y, $pag);
+        $y = $this->header($x, $y, $pag);
         // coloca os dados da CCe
-        $y = $this->pBody($x, $y + 15);
+        $y = $this->body($x, $y + 15);
         // coloca os dados da CCe
-        $y = $this->pFooter($x, $y + $this->hPrint - 20);
-        // retorna o ID do evento
-        if ($classe_pdf !== false) {
-            $aR = ['id' => $this->id, 'classe_PDF' => $this->pdf];
-            return $aR;
-        } else {
-            return $this->id;
-        }
+        $y = $this->footer($x, $y + $this->hPrint - 20);
     }
 
     /**
-     * pHeader
+     * header
      * @param  number $x
      * @param  number $y
      * @param  number $pag
      * @return number
      */
-    private function pHeader($x, $y, $pag)
+    private function header($x, $y, $pag)
     {
         $oldX = $x;
         $oldY = $y;
@@ -286,10 +238,10 @@ class Daevento extends Common
         $w1 = $w;
         $h = 32;
         $oldY += $h;
-        $this->pTextBox($x, $y, $w, $h);
+        $this->pdf->textBox($x, $y, $w, $h);
         $texto = 'IDENTIFICAÇÃO DO EMITENTE';
-        $this->pTextBox($x, $y, $w, 5, $texto, $aFont, 'T', 'C', 0, '');
-        if (is_file($this->logomarca)) {
+        $this->pdf->textBox($x, $y, $w, 5, $texto, $aFont, 'T', 'C', 0, '');
+        if (!empty($this->logomarca)) {
             $logoInfo = getimagesize($this->logomarca);
             // largura da imagem em mm
             $logoWmm = ($logoInfo[0] / 72) * 25.4;
@@ -323,6 +275,7 @@ class Daevento extends Common
                 $y1 = round($h / 3 + $y, 0);
                 $tw = round(2 * $w / 3, 0);
             }
+            $type = (substr($this->logomarca, 0, 7) === 'data://') ? 'jpg' : null;
             $this->pdf->image($this->logomarca, $xImg, $yImg, $nImgW, $nImgH, 'jpeg');
         } else {
             $x1 = $x;
@@ -335,8 +288,8 @@ class Daevento extends Common
             'size' => 12,
             'style' => 'B'
         );
-        $texto = (isset($this->aEnd['razao']) ? $this->aEnd['razao'] : '');
-        $this->pTextBox($x1, $y1, $tw, 8, $texto, $aFont, 'T', 'C', 0, '');
+        $texto = (isset($this->dadosEmitente['razao']) ? $this->dadosEmitente['razao'] : '');
+        $this->pdf->textBox($x1, $y1, $tw, 8, $texto, $aFont, 'T', 'C', 0, '');
         // endereço
         $y1 = $y1 + 6;
         $aFont = array(
@@ -344,16 +297,16 @@ class Daevento extends Common
             'size' => 8,
             'style' => ''
         );
-        $lgr = (isset($this->aEnd['logradouro']) ? $this->aEnd['logradouro'] : '');
-        $nro = (isset($this->aEnd['numero']) ? $this->aEnd['numero'] : '');
-        $cpl = (isset($this->aEnd['complemento']) ? $this->aEnd['complemento'] : '');
-        $bairro = (isset($this->aEnd['bairro']) ? $this->aEnd['bairro'] : '');
-        $CEP = (isset($this->aEnd['CEP']) ? $this->aEnd['CEP'] : '');
-        $CEP = $this->pFormat($CEP, "#####-###");
-        $mun = (isset($this->aEnd['municipio']) ? $this->aEnd['municipio'] : '');
-        $UF = (isset($this->aEnd['UF']) ? $this->aEnd['UF'] : '');
-        $fone = (isset($this->aEnd['telefone']) ? $this->aEnd['telefone'] : '');
-        $email = (isset($this->aEnd['email']) ? $this->aEnd['email'] : '');
+        $lgr = (isset($this->dadosEmitente['logradouro']) ? $this->dadosEmitente['logradouro'] : '');
+        $nro = (isset($this->dadosEmitente['numero']) ? $this->dadosEmitente['numero'] : '');
+        $cpl = (isset($this->dadosEmitente['complemento']) ? $this->dadosEmitente['complemento'] : '');
+        $bairro = (isset($this->dadosEmitente['bairro']) ? $this->dadosEmitente['bairro'] : '');
+        $CEP = (isset($this->dadosEmitente['CEP']) ? $this->dadosEmitente['CEP'] : '');
+        $CEP = $this->formatField($CEP, "#####-###");
+        $mun = (isset($this->dadosEmitente['municipio']) ? $this->dadosEmitente['municipio'] : '');
+        $UF = (isset($this->dadosEmitente['UF']) ? $this->dadosEmitente['UF'] : '');
+        $fone = (isset($this->dadosEmitente['telefone']) ? $this->dadosEmitente['telefone'] : '');
+        $email = (isset($this->dadosEmitente['email']) ? $this->dadosEmitente['email'] : '');
         $foneLen = strlen($fone);
         if ($foneLen > 0) {
             $fone2 = substr($fone, 0, $foneLen - 4);
@@ -377,11 +330,11 @@ class Daevento extends Common
         $texto .= ($texto != '' && $tmp_txt != '' ? "\n" : '') . $tmp_txt;
         $tmp_txt = $email;
         $texto .= ($texto != '' && $tmp_txt != '' ? "\n" : '') . $tmp_txt;
-        $this->pTextBox($x1, $y1 - 2, $tw, 8, $texto, $aFont, 'T', 'C', 0, '');
+        $this->pdf->textBox($x1, $y1 - 2, $tw, 8, $texto, $aFont, 'T', 'C', 0, '');
         // ##################################################
         $w2 = round($maxW - $w, 0);
         $x += $w;
-        $this->pTextBox($x, $y, $w2, $h);
+        $this->pdf->textBox($x, $y, $w2, $h);
         $y1 = $y + $h;
         $aFont = array(
             'font' => $this->fontePadrao,
@@ -393,7 +346,7 @@ class Daevento extends Common
         } else {
             $texto = 'Representação Gráfica de Evento';
         }
-        $this->pTextBox($x, $y + 2, $w2, 8, $texto, $aFont, 'T', 'C', 0, '');
+        $this->pdf->textBox($x, $y + 2, $w2, 8, $texto, $aFont, 'T', 'C', 0, '');
         $aFont = array(
             'font' => $this->fontePadrao,
             'size' => 12,
@@ -404,23 +357,24 @@ class Daevento extends Common
         } elseif ($this->tpEvento == '110111') {
             $texto = '(Cancelamento de NFe)';
         }
-        $this->pTextBox($x, $y + 7, $w2, 8, $texto, $aFont, 'T', 'C', 0, '');
+        $this->pdf->textBox($x, $y + 7, $w2, 8, $texto, $aFont, 'T', 'C', 0, '');
         $texto = 'ID do Evento: ' . $this->id;
         $aFont = array(
             'font' => $this->fontePadrao,
             'size' => 10,
             'style' => ''
         );
-        $this->pTextBox($x, $y + 15, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
-        $tsHora = $this->pConvertTime($this->dhEvento);
-        $texto = 'Criado em : ' . date('d/m/Y   H:i:s', $tsHora);
-        $this->pTextBox($x, $y + 20, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
-        $tsHora = $this->pConvertTime($this->dhRegEvento);
-        $texto = 'Prococolo: ' . $this->nProt . '  -  Registrado na SEFAZ em: ' . date('d/m/Y   H:i:s', $tsHora);
-        $this->pTextBox($x, $y + 25, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
+        $this->pdf->textBox($x, $y + 15, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
+        $texto = 'Criado em : ' . \DateTime::createFromFormat("Y-m-d\TH:i:sP", $this->dhEvento)->format('d/m/Y H:i:s');
+        $this->pdf->textBox($x, $y + 20, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
+        $texto = 'Prococolo: '
+            . $this->nProt
+            . ' - Registrado em: '
+            . \DateTime::createFromFormat("Y-m-d\TH:i:sP", $this->dhRegEvento)->format('d/m/Y H:i:s');
+        $this->pdf->textBox($x, $y + 25, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
         // ####################################################
         $x = $oldX;
-        $this->pTextBox($x, $y1, $maxW, 40);
+        $this->pdf->textBox($x, $y1, $maxW, 40);
         $sY = $y1 + 40;
         if ($this->tpEvento == '110110') {
             $texto = 'De acordo com as determinações legais vigentes, vimos por meio desta '
@@ -429,47 +383,47 @@ class Daevento extends Common
                 . 'essas correções ao executar seus lançamentos fiscais.';
         } elseif ($this->tpEvento == '110111') {
             $texto = 'De acordo com as determinações legais vigentes, '
-                    . 'vimos por meio desta comunicar-lhe que a Nota Fiscal, '
-                    . 'abaixo referenciada, está cancelada, solicitamos que sejam '
-                    . 'aplicadas essas correções ao executar seus lançamentos fiscais.';
+                . 'vimos por meio desta comunicar-lhe que a Nota Fiscal, '
+                . 'abaixo referenciada, está cancelada, solicitamos que sejam '
+                . 'aplicadas essas correções ao executar seus lançamentos fiscais.';
         }
         $aFont = ['font' => $this->fontePadrao,'size' => 10,'style' => ''];
-        $this->pTextBox($x + 5, $y1, $maxW - 5, 20, $texto, $aFont, 'T', 'L', 0, '', false);
+        $this->pdf->textBox($x + 5, $y1, $maxW - 5, 20, $texto, $aFont, 'T', 'L', 0, '', false);
         // ############################################
         $x = $oldX;
         $y = $y1;
         if ($this->CNPJDest != '') {
-            $texto = 'CNPJ do Destinatário: ' . $this->pFormat($this->CNPJDest, "##.###.###/####-##");
+            $texto = 'CNPJ do Destinatário: ' . $this->formatField($this->CNPJDest, "##.###.###/####-##");
         }
         if ($this->CPFDest != '') {
-            $texto = 'CPF do Destinatário: ' . $this->pFormat($this->CPFDest, "###.###.###-##");
+            $texto = 'CPF do Destinatário: ' . $this->formatField($this->CPFDest, "###.###.###-##");
         }
         $aFont = ['font' => $this->fontePadrao,'size' => 12,'style' => 'B'];
-        $this->pTextBox($x + 2, $y + 13, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
+        $this->pdf->textBox($x + 2, $y + 13, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
         $numNF = substr($this->chNFe, 25, 9);
         $serie = substr($this->chNFe, 22, 3);
-        $numNF = $this->pFormat($numNF, "###.###.###");
+        $numNF = $this->formatField($numNF, "###.###.###");
         $texto = "Nota Fiscal: " . $numNF . '  -   Série: ' . $serie;
-        $this->pTextBox($x + 2, $y + 19, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
+        $this->pdf->textBox($x + 2, $y + 19, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
         $bW = 87;
         $bH = 15;
         $x = 55;
         $y = $y1 + 13;
         $w = $maxW;
-        $this->pdf->SetFillColor(0, 0, 0);
-        $this->pdf->Code128($x + (($w - $bW) / 2), $y + 2, $this->chNFe, $bW, $bH);
-        $this->pdf->SetFillColor(255, 255, 255);
+        $this->pdf->setFillColor(0, 0, 0);
+        $this->pdf->code128($x + (($w - $bW) / 2), $y + 2, $this->chNFe, $bW, $bH);
+        $this->pdf->setFillColor(255, 255, 255);
         $y1 = $y + 2 + $bH;
         $aFont = ['font' => $this->fontePadrao,'size' => 10,'style' => ''];
-        $texto = $this->pFormat($this->chNFe, $this->formatoChave);
-        $this->pTextBox($x, $y1, $w - 2, $h, $texto, $aFont, 'T', 'C', 0, '');
+        $texto = $this->formatField($this->chNFe, $this->formatoChave);
+        $this->pdf->textBox($x, $y1, $w - 2, $h, $texto, $aFont, 'T', 'C', 0, '');
         $retVal = $sY + 2;
         if ($this->tpEvento == '110110') {
             $x = $oldX;
-            $this->pTextBox($x, $sY, $maxW, 15);
+            $this->pdf->textBox($x, $sY, $maxW, 15);
             $texto = $this->xCondUso;
             $aFont = ['font' => $this->fontePadrao,'size' => 8,'style' => 'I'];
-            $this->pTextBox($x + 2, $sY + 2, $maxW - 2, 15, $texto, $aFont, 'T', 'L', 0, '', false);
+            $this->pdf->textBox($x + 2, $sY + 2, $maxW - 2, 15, $texto, $aFont, 'T', 'L', 0, '', false);
             $retVal = $sY + 2;
         }
         // indicar sem valor
@@ -485,22 +439,22 @@ class Daevento extends Common
             $this->pdf->setTextColor(90, 90, 90);
             $texto = "SEM VALOR FISCAL";
             $aFont = ['font' => $this->fontePadrao,'size' => 48,'style' => 'B'];
-            $this->pTextBox($x, $y, $w, $h, $texto, $aFont, 'C', 'C', 0, '');
+            $this->pdf->textBox($x, $y, $w, $h, $texto, $aFont, 'C', 'C', 0, '');
             $aFont = ['font' => $this->fontePadrao,'size' => 30,'style' => 'B'];
             $texto = "AMBIENTE DE HOMOLOGAÇÃO";
-            $this->pTextBox($x, $y + 14, $w, $h, $texto, $aFont, 'C', 'C', 0, '');
+            $this->pdf->textBox($x, $y + 14, $w, $h, $texto, $aFont, 'C', 'C', 0, '');
             $this->pdf->setTextColor(0, 0, 0);
         }
         return $retVal;
     }
 
     /**
-     * pBody
+     * body
      *
      * @param number $x
      * @param number $y
      */
-    private function pBody($x, $y)
+    private function body($x, $y)
     {
         $maxW = $this->wPrint;
         if ($this->tpEvento == '110110') {
@@ -509,77 +463,48 @@ class Daevento extends Common
             $texto = 'JUSTIFICATIVA DO CANCELAMENTO';
         }
         $aFont = ['font' => $this->fontePadrao,'size' => 10,'style' => 'B'];
-        $this->pTextBox($x, $y, $maxW, 5, $texto, $aFont, 'T', 'L', 0, '', false);
+        $this->pdf->textBox($x, $y, $maxW, 5, $texto, $aFont, 'T', 'L', 0, '', false);
         $y += 5;
-        $this->pTextBox($x, $y, $maxW, 190);
+        $this->pdf->textBox($x, $y, $maxW, 190);
         if ($this->tpEvento == '110110') {
             $texto = $this->xCorrecao;
         } elseif ($this->tpEvento == '110111') {
             $texto = $this->xJust;
         }
         $aFont = ['font' => $this->fontePadrao,'size' => 12,'style' => 'B'];
-        $this->pTextBox($x + 2, $y + 2, $maxW - 2, 150, $texto, $aFont, 'T', 'L', 0, '', false);
+        $this->pdf->textBox($x + 2, $y + 2, $maxW - 2, 150, $texto, $aFont, 'T', 'L', 0, '', false);
     }
 
     /**
-     * pFooter
+     * footer
      *
      * @param number $x
      * @param number $y
      */
-    private function pFooter($x, $y)
+    private function footer($x, $y)
     {
         $w = $this->wPrint;
         if ($this->tpEvento == '110110') {
             $texto = "Este documento é uma representação gráfica da CC-e "
-                    . "e foi impresso apenas para sua informação e não possui validade "
-                    . "fiscal.\n A CC-e deve ser recebida e mantida em arquivo eletrônico XML "
-                    . "e pode ser consultada através dos Portais das SEFAZ.";
+                . "e foi impresso apenas para sua informação e não possui validade "
+                . "fiscal.\n A CC-e deve ser recebida e mantida em arquivo eletrônico XML "
+                . "e pode ser consultada através dos Portais das SEFAZ.";
         } elseif ($this->tpEvento == '110111') {
             $texto = "Este documento é uma representação gráfica do evento de NFe e "
-                    . "foi impresso apenas para sua informação e não possui validade "
-                    . "fiscal.\n O Evento deve ser recebido e mantido em arquivo "
-                    . "eletrônico XML e pode ser consultada através dos Portais "
-                    . "das SEFAZ.";
+                . "foi impresso apenas para sua informação e não possui validade "
+                . "fiscal.\n O Evento deve ser recebido e mantido em arquivo "
+                . "eletrônico XML e pode ser consultada através dos Portais "
+                . "das SEFAZ.";
         }
         $aFont = ['font' => $this->fontePadrao,'size' => 10,'style' => 'I'];
-        $this->pTextBox($x, $y, $w, 20, $texto, $aFont, 'T', 'C', 0, '', false);
+        $this->pdf->textBox($x, $y, $w, 20, $texto, $aFont, 'T', 'C', 0, '', false);
         $y = $this->hPrint - 4;
-        $texto = "Impresso em  " . date('d/m/Y   H:i:s');
+        $texto = "Impresso em  " . date('d/m/Y   H:i:s') . ' ' . $this->creditos;
         $w = $this->wPrint - 4;
         $aFont = ['font' => $this->fontePadrao,'size' => 6,'style' => 'I'];
-        $this->pTextBox($x, $y, $w, 4, $texto, $aFont, 'T', 'L', 0, '');
-        $texto = "Daevento ver. " . $this->version . "  Powered by NFePHP (GNU/GPLv3 GNU/LGPLv3) © www.nfephp.org";
+        $this->pdf->textBox($x, $y, $w, 4, $texto, $aFont, 'T', 'L', 0, '');
+        $texto = $this->powered ? "Powered by NFePHP®" : '';
         $aFont = ['font' => $this->fontePadrao,'size' => 6,'style' => 'I'];
-        $this->pTextBox($x, $y, $w, 4, $texto, $aFont, 'T', 'R', 0, 'http://www.nfephp.org');
-    }
-
-    /**
-     * printDocument
-     *
-     * @param  string $nome
-     * @param  string $destino
-     * @param  string $printer
-     * @return mixed
-     */
-    public function printDocument($nome = '', $destino = 'I', $printer = '')
-    {
-        return $this->printDaEventoNFe($nome, $destino, $printer);
-    }
-
-    /**
-     * printDaEventoNFe
-     *
-     * @param  string $nome
-     * @param  string $destino
-     * @param  string $printer
-     * @return mixed
-     */
-    public function printDaEventoNFe($nome = '', $destino = 'I', $printer = '')
-    {
-        if ($this->pdf == null) {
-            $this->montaDaEventoNFe();
-        }
-        return $this->pdf->Output($nome, $destino);
+        $this->pdf->textBox($x, $y, $w, 4, $texto, $aFont, 'T', 'R', 0, 'http://www.nfephp.org');
     }
 }

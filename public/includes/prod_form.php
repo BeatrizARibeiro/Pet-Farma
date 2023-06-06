@@ -6,9 +6,9 @@
     use \App\Entity\Prod_Cate;
 
     //criando variaveis que recebem arrays dos objetos
-    $especies = Especie::getEspecies();
-    $marcas = Marca::getMarcas();
-    $categorias = Categoria::getCategorias();
+    $especies = Especie::getEspecies(null, 'nome_espe');
+    $marcas = Marca::getMarcas(null, 'nome_marca');
+    $categorias = Categoria::getCategorias(null, 'nome_cate');
 
     //instanciando um objeto
     $objProd_Cate = new Prod_Cate();

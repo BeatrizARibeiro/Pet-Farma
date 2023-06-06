@@ -145,6 +145,11 @@ table tbody tr td {
     margin-bottom: 10px;
 }
 
-.product .info .categoryProduct {
-    color: #adadad;
+.categoryProduct span{
+    background-color:#b89ac5;
+    padding: 6px;
+    border-radius: 15px;
+    color: #ffff;
+    font-size: 13px;
+    margin-right: 10px;
 }

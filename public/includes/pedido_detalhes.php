@@ -1,8 +1,10 @@
 <?php
+    use App\Entity\Categoria;
     use App\Entity\Item_Pedido;
     use App\Entity\Pedido;
     use App\Entity\Produto;
     use App\Entity\Endereco;
+    use App\Entity\Prod_Cate;
     use App\Session\Login;
 
     $sessao = Login::getUsuarioLogado();
@@ -38,7 +40,14 @@
                             <img style="height: 100px;" src="public/img/'.$item->imagem.'" alt="">
                             <div class="info">
                                 <div class="nameProduct">'.$item->nome_prod.'</div>
-                                <div class="categoryProduct">'.$item->nome_cate.'</div>
+                                <div class="categoryProduct">';
+                                        $categorias = Prod_Cate::getProd_Cate($item->codprod);
+                                        foreach($categorias as $categoria){
+                                            $cate = Categoria::getCategoria($categoria->codcate);
+                                            $res .= '<span>'.$cate->nome_cate . '</span>';
+                                        }
+
+                                        $res .= '</div>
                             </div>
                         </div>
                     </td>

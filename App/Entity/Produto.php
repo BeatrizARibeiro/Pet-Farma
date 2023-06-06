@@ -161,12 +161,19 @@ class Produto{
                                     ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
   }
 
+   //Função para pegar produtos que estão em pedidos
+   public static function getProdutosEmPedidos($codprod){
+    return (new Database('produto'))->selectProdutosEmPedidos($codprod)
+                                    ->fetchAll(PDO::FETCH_CLASS,self::class);//todo retorno vai ser passado num array de classes de objetos
+  }
+
   //funcao para pegar a quantidade de produtos
   public static function getQtdeProdutos($where = null){
     return (new Database('produto'))->select($where, null, null, 'COUNT(*) as qtde')
                                     ->fetchObject()
                                     ->qtde;
   }
+
 
 
   /**

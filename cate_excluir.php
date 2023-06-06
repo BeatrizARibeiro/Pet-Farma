@@ -19,13 +19,21 @@ if(!$objCate instanceof Categoria){
     exit;
 }
 
+$tem = Categoria::getCategoriasEmProdutos($_GET['codcate']);
+
 //VALIDACAO DO POST
 if(isset($_POST['excluir'])){
   
+  if($tem == null){
     $objCate->excluir();
 
-  header('location: cate_listar.php?status=success');
-  exit;
+    header('location: cate_listar.php?status=success');
+    exit;
+  }
+  else{
+    header('location: cate_listar.php?status=errore');
+    exit;
+  }
 }
 
 

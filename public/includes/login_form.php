@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
   <link rel="icon" type="imagem/png" href="./public/img/logopetfarma.png" />
   <link rel="stylesheet" href="./public/css/StyleLogin.css">
+  <link rel="stylesheet" href="./public/css/styleMensagens.css">
   <title>Entrar</title>
   <style>
     .password-toggle {

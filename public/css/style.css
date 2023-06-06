@@ -786,7 +786,8 @@ footer .copyright {
         width: 80px;
         margin: 8px 0 12px 0;
     }
-
+    
+   
     .navbar {
         display: flex;
         flex-direction: column;
@@ -870,7 +871,7 @@ footer .copyright {
     #signup .form {
         width: 70%;
     }
-  
+}
 
 @media only screen and (max-width: 1400px) {
     .animaishome img {
@@ -883,5 +884,4 @@ footer .copyright {
     display: flex;
     flex-direction: column;
 }
-
 }

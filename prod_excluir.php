@@ -22,15 +22,23 @@ if(!$objProd instanceof Produto){
     exit;
 }
 
+$tem = Produto::getProdutosEmPedidos($_GET['codprod']);
 //VALIDACAO DO POST
 if(isset($_POST['excluir'])){
-    $objProd_Cate->excluir($_GET['codprod']);
-    $objProd->excluir();
-    unlink("./public/img/".$objProd->imagem."");
-    
+    if($tem == null){
+      $objProd_Cate->excluir($_GET['codprod']);
+      $objProd->excluir();
+      unlink("./public/img/".$objProd->imagem."");
+      
 
-  header('location: prod_listar.php?status=success');
-  exit;
+      header('location: prod_listar.php?status=success');
+      exit;
+    }
+    else{
+      header('location: prod_listar.php?status=errore');
+      exit;
+    }
+    
 }
 
 

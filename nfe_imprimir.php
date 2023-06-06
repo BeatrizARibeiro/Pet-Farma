@@ -9,10 +9,30 @@ $pedido = Pedido::getPedido($_GET['numpedido']);
 
 $string = $pedido->nf;
 
-$xml = simplexml_load_string( $string,$class_name = "SimpleXMLElement", $options = 0, $ns = "", $is_prefix = false);
+//$imagem = fopen("C:\xampp\htdocs\Pet-Farma\public\img\logopetfarma.png", 'wb');
 
-$danfe = new Danfe($xml);
+//$xml = simplexml_load_string( $string,$class_name = "SimpleXMLElement", $options = 0, $ns = "", $is_prefix = false);
+
+$danfe = new Danfe($string);
 $pdf = $danfe->render();
 
-return response($pdf)
-->header('Content-Type', 'application/xml');
+/* header('Content-Type: application/pdf');
+header('Content-Disposition: inline; filename="Nfe_imprimir_' .$_GET['numpedido']. '"');
+header('Content-Transfer-Encoding; binary');
+header('Accept-Ranges; bytes');
+readfile($pdf);
+exit(0); */
+
+
+
+header('Content-Type: application/pdf');
+header('Content-Transfer-Encoding; binary');
+header('Accept-Ranges; bytes');
+echo $pdf;
+
+//header('location: pedido_ver.php?numpedido='.$_GET['numpedido'].'&status=notasalva');
+
+//var_dump($pdf);
+
+/* return response($pdf)
+->header('Content-Type', 'application/xml'); */

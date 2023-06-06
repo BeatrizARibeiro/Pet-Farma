@@ -22,7 +22,7 @@
                           <div class="des">
                               <h5>'.$prod->nome_prod.'</h5>
                               <span>'.$prod->apresentacao.'</span>
-                              <h4>R$'.$prod->preco.'</h4>
+                              <h4>R$'.number_format($prod->preco, 2, ',', '.').'</h4>
                           </div>
                           <a href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.' id="btncomprar"><i class="fa-solid fa-cart-shopping cart"></i></a>
                       </div>
@@ -36,10 +36,10 @@
     if(isset($_GET['status'])){
         switch($_GET['status']){
         case 'item':
-            $mensagem = '<div>Você já possui esse item no carrinho!  &#128584;</div>';
+            $mensagem = '<div class="neutro">Você já possui esse item no carrinho!  &#128584;</div>';
             break;
         case 'cancelado':
-          $mensagem = '<div>Seu pedido foi cancelado com sucesso, <br>você receberá seu reembolso em breve!</div>';
+          $mensagem = '<div class="sucesso">Seu pedido foi cancelado com sucesso, <br>você receberá seu reembolso em breve!</div>';
           break;
         }
         

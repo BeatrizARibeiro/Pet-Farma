@@ -273,6 +273,46 @@ class Database{
     return $this->execute($query);
   }
 
+  public function selectProdutosEmPedidos($codprod){
+    $query = "select * from produto p inner join item_pedido i
+    on p.codprod = i.codprod
+    inner join pedido pd
+    on i.numpedido = pd.numpedido
+    where p.codprod = ".$codprod."";
+
+    return $this->execute($query);
+  }
+
+  public function selectMarcasEmProdutos($codmarca){
+    $query = "select * from marca m
+    inner join produto p 
+    on m.codmarca = p.codmarca
+    where m.codmarca = ".$codmarca."";
+
+    return $this->execute($query);
+  }
+
+
+  public function selectEspeciesEmProdutos($codespe){
+    $query = "select * from especie e
+    inner join produto p 
+    on e.codespe = p.codmarca
+    where e.codespe = ".$codespe."";
+
+    return $this->execute($query);
+  }
+
+  public function selectCategoriasEmProdutos($codcate){
+    $query = "select * from categoria c
+    inner join prod_cate pc
+    on c.codcate = pc.codcate
+    inner join produto p
+    on pc.codprod = p.codprod
+    where c.codcate = ".$codcate."";
+
+    return $this->execute($query);
+  }
+
   public function selectPedidosSituacoes($where = null, $order = null, $limit = null, $fields = '*'){
     //DADOS DA QUERY
     $where = strlen($where) ? 'WHERE '.$where : '';

@@ -37,13 +37,17 @@
 
     if(isset($_GET['status'])){
         switch($_GET['status']){
-        case 'success':
-            $mensagem = '<div>Ação executada com sucesso!</div>';
-            break;
-
-        case 'error':
-            $mensagem = '<div>Ação não executada!</div>';
-            break;
+            case 'success':
+                $mensagem = '<div class="sucesso">Ação executada com sucesso!</div>';
+                break;
+    
+            case 'error':
+                $mensagem = '<div class="erro">Ação não executada!</div>';
+                break;
+    
+            case 'errore':
+                $mensagem = '<div class="erro">Esse produto já se encontra em um pedido!</div>';
+                break;
         }
     } 
 

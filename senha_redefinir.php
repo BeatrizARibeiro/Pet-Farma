@@ -13,7 +13,7 @@ $obUsuario = Usuario::getUsuarioPorToken($_GET['token']);
 
 // Obtém o usuário a partir do email informado
 if(!$obUsuario instanceof Usuario) {
-  $alerta = "Usuário não encontrado.";
+  $alerta = '<div class="erro">Usuário não encontrado.</div>';
   header('Location: login.php?status=missinguser');
 }
 
@@ -33,26 +33,26 @@ if(isset($_POST['acao'])) {
 
       // Verifica se a nova senha foi informada
       if(empty($_POST['senha'])){
-        $alerta = "Por favor, informe a nova senha.";
+        $alerta = '<div class="erro">Por favor, informe a nova senha.</div>';
         break;
       }
 
       // Verifica se a confirmação da nova senha foi informada
       if(empty($_POST['confirmar-senha'])){
-        $alerta = "Por favor, confirme a nova senha.";
+        $alerta = '<div class="erro">Por favor, confirme a nova senha.</div>';
         break;
       }
 
       // Verifica se as novas senhas são iguais
       if($_POST['senha'] != $_POST['confirmar-senha']){
-        $alerta = "As novas senhas não conferem.";
+        $alerta = '<div class="erro">As novas senhas não conferem.</div>';
         break;
       }
 
       // Verifica se a senha atende aos requisitos
       $senha = $_POST['senha'];
       if (strlen($senha) < 6 || !preg_match('/[A-Z]/', $senha)) {
-          $alerta = "A senha deve ter no mínimo 6 caracteres e pelo menos uma letra maiúscula.";
+          $alerta = '<div class="erro">A senha deve ter no mínimo 6 caracteres e pelo menos uma letra maiúscula.</div>';
           break;
       }
 
@@ -61,7 +61,7 @@ if(isset($_POST['acao'])) {
       // Cria o hash da nova senha e atualiza o registro do usuário
       $novaSenha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
       if(!$obUsuario->atualizarSenha($novaSenha)){
-          $alerta = "Erro ao atualizar a senha. Tente novamente mais tarde.";
+          $alerta = '<div class="erro">Erro ao atualizar a senha. Tente novamente mais tarde.</div>';
           break;
       }
 
