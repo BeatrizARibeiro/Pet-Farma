@@ -37,7 +37,7 @@
                             <td>'.$pedido->status_pedido.'</td>
                             <td>'.implode('/', array_reverse(explode('-', $pedido->dt_pedido))).'</td>
                             <td>R$ '.number_format($valorTotal, 2, ',', '.').'</td>
-                            <td><a href="pedido_ver.php?numpedido='.$pedido->numpedido.'">Ver</a></td>
+                            <td><a class="btnVer" href="pedido_ver.php?numpedido='.$pedido->numpedido.'">Ver</a></td>
                     </tr>';
     }
 
