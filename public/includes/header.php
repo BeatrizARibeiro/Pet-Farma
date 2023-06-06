@@ -14,10 +14,10 @@ if ($usuarioLogado) {
 } else {
   $usuario = 'Visitante! 
   <div>
-  <ul class="navbar">
+  <ul class="navbar2">
   <li><a href="login.php" class="f-cli">Entrar</a> </li>
   <li><a href="cadastro.php" class="f-cli">Criar conta</a></li>
-  <a href="#" class="close"><i class="far fa-times"></i></a>
+  <a href="#" class="close2"><i class="far fa-times"></i></a>
   </ul>
   </div>';
 }
