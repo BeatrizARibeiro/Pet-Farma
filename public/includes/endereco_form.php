@@ -118,7 +118,7 @@
         <?=$alertaCadastroEndereco?>
 
         <div class="btn">
-          <center><input type="submit" name="acao" value="Cadastrar" class="form-button"></center>
+          <center><input type="submit" name="acao" value="cadastrar" class="form-button"></center>
         </div>
       </form>
     </div>
