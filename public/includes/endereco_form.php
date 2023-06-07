@@ -41,74 +41,76 @@ $alertaCadastroEndereco = strlen($alertaCadastroEndereco) ? '<div>' . $alertaCad
       <h1>Cadastrar endereço</h1>
       <form method="POST">
         <div class="form-group">
-          <label for="cep" class="inputLabel">CEP</label>
-          <input
-            type="text"
-            name="cep"
-            id="cep"
-            class="inputUser"
-            placeholder="00000-000"
-            value="<?php echo (in_array('cep', $camposComErro)) ? '' : htmlspecialchars($_POST['cep']); ?>"
-            required
-          />
+            <label for="cep" class="inputLabel">CEP</label>
+            <input
+                type="text"
+                name="cep"
+                id="cep"
+                class="inputUser"
+                placeholder="00000-000"
+                value="<?php echo (in_array('cep', $camposComErro)) ? '' : htmlspecialchars($_POST['cep'] ?? ''); ?>"
+                required
+            />
         </div>
 
         <div class="form-group">
-          <label for="uf" class="inputLabel">UF</label>
-          <select name="uf" id="uf" class="inputUser" required>
-            <option value="" selected disabled hidden>
-              Selecione um estado
-            </option>
-          </select>
+            <label for="uf" class="inputLabel">UF</label>
+            <select name="uf" id="uf" class="inputUser" required>
+                <option value="" <?php echo (in_array('uf', $camposComErro)) ? '' : 'selected'; ?> disabled hidden>
+                    Selecione um estado
+                </option>
+                <!-- Aqui você pode adicionar opções para os estados -->
+            </select>
         </div>
 
         <div class="form-group">
-          <label for="cidade" class="inputLabel">Cidade</label>
-          <input
-            type="text"
-            name="cidade"
-            id="cidade"
-            class="inputUser"
-            value="<?php echo (in_array('cidade', $camposComErro)) ? '' : htmlspecialchars($_POST['cidade']); ?>"
-            required
-          />
+            <label for="cidade" class="inputLabel">Cidade</label>
+            <input
+                type="text"
+                name="cidade"
+                id="cidade"
+                class="inputUser"
+                value="<?php echo (in_array('cidade', $camposComErro)) ? '' : htmlspecialchars($_POST['cidade'] ?? ''); ?>"
+                required
+            />
         </div>
 
         <div class="form-group">
-          <label for="rua" class="inputLabel">Rua</label>
-          <input 
-            type="text" 
-            name="rua" 
-            id="rua" 
-            class="inputUser" 
-            value="<?php echo (in_array('rua', $camposComErro)) ? '' : htmlspecialchars($_POST['rua']); ?>"
-            required 
-          />
+            <label for="rua" class="inputLabel">Rua</label>
+            <input
+                type="text"
+                name="rua"
+                id="rua"
+                class="inputUser"
+                value="<?php echo (in_array('rua', $camposComErro)) ? '' : htmlspecialchars($_POST['rua'] ?? ''); ?>"
+                required
+            />
         </div>
 
         <div class="form-group">
-          <label for="bairro" class="inputLabel">Bairro</label>
-          <input
-            type="text"
-            name="bairro"
-            id="bairro"
-            class="inputUser"
-            value="<?php echo (in_array('bairro', $camposComErro)) ? '' : htmlspecialchars($_POST['bairro']); ?>"
-            required
-          />
+            <label for="bairro" class="inputLabel">Bairro</label>
+            <input
+                type="text"
+                name="bairro"
+                id="bairro"
+                class="inputUser"
+                value="<?php echo (in_array('bairro', $camposComErro)) ? '' : htmlspecialchars($_POST['bairro'] ?? ''); ?>"
+                required
+            />
         </div>
 
         <div class="form-group">
-          <label for="numero" class="inputLabel">Numero</label>
-          <input
-            type="number"
-            name="numero"
-            id="numero"
-            class="inputUser"
-            value="<?php echo (in_array('numero', $camposComErro)) ? '' : htmlspecialchars($_POST['numero']); ?>"
-            required
-          />
+            <label for="numero" class="inputLabel">Número</label>
+            <input
+                type="number"
+                name="numero"
+                id="numero"
+                class="inputUser"
+                value="<?php echo (in_array('numero', $camposComErro)) ? '' : htmlspecialchars($_POST['numero'] ?? ''); ?>"
+                required
+            />
         </div>
+
 
         <div class="form-group">
             <label for="tipo">Tipo</label>
@@ -119,8 +121,8 @@ $alertaCadastroEndereco = strlen($alertaCadastroEndereco) ? '<div>' . $alertaCad
         </div>
 
         <div class="form-group">
-          <label for="padrao">Definir como padrão (opcional)</label>
-          <input type="checkbox" name="padrao" id="padrao" value="1" />
+            <label for="padrao">Definir como padrão (opcional)</label>
+            <input type="checkbox" name="padrao" id="padrao" value="1" <?php echo (isset($_POST['padrao']) && $_POST['padrao'] === '1') ? 'checked' : ''; ?> />
         </div>
 
         <?= $alertaCadastroEndereco ?>
