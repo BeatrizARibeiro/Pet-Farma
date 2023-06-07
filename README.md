@@ -12,6 +12,10 @@
 
 <br>
 
+<p align="center">
+  <img alt="projeto TwitterUI" src=".github/preview.png" width="100%">
+</p>
+
 ## 💻 Projeto
 
 Aplicação E-commerce para venda de medicamentos, cosméticos e acessórios para animais de estimação.
