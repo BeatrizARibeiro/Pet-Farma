@@ -3,7 +3,7 @@
 
 <p align="center">
     <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
 <p align="center">
@@ -17,11 +17,18 @@
 Aplicação E-commerce para venda de medicamentos, cosméticos e acessórios para animais de estimação.
 
 
-## 🚀 Tecnologias
+## 🚀 Tecnologias e API's
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML, CSS, JavaScript, XAMPP, PHP, Composer, mySQL
+
+API's utilizadas:
+
+- Serviço SMTP do Gmail
+- Mercado Pago
+- ViaCep
+- IBGE Localidades
 
 ---
 
