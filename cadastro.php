@@ -7,6 +7,7 @@ use App\Session\Login;
 Login::requireLogout();
 
 $alertaCadastro = "";
+$camposComErro = [];
 
 if (isset($_POST['acao'])) {
     switch ($_POST['acao']) {
@@ -16,23 +17,27 @@ if (isset($_POST['acao'])) {
                 $obUsuario = Usuario::getUsuarioPorEmail($_POST['email']);
                 if ($obUsuario instanceof Usuario) {
                     $alertaCadastro = "O e-mail já está em uso.";
+                    $camposComErro[] = 'email';
                     break;
                 }
 
                 if (strlen($_POST['telefone']) != 15) {
                     $alertaCadastro = "Número de telefone inválido.";
+                    $camposComErro[] = 'telefone';
                     break;
                 }
 
                 $usuarioCPF = Usuario::validaCPF($_POST['cpf']);
                 if (!$usuarioCPF) {
                     $alertaCadastro = "CPF inválido.";
+                    $camposComErro[] = 'cpf';
                     break;
                 }
 
                 $senha = $_POST['senha'];
                 if (strlen($senha) < 6 || !preg_match('/[A-Z]/', $senha)) {
                     $alertaCadastro = "A senha deve ter no mínimo 6 caracteres e pelo menos uma letra maiúscula.";
+                    $camposComErro[] = 'senha';
                     break;
                 }
 

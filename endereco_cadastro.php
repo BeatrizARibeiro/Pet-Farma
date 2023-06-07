@@ -6,6 +6,7 @@ use App\Entity\Endereco;
 use App\Session\Login;
 
 $alertaCadastroEndereco = "";
+$camposComErro = [];
 
 $usuarioLogado = Login::getUsuarioLogado();
 
@@ -32,6 +33,7 @@ if (isset($_POST['acao'])) {
                     $enderecoPadraoExistente = Endereco::getEnderecoPadrao($usuarioLogado['codus']);
                     if ($enderecoPadraoExistente) {
                         $alertaCadastroEndereco = "Você já possui um endereço definido como padrão.";
+                        $camposComErro[] = 'padrao';
                     } else {
                         $obEndereco->padrao = $_POST['padrao'];
                     }

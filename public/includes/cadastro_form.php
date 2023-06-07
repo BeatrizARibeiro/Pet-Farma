@@ -59,6 +59,7 @@
             name="nome"
             id="nome"
             placeholder="Nome Completo"
+            value="<?php echo (in_array('nome', $camposComErro)) ? '' : htmlspecialchars($_POST['nome']); ?>"
             required>
           </label>
           <label class="label-input" for="cpf">
@@ -67,6 +68,7 @@
             name="cpf"
             id="cpf"
             placeholder="CPF"
+            value="<?php echo (in_array('cpf', $camposComErro)) ? '' : htmlspecialchars($_POST['cpf']); ?>"
             required>
           </label>
           <label class="label-input" for="telefone">
@@ -76,6 +78,7 @@
             name="telefone"
             id="telefone"
             placeholder="Telefone"
+            value="<?php echo (in_array('telefone', $camposComErro)) ? '' : htmlspecialchars($_POST['telefone']); ?>"
             required>
           </label>
           <label class="label-input" for="email">
@@ -84,6 +87,7 @@
             type="email"
             name="email"
             id="email"
+            value="<?php echo (in_array('email', $camposComErro)) ? '' : htmlspecialchars($_POST['email']); ?>"
             required>
           </label>
           <label class="label-input" for="senha">

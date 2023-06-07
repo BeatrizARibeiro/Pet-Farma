@@ -42,6 +42,13 @@ if(isset($_POST['acao'])) {
         break;
       }
 
+      $usuarioCPF = Usuario::validaCPF($_POST['cpf']);
+      if (!$usuarioCPF) {
+          $alertaEditarDados = '<div class="erro">CPF inválido.</div>';
+          $camposComErro[] = 'cpf';
+          break;
+      }
+
       if (strlen($_POST['telefone']) != 15) {
         $alertaEditarDados = '<div class="erro">Número de telefone inválido.</div>';
         break;
