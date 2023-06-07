@@ -2,8 +2,8 @@
 <h3 align="center"> Trabalho de graduação do curso de Análise e desenvolvimento de sistemas. </h3>
 
 <p align="center">
+    <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 <p align="center">
@@ -12,15 +12,16 @@
 
 <br>
 
+## 💻 Projeto
+
+Aplicação E-commerce para venda de medicamentos, cosméticos e acessórios para animais de estimação.
+
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML, CSS, JavaScript, XAMPP, PHP, Composer, mySQL
-
-## 💻 Projeto
-
-Aplicação E-commerce para venda de medicamentos, cosméticos e acessórios para animais de estimação.
 
 ---
 
