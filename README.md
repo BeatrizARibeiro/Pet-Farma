@@ -1,8 +1,8 @@
-<h1 align="center"> Pet Farma </h1>
+<h1 align="center"> Pet-Farma </h1>
 <h3 align="center"> Trabalho de graduação do curso de Análise e desenvolvimento de sistemas. </h3>
 
 <p align="center">
-    <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
