@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+.container {
+    /* text-align: justify; */
+    font-size: 25pt;
+    padding: 1% 10%;
+    /* background-color: rgb(168, 204, 194); */
+    margin: 3% 5%;
+}
+.container h3{
+    /* text-align: justify; */
+    color: #7843e8;
+}
+.container h1{
+    /* text-align: justify; */
+    color: #2c2c2c;
+}
+
+.texto p{
+    font-size: 15pt;
+    text-align: justify;
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    line-height: 150%;
+}
+
+.img {
+    width: 25%;
+}
+
+.alinhamento {
+    display: flex;
+}
+
+.form-button {
+    width: 20%;
+    background-color: #52C1B7;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+button:hover {
+  
+    background-color: #fff;
+    color: #52C1B7;
+    border: 1px solid #52C1B7;
+
+}
