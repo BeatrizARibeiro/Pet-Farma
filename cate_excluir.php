@@ -39,4 +39,4 @@ if(isset($_POST['excluir'])){
 
 include __DIR__.'/public/includes/header.php';
 include __DIR__.'/public/includes/cate_conf.php';
-include __DIR__.'/public/includes/footer.php';
+// include __DIR__.'/public/includes/footer.php';

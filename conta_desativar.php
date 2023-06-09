@@ -55,4 +55,4 @@ if (isset($_POST['desativar'])) {
 
 include __DIR__.'/public/includes/header.php';
 include __DIR__.'/public/includes/conta_conf.php';
-include __DIR__.'/public/includes/footer.php';
+// include __DIR__.'/public/includes/footer.php';
