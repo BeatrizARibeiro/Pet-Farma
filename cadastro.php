@@ -42,7 +42,7 @@ if (isset($_POST['acao'])) {
                 }
 
                 $obUsuario = new Usuario();
-                $obUsuario->nome = $_POST['nome'];
+                $obUsuario->nome = ucfirst(strtolower($_POST['nome']));
                 $obUsuario->cpf = $_POST['cpf'];
                 $obUsuario->telefone = $_POST['telefone'];
                 $obUsuario->email = $_POST['email'];

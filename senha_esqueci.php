@@ -25,7 +25,7 @@ if(isset($_POST['acao'])) {
       $email = trim($_POST['email']);
       $obUsuario = Usuario::getUsuarioPorEmail($email);
       $nomeUsuario = $obUsuario->nome;
-      $primeiroNome = ucfirst(explode(' ', $nomeUsuario)[0]);
+      $primeiroNome = explode(' ', $nomeUsuario)[0];
 
       if(!$obUsuario instanceof Usuario) {
         $alerta = '<div class="erro">Email não cadastrado.</div>';
