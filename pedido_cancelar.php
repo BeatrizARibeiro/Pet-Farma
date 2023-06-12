@@ -138,7 +138,7 @@ if(isset($_POST['sim'])){
                       <div class="overlay">
                         <div class="center title">Pet Farma</div>
                         <div class="center image-container">
-                          <a href="' . $linkHome . '">
+                          <a href="#">
                             <img
                               src="https://i.imgur.com/4aQEnev.png"
                               alt="Logo Pet-Farma"
@@ -150,7 +150,7 @@ if(isset($_POST['sim'])){
                         <div class="message">
                           <p>
                             Olá, <strong>' . $primeiroNome . '!</strong><br />
-                            Gostaríamos de informar que seu pedido cujo id é '. $numPedido . ' foi cancelado com sucesso.
+                            Gostaríamos de informar que seu pedido de número #'. $numPedido . ' foi cancelado com sucesso.
                           </p>
                         </div>
                       </div>
