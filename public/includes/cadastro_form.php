@@ -88,7 +88,7 @@
         <label class="label-input" for="email">
             <i class="fas fa-regular fa-envelope icon-modify"></i>
             <input 
-                placeholder="E-mail"
+                placeholder="Insira seu melhor e-mail"
                 type="email"
                 name="email"
                 id="email"

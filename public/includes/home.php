@@ -41,6 +41,8 @@
         case 'cancelado':
           $mensagem = '<div class="sucesso">Seu pedido foi cancelado com sucesso, <br>você receberá seu reembolso em breve!</div>';
           break;
+        case 'cadastrado':
+          $mensagem = '<div class="sucesso">Conta criada com sucesso! Um link de ativação foi enviado para o seu e-mail.</div>';
         }
         
     }

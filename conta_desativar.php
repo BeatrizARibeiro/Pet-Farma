@@ -45,7 +45,7 @@ if (isset($_POST['desativar'])) {
         $alerta = '<div class="erro">Não é possível desativar a conta pois existem pedidos pendentes.</div>';
     } else {
     // Altere o status da conta entre ativo e inativo
-    $novoStatus = ($obUsuario->situacao == 'ativa') ? 'inativa' : 'ativa';
+    $novoStatus = ($obUsuario->situacao == 'ativa') ? 'ativa' : 'ativa';
     $obUsuario->setStatus($obUsuario->codus, $novoStatus);
     Login::logout();
     exit;

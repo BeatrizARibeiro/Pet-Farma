@@ -19,11 +19,27 @@ if(isset($_POST['acao'])) {
         $alertaLogin = '<div class="erro">E-mail ou senha inválidos.</div>';
         break;
       }
+
+      if($obUsuario->situacao == "inativa"){
+        $alertaLogin = '<div class="erro">Ative sua conta antes de logar.</div>';
+        break;
+      }
+
       $obUsuario->setStatus($obUsuario->codus, "ativa");
       Login::login($obUsuario);
       
       break;
   }
+}
+
+if (isset($_GET['acao']) && $_GET['acao'] === 'ativar') {
+    $token = $_GET['token'];
+    $obUsuario = Usuario::getUsuarioPorToken($token);
+    $obUsuario->setStatus($obUsuario->codus, "ativa");
+    $obUsuario->setToken(null);
+
+    header("Location: login.php?conta_ativada");
+
 }
 
 if(isset($_GET['status'])) {
