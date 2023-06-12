@@ -24,16 +24,19 @@
 }
 
 .texto p{
+    width: 100%;
     font-size: 15pt;
     text-align: justify;
     padding-top: 1%;
-    padding-left: 10%;
     padding-right: 10%;
     line-height: 150%;
 }
 
 .img {
-    width: 25%;
+    align-items: center;
+    margin-top: 10px;
+    height: 250px;
+    border-radius: 50%;
 }
 
 .alinhamento {

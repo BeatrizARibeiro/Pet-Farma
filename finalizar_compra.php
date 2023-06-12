@@ -228,8 +228,8 @@
                 <mod>55</mod>
                 <serie>1</serie>
                 <nNF>2</nNF>
-                <dhEmi>'.date('d/m/Y H:i').'</dhEmi>
-                <dhSaiEnt>'.date('d/m/Y H:i').'</dhSaiEnt>
+                <dhEmi>'.date('Y/m/d').'</dhEmi>
+                <dhSaiEnt>'.date('Y/m/d').'</dhSaiEnt>
                 <tpNF>1</tpNF>
                 <idDest>1</idDest>
                 <cMunFG>3547809</cMunFG>

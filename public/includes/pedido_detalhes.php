@@ -104,9 +104,10 @@
     </div>
 
     <section <?=$visibilidade?>>
+    <br>
         <h4>Protocolo: <?=$pedido->protocolo?></h4>
         <p>Seu pedido foi entregue a transportadora.</p>
-        <p>Use seu número de protocolo para acompanhar seu pedido na <a href="">Transportadora Maravilha</a></p>
+        <p>Use seu número de protocolo para acompanhar seu pedido no portal da Transportadora Maravilha</p>
     </section>
     </div> 
 </body>
