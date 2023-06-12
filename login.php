@@ -35,6 +35,13 @@ if(isset($_POST['acao'])) {
 if (isset($_GET['acao']) && $_GET['acao'] === 'ativar') {
     $token = $_GET['token'];
     $obUsuario = Usuario::getUsuarioPorToken($token);
+
+    if($obUsuario->token != $token){
+      header('Location: index.php?status=invalidtoken');
+      exit;
+
+    }
+
     $obUsuario->setStatus($obUsuario->codus, "ativa");
     $obUsuario->setToken(null);
 
