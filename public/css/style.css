@@ -644,7 +644,7 @@ footer .copyright {
     flex-wrap: wrap;
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
     
   a {
     text-decoration: none !important;
@@ -947,7 +947,7 @@ footer .copyright {
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1430px) {
     .animaishome img {
         width: 100%;
         height: auto;
@@ -965,12 +965,22 @@ footer .copyright {
         padding: 20px 80px;
         background: #52C1B7;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-        z-index: 999;
-        position: sticky;
-        top: 0;
-        left: 0;
+        gap: 10px;
     }
+.navbar2 li a {
+    /* font-size: 10px; */
+    display: flex;
+    gap: 15px;
+    white-space: nowrap;
+}
 
+.f-admin a, .f-cli, .usuario, .categoria a {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 17px;
+    margin-left: 20px;
+    white-space: nowrap;
+}
     #product1 .pro-container {
         display: flex;
         justify-content: center;
