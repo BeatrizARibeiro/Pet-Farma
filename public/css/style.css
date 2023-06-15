@@ -958,6 +958,26 @@ footer .copyright {
         display: flex;
         flex-direction: column;
     }
+    #header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 80px;
+        background: #52C1B7;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        z-index: 999;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+
+    #product1 .pro-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }
 
 /* @media only screen and (max-width: 1285px) {
