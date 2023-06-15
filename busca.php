@@ -27,6 +27,13 @@
     //PAGINACAO
     $objPagi = new Pagination($qtdeProdutos, $_GET['pagina'] ?? 1, 10);
 
+    //adm
+    $enabled = '';
+  
+    if($usuarioLogado && $usuarioLogado['admin'] == 1){
+        $enabled = 'style="display:none"';
+    }
+
     //variavel com array de produtos
     $produtos = Produto::getProdutos($where, null, $objPagi->getLimit());
 
@@ -45,7 +52,7 @@
                         <a href="add_carrinho.php?codprod='.$prod->codprod.'" '.$enabled.'><i class="fa-solid fa-cart-shopping cart"></i></a>
                     </div>
                  </a>';
-      }}
+      }
 
     //caso nao tenha nenhum produto cadastrado no banco
   $cards = strlen($cards) ? $cards : '<h4>Nenhum produto encontrado</h4>';
