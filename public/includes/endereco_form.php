@@ -37,7 +37,7 @@ $alertaCadastroEndereco = strlen($alertaCadastroEndereco) ? '<div>' . $alertaCad
 
   <main>
     <div class="form-container">
-      <a href="dados_listar.php?codus=<?= $usuarioLogado['codus'] ?>">Voltar</a>
+      <a class="form-button" href="dados_listar.php?codus=<?= $usuarioLogado['codus'] ?>">Voltar</a>
       <h1>Cadastrar endereço</h1>
       <form method="POST">
         <div class="form-group">

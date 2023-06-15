@@ -354,3 +354,63 @@ aside button:hover{
     outline:none;
     text-indent:-9999px;
   }
+
+  @media (max-width: 400px){
+    main {
+        background: #fff;
+        padding: 0 30px 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    main .page-title {
+        font-size: 30px;
+        padding: 50px 0;
+        font-weight: 600;
+        display: flex;
+    }
+    table {
+        display: flex;
+        flex-direction: column;
+    }
+    table thead tr th {
+        text-align: left;
+        padding-bottom: 10px;
+        font-size: 13px;
+        padding-right: 10px;
+    }
+
+    table tbody tr td {
+        padding: 20px 0px;
+        display: flex;
+    align-items: center;
+    flex-direction: column;
+    }
+    .content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    element.style {
+        height: 50px;
+    }
+
+    aside .box footer {
+        padding: 10px 0px;
+    }
+    footer span {
+        margin: 10px;
+    }
+  }
+
+  @media (max-width: 1150px){
+    .content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    main .content aside {
+        /* background: #ECF5F5; */
+        min-width: 100%;
+        margin: 0;
+    }
+  }

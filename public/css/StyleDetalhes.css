@@ -168,6 +168,11 @@ input[type=number]::-webkit-inner-spin-button,
 }
 
 @media (max-width: 480px) {
+  .sidebar2 {
+    width: 80%;
+    /* margin: 0px 10px; */
+  }
+  
     .imgDetalhes {
       width: 100%;
     }
@@ -179,6 +184,8 @@ input[type=number]::-webkit-inner-spin-button,
     
     .container {
       flex-direction: column;
+      display: flex;
+      align-items: center;
     }
     
     .main-content h4 {
@@ -198,16 +205,16 @@ input[type=number]::-webkit-inner-spin-button,
     }
     
     .main-content img {
-      margin: 0px 30px;
+      margin: 0px 10px;
       width: 100%;
     }
 
-    .sidebar2 {
+    /* .sidebar2 {
       width: 100%;
       height: auto;
       margin: 20px;
       padding: 10px;
-    }
+    } */
     
     .inputQtdAside {
       flex-direction: column;
@@ -327,9 +334,9 @@ input[type=number]::-webkit-inner-spin-button,
     }
   }
   
-  @media (max-width: 1400px) {
+  @media ( max-width: 801px) and( max-width: 1400px) {
   .main-content img {
-    width: 70%;
+    width: 80%;
     margin: 0;
   }
   .main-content {
