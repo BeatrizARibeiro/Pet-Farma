@@ -948,6 +948,15 @@ footer .copyright {
         height: auto;
         margin: 0;
     }
+    #header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 80px;
+        background: #52C1B7;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        gap: 20px;
+    }
 }
 
 @media only screen and (max-width: 800px) {
