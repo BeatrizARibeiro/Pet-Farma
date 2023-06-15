@@ -154,13 +154,13 @@ body {
 .f-admin a, .f-cli,.usuario, .categoria a{
     color: #ffffff;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 15px;
     margin-left: 20px;
     white-space: nowrap;
 }
 
 .f-admin a, .f-cli{
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .f-admin a:hover, .f-cli:hover{
@@ -182,7 +182,7 @@ body {
 
 .navbar li a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   color: rgb(255, 255, 255);
   transition: 0.3s ease;
@@ -219,7 +219,7 @@ body {
 
 .navbar2 li a {
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
     color: rgb(255, 255, 255);
     transition: 0.3s ease;
@@ -1038,7 +1038,7 @@ footer .copyright {
         gap: 10px;
     }
 .navbar2 li a {
-    /* font-size: 10px; */
+    font-size: 10px;
     display: flex;
     gap: 15px;
     white-space: nowrap;
