@@ -947,7 +947,20 @@ footer .copyright {
     }
 }
 
-@media only screen and (max-width: 1430px) {
+@media only screen and (max-width: 800px) {
+    #hero {
+        background-image: url(../img/fundopet.png);
+        height: 90vh;
+        /* height: 50vh; */
+        width: 100%;
+        background-size: cover;
+        background-position: top 25% right 0;
+        padding: 0 80px;
+        display: flex;
+        /* flex-direction: column; */
+        /* align-items: flex-start; */
+        justify-content: center;
+    }
     .animaishome img {
         width: 100%;
         height: auto;
