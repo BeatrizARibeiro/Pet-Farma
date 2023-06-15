@@ -35,7 +35,7 @@ h6 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     color: #465b52;
     margin: 15px 0 20px 0;
@@ -158,6 +158,10 @@ body {
     margin-left: 20px;
 }
 
+.f-admin a, .f-cli{
+    font-size: 17px;
+}
+
 .f-admin a:hover, .f-cli:hover{
     color: #137373;
 }
@@ -176,7 +180,7 @@ body {
 
 .navbar li a {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: rgb(255, 255, 255);
   transition: 0.3s ease;
@@ -212,7 +216,7 @@ body {
 
 .navbar2 li a {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     color: rgb(255, 255, 255);
     transition: 0.3s ease;
@@ -563,7 +567,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: #52C1B7;
+    background: #47b5ac;
 }
 
 footer .col {
@@ -584,22 +588,23 @@ footer .logo {
 }
 
 footer h4 {
-    font-size: 14px;
+    font-size: 17px;
     padding-bottom: 20px;
-    color: #eee;
+    color:#156666;
 }
 
 footer p {
-    font-size: 13px;
+    font-size: 15px;
     margin: 0 0 8px 0;
     color: #eee;
 }
 
 footer a {
-    font-size: 13px;
+    font-size: 15px;
     text-decoration: none;
     color: #eee;
     margin-bottom: 10px;
+    font-weight: 500 !important;
 }
 
 footer .follow {
@@ -610,6 +615,7 @@ footer .follow i {
     color: #eee;
     padding-right: 4px;
     cursor: pointer;
+    font-size: 17px;
 }
 
 footer .pagamento img {
@@ -619,13 +625,13 @@ footer .pagamento img {
 
 footer .follow i:hover,
 footer a:hover {
-    color: #003f3a;
+    color: #156666;
 }
 
 footer .copyright {
     width: 100%;
     text-align: center;
-    height: ;
+    height: 600;
 }
 
 

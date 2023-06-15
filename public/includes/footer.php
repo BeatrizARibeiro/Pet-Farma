@@ -12,7 +12,7 @@
 
 <footer class="section-p1">
         <div class="col">
-            <img class="logo" src="./public/img/logopetfarma2.png" alt="">
+            <img class="logo" src="./public/img/logopetfarma.png" alt="">
             <h4>Contato</h4>
             <p><strong>WhatsApp: </strong>(15) 66666-6666</p>
             <p><strong>E-mail: </strong>petfarma.dev@gmail.com</p>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="col pagamento">
-            <p>Pagamento seguro</p>
+            <h4>Pagamento seguro</h4>
             <div>
                 <img src="./public/img/visamastercard.png" alt="">
                 <img style="width:40px !important;" src="./public/img/americanexpress.png" alt="">
