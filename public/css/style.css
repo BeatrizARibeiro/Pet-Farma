@@ -954,8 +954,15 @@ footer .copyright {
         padding: 0 20px;
     }
     
-.homeimgtexto {
-    display: flex;
-    flex-direction: column;
+    .homeimgtexto {
+        display: flex;
+        flex-direction: column;
+    }
 }
+
+@media only screen and (max-width: 1285px) {
+#hero {
+    padding: 30px ;
+}
+
 }
