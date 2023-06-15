@@ -948,15 +948,60 @@ footer .copyright {
         height: auto;
         margin: 0;
     }
-    #header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 80px;
-        background: #52C1B7;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-        gap: 20px;
-    }
+    .cesta {
+        width: 20px;
+      }
+    
+      .search-box {
+        height: 30px;
+      }
+    
+      .search-txt {
+        font-size: 14px;
+      }
+    
+      .search-btn {
+        width: 70px;
+        height: 30px;
+      }
+    
+      .search-btn .lupa {
+        width: 30px;
+        padding: 5px;
+      }
+    
+      #header {
+        padding: 20px;
+      }
+    
+      .f-admin a,
+      .f-cli,
+      .usuario,
+      .categoria a {
+        font-size: 14px;
+        margin-left: 10px;
+      }
+    
+    
+        .search-btn {
+            width: 70px;
+            height: 30px;
+        }
+    
+        .search-btn .lupa {
+            width: 30px;
+            padding: 5px;
+        }
+    
+        #header {
+            padding: 20px;
+        }
+    
+        .f-admin a, .f-cli, .usuario, .categoria a {
+            font-size: 14px;
+            margin-left: 10px;
+        }
+    
 }
 
 @media only screen and (max-width: 800px) {
