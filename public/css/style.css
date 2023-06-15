@@ -947,7 +947,7 @@ footer .copyright {
     }
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
     .animaishome img {
         width: 100%;
         height: auto;
@@ -960,9 +960,9 @@ footer .copyright {
     }
 }
 
-@media only screen and (max-width: 1285px) {
+/* @media only screen and (max-width: 1285px) {
 #hero {
     padding: 30px ;
 }
 
-}
+} */
