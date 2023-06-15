@@ -625,12 +625,21 @@ footer a:hover {
 footer .copyright {
     width: 100%;
     text-align: center;
-    height: ;
+    height: 30%;
 }
 
 
 /* MEDIA QUERY */
+@media only screen and (max-width: 400px) {
+    #feature {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+}
 @media only screen and (max-width: 600px) {
+    
   a {
     text-decoration: none !important;
   }
@@ -921,6 +930,14 @@ footer .copyright {
 
     #signup .form {
         width: 70%;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        margin: 0;
     }
 }
 

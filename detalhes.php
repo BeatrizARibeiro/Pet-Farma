@@ -54,7 +54,7 @@ if(!isset($_GET['codprod']) or !is_numeric($_GET['codprod'])){
         <img class="imgDetalhes" src="./public/img/<?=$objProd->imagem?>" alt="">
     </div>
 
-    <aside class="sidebar">
+    <aside class="sidebar2">
         <h4><?=$objProd->nome_prod?></h4>
         <h3>Informações:</h3>
         <p><?=str_replace('-', '&bull;',(str_replace(' -', '<br>-', $objProd->descricao)))?></p>
