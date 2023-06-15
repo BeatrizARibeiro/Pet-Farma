@@ -110,48 +110,9 @@ justify-content: center;
     background-color: #52C1B7;
     color: #fff;
     cursor: pointer;
-<<<<<<< HEAD
     display:flex;
     justify-content: center;
     align-items: center;
-=======
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    align-items: center;
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.form-button:hover{
-    background:#1a7a72;
-  }
-
-.form-container a{
-    width: 15%;
-    text-decoration: none;
-    background-color: #52C1B7;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin:10px;
-    margin-bottom: 15px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    font-size: 15px;
-}
-
-.form-group .btn{
-    position: center;
-    display: none !important;
-    align-items: center !important;
->>>>>>> caf42948c0d53e4dcd348f8d6943643b9f42b68f
 }
 
 @media screen and (min-width: 300px) {
