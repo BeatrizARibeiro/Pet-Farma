@@ -7,6 +7,7 @@ use App\Session\Login;
 
 
 $alertaAlterarSenha = "";
+$camposComErro = [];
 
 if(isset($_POST['acao'])) {
   switch($_POST['acao']){
@@ -44,12 +45,16 @@ if(isset($_POST['acao'])) {
 
       // Verifica se as novas senhas são iguais
       if($_POST['senha'] != $_POST['confirmar-senha']){
+        $camposComErro[] = 'senha';
+        $camposComErro[] = 'confirmar-senha';
         $alertaAlterarSenha = '<div class="erro">As novas senhas não conferem.</div>';
         break;
       }
 
       $senha = $_POST['senha'];
       if (strlen($senha) < 6 || !preg_match('/[A-Z]/', $senha)) {
+          $camposComErro[] = 'senha';
+          $camposComErro[] = 'confirmar-senha';
           $alertaAlterarSenha = '<div class="erro">A senha deve ter no mínimo 6 caracteres e pelo menos uma letra maiúscula.</div>';
           break;
       }
@@ -57,12 +62,14 @@ if(isset($_POST['acao'])) {
       // Obtém o usuário a partir do email informado
       $obUsuario = Usuario::getUsuarioPorEmail($_POST['email']);
       if(!$obUsuario instanceof Usuario) {
+        $camposComErro[] = 'email';
         $alertaAlterarSenha = '<div class="erro">Usuário não encontrado.</div>';
         break;
       }
 
       // Verifica se a senha atual é válida
       if(!password_verify($_POST['senha-atual'], $obUsuario->senha)) {
+        $camposComErro[] = 'senha-atual';
         $alertaAlterarSenha = '<div class="erro">Senha atual inválida.</div>';
         break;
       }
