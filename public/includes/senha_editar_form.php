@@ -54,7 +54,13 @@
         <form class="form" method="post">
           <label class="label-input" for="email">
             <i class="fas fa-regular fa-envelope icon-modify"></i>
-            <input type="text" name="email" placeholder="Email" required />
+            <input 
+              type="text" 
+              name="email" 
+              placeholder="Email" 
+              required 
+              value="<?php echo (in_array('email', $camposComErro)) ? '' : htmlspecialchars($_POST['email'] ?? ''); ?>"
+            />
           </label>
 
           <label class="label-input" for="senha-atual">
@@ -65,6 +71,7 @@
               name="senha-atual"
               placeholder="Senha atual"
               required
+              value="<?php echo (in_array('senha-atual', $camposComErro)) ? '' : htmlspecialchars($_POST['senha-atual'] ?? ''); ?>"
             />
             <span class="password-toggle" onclick="mostrarSenha('senhaAtual', 'eyeIconAtual')">
               <i id="eyeIconAtual" class="fas fa-solid fa-eye icon-modify"></i>
@@ -79,6 +86,7 @@
               name="senha"
               placeholder="Nova senha"
               required
+              value="<?php echo (in_array('senha', $camposComErro)) ? '' : htmlspecialchars($_POST['senha'] ?? ''); ?>"
             />
             <span class="password-toggle" onclick="mostrarSenha('senhaNova', 'eyeIconNova')">
               <i id="eyeIconNova" class="fas fa-solid fa-eye icon-modify"></i>
@@ -93,6 +101,7 @@
               name="confirmar-senha"
               placeholder="Confirma a Nova Senha"
               required
+              value="<?php echo (in_array('confirmar-senha', $camposComErro)) ? '' : htmlspecialchars($_POST['confirmar-senha'] ?? ''); ?>"
             />
             <span class="password-toggle" onclick="mostrarSenha('senhaConf', 'eyeIconConf')">
               <i id="eyeIconConf" class="fas fa-solid fa-eye icon-modify"></i>
