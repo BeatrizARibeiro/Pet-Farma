@@ -49,9 +49,13 @@
             <input
               type="password"
               name="senha"
+              id="novaSenha"
               placeholder="Nova senha"
               required
             />
+            <span class="password-toggle" onclick="mostrarSenha('novaSenha', 'eyeIconNova')">
+                <i id="eyeIconNova" class="fas fa-solid fa-eye icon-modify"></i>
+            </span>
           </label>
 
           <label for="confirmar-senha" class="label-input">
@@ -59,9 +63,13 @@
             <input
               type="password"
               name="confirmar-senha"
+              id="confirmarSenha"
               placeholder="Confirme a nova senha"
               required
             />
+            <span class="password-toggle" onclick="mostrarSenha('confirmarSenha', 'eyeIconConf')">
+                <i id="eyeIconConf" class="fas fa-solid fa-eye icon-modify"></i>
+            </span>
           </label>
 
           <?=$alerta?>
@@ -78,5 +86,5 @@
       </div>
     </div>
   </div>
-  <!-- <script src="/script/scriptLogin.js"></script> -->
+  <script src="./public/js/senha.js"></script>
 </body>

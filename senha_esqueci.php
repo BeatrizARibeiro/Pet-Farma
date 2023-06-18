@@ -18,19 +18,21 @@ if(isset($_POST['acao'])) {
   switch($_POST['acao']) {
     case 'trocar':
 
+      $email = trim($_POST['email']);
+      $obUsuario = Usuario::getUsuarioPorEmail($email);
+
       if(empty($_POST['email'])){
         $alerta = '<div class="erro">Por favor, informe seu email.</div>';
         break;
       }
-      $email = trim($_POST['email']);
-      $obUsuario = Usuario::getUsuarioPorEmail($email);
-      $nomeUsuario = $obUsuario->nome;
-      $primeiroNome = explode(' ', $nomeUsuario)[0];
 
       if(!$obUsuario instanceof Usuario) {
         $alerta = '<div class="erro">Email não cadastrado.</div>';
         break;
       }else {
+
+        $nomeUsuario = $obUsuario->nome;
+        $primeiroNome = explode(' ', $nomeUsuario)[0];
         $token = bin2hex(random_bytes(16));
         $obUsuario->setToken($token);
 
