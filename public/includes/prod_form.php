@@ -140,7 +140,7 @@
     
     <div class="form-group">
       <label>Categorias:</label>
-      <select class="form-select" name="categorias[]" multiple>
+      <select class="form-select" style="height:160px;" name="categorias[]" multiple>
         <?=$resCate?>;
       </select>
       <p style="color:darkcyan; font-weight:600;">Aperte CTRL ou SHIFT para selecionar as categorias de sua escolha!</p>
