@@ -43,7 +43,7 @@
                     </td>
                     <td>
                         <div class="product">
-                            <div class="info">
+                            <div class="info2">
                                 <div class="nameProduct">R$ '.number_format($item->preco * $item->qtde, 2, ',', '.').'</div>
                                 <div class="categoryProduct"> X'.$item->qtde.'</div>
                             </div>
@@ -81,7 +81,7 @@
 
 <table>
     <thead>
-        <th></th>
+        <th style="width: 75%;"></th>
         <th></th>
     </thead>
     <tbody>

@@ -33,9 +33,9 @@
 
         foreach($produtos as $prod){
             $resultado .= '<tr>
-                            <td>
+                            <td style="width:50%;">
                                 <div class="product">
-                                    <img style="height: 100px;" src="public/img/'.$prod->imagem.'" alt="">
+                                    <img style="height: 99px;" src="public/img/'.$prod->imagem.'" alt="">
                                     <div class="info">
                                         <div class="nameProduct">'.$prod->nome_prod.'</div>
                                         <div class="categoryProduct">';
@@ -79,7 +79,7 @@
         else{
             $endereco .= '<p>Você ainda não possui um endereço padrão!</p>
                         <p>Defina um endereço padrão para poder terminar sua compra.</p>
-                        <div class="link"> <a href="dados_listar.php?codus='.$sessao['codus'].'">Adicionar Endereço Padrão</a></div>';
+                        <div class="link"> <a href="dados_listar.php?codus='.$sessao['codus'].'">Endereço Padrão</a></div>';
             $enabled = 'disabled';
         }
     
@@ -116,7 +116,7 @@
             <input name="numpedido" value="<?=$numpedido?>" style="display:none;"></input>
             <table>
                 <thead>
-                <tr>
+                <tr style="align-items:center; justify-content: center;">
                     <th>Produto</th>
                     <th>Preço</th>
                     <th>Quantidade</th>
@@ -150,13 +150,13 @@
                                 <span id="sub">R$ <?=number_format($soma, 2, ',', '.')?></span>
                             </div>
                             <div>
-                                <span>Frete fixo para todo o Brasil</span>
-                                <span id="frete">R$ 25,00</span>
+                                <span id="frete">Frete fixo para todo o Brasil</span>
+                                <span >R$ 25,00</span>
                             </div>
                         </div>
-                        <footer>
-                            <span style="font-weight: 500;">Total</span>
-                            <input class="inputTotal" id="totalfinal" name="totalfinal" value="R$ <?=number_format($soma + 25.00, 2, ',', '.')?>"></input>
+                        <footer style="align-items:center;">
+                            <span style="font-weight: 500; width:60%">Total</span>
+                            <input style="width:40%" class="inputTotal" id="totalfinal" name="totalfinal" value="R$ <?=number_format($soma + 25.00, 2, ',', '.')?>"></input>
                         </footer>
                     </div>
                     <button type="submit" name="finalizar" <?=$enabled?> onkeypress="teste(event)">Finalizar Compra</button>

@@ -219,7 +219,8 @@ class Database{
     on p.codprod = pc.codprod
     inner join categoria c
     on pc.codcate = c.codcate
-    where c.nome_cate like '%Suplementos%' or c.nome_cate like '%Vitaminas%'";
+    where c.nome_cate like '%Suplementos%' or c.nome_cate like '%Vitaminas%'
+    group by pc.codprod";
 
     return $this->execute($query);
   }

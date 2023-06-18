@@ -81,6 +81,10 @@ body {
     padding: 10px;
     border: 1px solid transparent;
     border-radius: 4px;
+    margin-top:10px;
+}
+.form-button{
+    margin-left: 10px;
 }
 button:hover {
   
@@ -95,6 +99,12 @@ button i {
 
 h2 {
     margin: 20px auto;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+h4{
+    margin-left: 10px;
 }
 
 table {
@@ -137,12 +147,27 @@ table tbody tr td {
 }
 
 .product .info {
-    margin-left: 20px;
+    margin-left: 10px;
+    padding-top: 3%;
+}
+
+.product .info2{
+    margin-left: 10px;
+    padding-left: 10px;
 }
 
 .product .info .nameProduct {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
+}
+
+.product .info2 .nameProduct {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product .info2 .categoryProduct {
+    font-size: 14px;
 }
 
 .categoryProduct span{

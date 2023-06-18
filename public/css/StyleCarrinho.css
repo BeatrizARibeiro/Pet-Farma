@@ -113,7 +113,7 @@ main .content section {
 
 main .content aside {
     /* background: #ECF5F5; */
-    min-width: 250px;
+    min-width: 270px;
 }
 
 table {
@@ -143,8 +143,10 @@ table tbody tr:last-child {
 
 
 table tbody tr td {
-    padding: 30px 20px;
+    padding: 20px 10px;
 }
+
+
 
 .product {
     display: flex;
@@ -156,11 +158,11 @@ table tbody tr td {
 }
 
 .product .info {
-    margin-left: 20px;
+    margin-left: 13px;
 }
 
 .product .info .nameProduct {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
@@ -190,6 +192,10 @@ p, span{
     color: #000;
 }
 
+#frete{
+    width: 60%;
+}
+
 .inputQtd {
     background: #eee;
     /* border: 3px solid #eee; */
@@ -197,7 +203,7 @@ p, span{
     padding: 0;
     justify-content: space-around;
     align-items: center;
-    min-width: 60px;
+    min-width: 50px;
     border-radius: 20px;
     overflow: hidden;
     height: 30px;
@@ -209,7 +215,7 @@ p, span{
     background: transparent;
     border: 0;
     padding: 0 10px;
-    font-size: 15px;
+    font-size: 13px;
     height: 100%;
 }
 
@@ -227,7 +233,7 @@ p, span{
     height: 100%;
     padding-left: 10px;
     justify-items: center;
-    width: 50px;
+    width: 45px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -291,7 +297,7 @@ input[type=number]::-webkit-inner-spin-button,
 
 aside {
     margin-left: 40px;
-    width: 30%;
+    width: 25%;
 }
 
 aside .box {
@@ -309,7 +315,7 @@ aside .box header {
 }
 
 aside .box .info {
-    padding: 30px 20px;
+    padding: 20px 10px;
 }
 aside .box .info > div {
     display: flex;
@@ -380,10 +386,10 @@ aside button:hover{
     }
 
     table tbody tr td {
-        padding: 20px 0px;
+        padding: 10px 0px;
         display: flex;
-    align-items: center;
-    flex-direction: column;
+        align-items: center;
+        flex-direction: column;
     }
     .content {
         display: flex;
