@@ -429,8 +429,14 @@ body {
     margin-bottom: 10px;
 }
 
-#product1 {
+/* #product1 {
     text-align: center;
+} */
+#product1 {
+   text-align: center;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
 }
 
 /* #product1 .pro-container {
@@ -442,10 +448,9 @@ body {
 
 #product1 .pro-container {
     display: flex;
-    justify-content: flex-start;
-    padding-top: 20px;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 0.5%;
+    gap: 0.5px;
 }
 
 #product1 .pro {
@@ -456,7 +461,7 @@ body {
     border-radius: 25px;
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.03);
-    margin: 15px 0;
+    margin: 14px;
     transition: 0.2s ease;
     position: relative;
     background: #ffffff;
