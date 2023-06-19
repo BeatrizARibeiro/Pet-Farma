@@ -106,7 +106,7 @@ use \App\Session\Login;
 
       <table>
         <?php foreach ($enderecoArray as $endereco) { ?>
-          <tbody>
+          <tbody class="tbody2">
             <tr>
               <th class="titleTd">CEP:</th>
               <td><?=$endereco->cep?></td>
@@ -154,7 +154,7 @@ use \App\Session\Login;
       <p>Nenhum endereço cadastrado.</p>
     <?php } ?>
 
-    
+    <hr>
 
   </div>
 </div>
